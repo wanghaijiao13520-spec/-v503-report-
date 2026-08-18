@@ -1,0 +1,1036 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>竞品横向对比报告 · V503 修身方领背心（带胸垫）</title>
+<style>
+  :root{
+    --blue:#2563eb; --sky:#38bdf8; --amber:#f59e0b; --emerald:#10b981;
+    --violet:#8b5cf6; --rose:#ef4444; --slate:#64748b;
+    --bg:#f1f5f9; --card:#ffffff; --line:#e2e8f0; --ink:#0f172a; --ink2:#475569; --ink3:#94a3b8;
+    --radius:16px; --shadow:0 1px 3px rgba(15,23,42,.07), 0 8px 24px -12px rgba(15,23,42,.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+    background:var(--bg); color:var(--ink); font-size:14px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    background:linear-gradient(135deg,#0b1220 0%,#16233f 55%,#1e3a5f 100%);
+    color:#e2e8f0; padding:22px 28px 20px; position:relative; overflow:hidden;
+  }
+  header::after{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:radial-gradient(rgba(148,163,184,.16) 1px, transparent 1px);
+    background-size:22px 22px;
+  }
+  .hd-inner{max-width:1560px; margin:0 auto; position:relative; z-index:1;
+    display:flex; flex-wrap:wrap; align-items:center; gap:14px; justify-content:space-between;}
+  .hd-title{display:flex; align-items:center; gap:12px;}
+  .hd-logo{
+    width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex:none;
+    background:linear-gradient(135deg,var(--violet),var(--blue)); box-shadow:0 4px 14px rgba(124,58,237,.45);
+    font-size:20px; color:#fff;
+  }
+  .hd-title h1{font-size:19px; font-weight:700; letter-spacing:.5px; color:#fff;}
+  .hd-title p{font-size:12px; color:#94a3b8; margin-top:2px;}
+  .hd-nav{display:flex; flex-wrap:wrap; gap:8px;}
+  .hd-nav a{color:#cbd5e1; text-decoration:none; font-size:12.5px; padding:5px 11px; border:1px solid rgba(255,255,255,.14); border-radius:20px; background:rgba(255,255,255,.06);}
+  .hd-nav a:hover{background:rgba(255,255,255,.14); color:#fff;}
+  main{max-width:1560px; margin:0 auto; padding:20px 24px 60px; display:flex; flex-direction:column; gap:18px;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);}
+  .card-pad{padding:18px 20px;}
+  .sec-head{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; flex-wrap:wrap;}
+  .sec-title{display:flex; align-items:center; gap:9px; font-size:15.5px; font-weight:700; color:var(--ink);}
+  .sec-title::before{content:""; width:4px; height:16px; border-radius:2px; background:linear-gradient(180deg,var(--blue),var(--sky));}
+  .sec-sub{font-size:12px; color:var(--ink3);}
+  .part-badge{display:inline-block; font-size:11.5px; font-weight:800; padding:2px 10px; border-radius:6px; color:#fff; letter-spacing:1px;}
+  /* KPI */
+  .kpi-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px;}
+  .kpi{position:relative; overflow:hidden; padding:14px 16px;}
+  .kpi .ico{position:absolute; right:12px; top:12px; width:34px; height:34px; border-radius:10px; display:grid; place-items:center; font-size:16px;}
+  .kpi .lab{font-size:11.5px; color:var(--ink2);}
+  .kpi .val{font-size:23px; font-weight:800; margin:5px 0 2px; font-variant-numeric:tabular-nums;}
+  .kpi .sub{font-size:11px; color:var(--ink3);}
+  .kpi .bar{position:absolute; left:0; right:0; bottom:0; height:3px;}
+  /* Alerts */
+  .alert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px;}
+  .alert{border-left:4px solid var(--line); padding:14px 16px; background:linear-gradient(180deg,#fbfcfe,#f8fafc);}
+  .alert .a-head{display:flex; align-items:center; gap:9px; font-weight:700; font-size:14px;}
+  .alert .a-tag{font-size:11.5px; font-weight:700; padding:2px 9px; border-radius:20px; letter-spacing:.5px;}
+  .tag-attack{background:#fee2e2; color:#b91c1c;} .tag-free{background:#d1fae5; color:#065f46;}
+  .tag-warn{background:#fef3c7; color:#92400e;} .tag-none{background:#f1f5f9; color:#94a3b8;}
+  .alert .a-kw{font-size:12.5px; color:var(--ink2); margin-top:6px;}
+  .alert .a-why{font-size:12px; color:var(--ink3); margin-top:4px; line-height:1.5;}
+  .alert .a-rule{font-size:11.5px; color:var(--ink3); margin-top:8px; padding-top:8px; border-top:1px dashed var(--line);}
+  /* Balance */
+  .bal-wrap{display:flex; flex-direction:column; gap:10px;}
+  .bal-line{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13px; align-items:center;}
+  .bal-line b{font-variant-numeric:tabular-nums;}
+  .bal-check{display:inline-flex; align-items:center; gap:6px; background:#ecfdf5; color:#047857; font-weight:700;
+    border:1px solid #a7f3d0; padding:3px 12px; border-radius:20px; font-size:12.5px;}
+  .bal-check.bad{background:#fef2f2; color:#b91c1c; border-color:#fecaca;}
+  .stackbar{display:flex; height:16px; border-radius:8px; overflow:hidden; border:1px solid var(--line);}
+  .stackbar div{height:100%; transition:width .5s ease;}
+  .bal-legend{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:12px; color:var(--ink2);}
+  .bal-legend i{display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; vertical-align:-1px;}
+  .bal-note{margin-top:10px; padding:10px 14px; background:#fffbeb; border:1px solid #fde68a; border-radius:10px; font-size:12px; color:#92400e; line-height:1.7;}
+  /* Table */
+  .tbl-scroll{overflow-x:auto; max-height:560px; overflow-y:auto; border-radius:0 0 var(--radius) var(--radius);}
+  table{width:100%; border-collapse:separate; border-spacing:0; font-size:12.5px;}
+  thead th{position:sticky; z-index:5; background:#f8fafc; border-bottom:1px solid var(--line); white-space:nowrap;}
+  thead th.mod{top:0; font-size:11.5px; font-weight:700; letter-spacing:.5px; text-align:center; padding:7px 10px; color:#fff;}
+  thead th.fld{top:28px; font-weight:600; color:var(--ink2); padding:8px 10px; text-align:right; cursor:pointer; user-select:none;}
+  thead th.fld:hover{color:var(--blue);}
+  thead th.fld .arr{font-size:10px; margin-left:3px; color:var(--blue);}
+  th.l, td.l{text-align:left !important;}
+  thead th.sticky{left:0; z-index:7;}
+  thead th.sticky2{left:120px; z-index:7;}
+  tbody td{padding:8px 10px; border-bottom:1px solid #f1f5f9; text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  tbody tr:hover td{background:#f0f7ff;}
+  td.sticky{position:sticky; left:0; background:#fff; z-index:2;}
+  td.sticky2{position:sticky; left:120px; background:#fff; z-index:2;}
+  tfoot td{font-weight:700; background:#f8fafc; border-top:2px solid var(--line); padding:9px 10px; text-align:right; white-space:nowrap;}
+  .chip{display:inline-block; padding:2px 9px; border-radius:20px; font-size:11.5px; font-weight:600; white-space:nowrap;}
+  .chip.group-brand{background:#fef3c7; color:#92400e;} .chip.group-core{background:#fee2e2; color:#b91c1c;}
+  .chip.group-attr{background:#ede9fe; color:#5b21b6;} .chip.group-other{background:#e0f2fe; color:#075985;}
+  .chip.group-beyond{background:#d1fae5; color:#065f46;}
+  .muted{color:var(--ink3);} .pos{color:#b91c1c;} .neg{color:#047857;}
+  /* Charts */
+  .charts-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(430px,1fr)); gap:16px;}
+  .chart-box{min-width:0;}
+  .chart-box svg{width:100%; height:auto; display:block;}
+  .legend{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:12.5px; color:var(--ink2); margin-top:8px;}
+  .legend i{display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:6px; vertical-align:-1px;}
+  .toggle{display:inline-flex; background:#f1f5f9; border-radius:9px; padding:2px; border:1px solid var(--line);}
+  .toggle button{border:none; background:transparent; font-size:12px; padding:4px 12px; border-radius:7px; cursor:pointer; color:var(--ink2); font-weight:600;}
+  .toggle button.on{background:#fff; color:var(--blue); box-shadow:0 1px 3px rgba(15,23,42,.15);}
+  /* Tabs */
+  .tabs{display:flex; flex-wrap:wrap; gap:8px;}
+  .tab-btn{border:1px solid var(--line); background:#fff; color:var(--ink2); font-size:13px; font-weight:600;
+    padding:8px 16px; border-radius:10px; cursor:pointer; transition:.15s;}
+  .tab-btn:hover{border-color:var(--blue); color:var(--blue);}
+  .tab-btn.on{background:var(--blue); border-color:var(--blue); color:#fff; box-shadow:0 4px 12px -4px rgba(37,99,235,.5);}
+  .tab-btn .dot{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:1px;}
+  /* Comparison tables */
+  .cmp-table{width:100%; border-collapse:collapse; font-size:12.5px;}
+  .cmp-table th,.cmp-table td{border:1px solid var(--line); padding:7px 9px; text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .cmp-table th{background:#f8fafc; font-weight:600; color:var(--ink2);}
+  .cmp-table th.l,.cmp-table td.l{text-align:left;}
+  .cmp-table td.big{font-weight:800; color:var(--ink);}
+  .cmp-table td.hot{background:#fef3c7; color:#92400e; font-weight:700;}
+  .cmp-table td.bad{background:#fee2e2; color:#b91c1c; font-weight:700;}
+  .cmp-table td.good{background:#d1fae5; color:#065f46; font-weight:700;}
+  .cmp-table tr.comp-row td{background:#f8fafc; font-weight:700; color:var(--ink2); text-align:left; letter-spacing:.5px;}
+  /* Profile cards */
+  .profile-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px;}
+  .profile-card{border:1px solid var(--line); border-radius:12px; padding:12px 14px; background:#fbfcfe;}
+  .profile-card .p-lab{font-size:11px; color:var(--ink3);}
+  .profile-card .p-val{font-size:13.5px; font-weight:700; margin-top:2px;}
+  /* Notes */
+  .watch-note{margin-top:10px; padding:10px 14px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; font-size:12px; color:#1e40af; line-height:1.7;}
+  .warn-note{margin-top:10px; padding:10px 14px; background:#fffbeb; border:1px solid #fde68a; border-radius:10px; font-size:12px; color:#92400e; line-height:1.7;}
+  /* Details / dictionary */
+  details.card{overflow:hidden;}
+  details.card summary{list-style:none; cursor:pointer; padding:16px 20px; font-weight:700; font-size:15px;
+    display:flex; align-items:center; justify-content:space-between;}
+  details.card summary::-webkit-details-marker{display:none;}
+  details.card summary::after{content:"▾"; color:var(--ink3); font-size:14px; transition:.2s;}
+  details.card[open] summary::after{transform:rotate(180deg);}
+  .formula-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; padding:0 20px 20px;}
+  .f-card{border:1px solid var(--line); border-radius:12px; padding:12px 14px; background:#fbfcfe;}
+  .f-card .f-name{font-size:12px; color:var(--ink2); font-weight:700; margin-bottom:4px;}
+  .f-card .f-eq{font-size:13px; font-weight:700; color:var(--blue); font-variant-numeric:tabular-nums;}
+  .f-card .f-note{font-size:11.5px; color:var(--ink3); margin-top:3px;}
+  .dict-table{width:100%; border-collapse:collapse; font-size:12.5px; margin:0 20px 20px; width:calc(100% - 40px);}
+  .dict-table th,.dict-table td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top;}
+  .dict-table th{background:#f8fafc; white-space:nowrap;}
+  .dict-table td.v{font-weight:600; color:var(--blue); white-space:nowrap;}
+  .foot{font-size:12px; color:var(--ink3); padding:0 6px; line-height:1.8;}
+  .foot b{color:var(--ink2);}
+  .tooltip-note{font-size:11.5px; color:var(--ink3); margin-top:8px;}
+  .audit-table{width:100%; border-collapse:collapse; font-size:12.5px; margin:0 20px 20px; width:calc(100% - 40px);}
+  .audit-table th,.audit-table td{border:1px solid var(--line); padding:6px 9px; text-align:left; vertical-align:top; font-variant-numeric:tabular-nums;}
+  .audit-table th{background:#f8fafc; white-space:nowrap;}
+  /* SOP */
+  .sop-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px;}
+  .sop-card{border:1px solid var(--line); border-radius:14px; padding:14px 16px; background:linear-gradient(180deg,#fbfcfe,#fff);}
+  .sop-card .sop-title{font-weight:800; font-size:13.5px; margin-bottom:8px;}
+  .sop-card .sop-body{font-size:12.5px; color:var(--ink2); line-height:1.7;}
+  .sop-card .sop-body b{color:var(--ink);}
+  @media (max-width:900px){
+    header{padding:16px;}
+    .hd-inner{flex-direction:column; align-items:flex-start;}
+    main{padding:14px 12px 50px;}
+    .charts-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hd-inner">
+    <div class="hd-title">
+      <div class="hd-logo">🛍️</div>
+      <div>
+        <h1>竞品横向对比报告 · V503 修身方领背心（带胸垫）</h1>
+        <p>紧身方领背心 · Built-in Bra 细分赛道 · 竞1~竞7 多竞对 × 多月份 · 数据源：西柚洞察 + 卖家精灵（21 项指标 × 5 大模块 · 总分结构）</p>
+      </div>
+    </div>
+    <div class="hd-nav">
+      <a href="#exec">壹 执行摘要</a>
+      <a href="#compare">贰 横向对比</a>
+      <a href="#deep">叁 单竞对深拆</a>
+      <a href="#strategy">肆 策略素材</a>
+      <a href="#audit">追溯底稿</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ==================== 壹 执行摘要 ==================== -->
+  <section class="card card-pad" id="exec">
+    <div class="sec-head">
+      <div class="sec-title"><span class="part-badge" style="background:#2563eb;">壹</span> 执行摘要（总）</div>
+      <div class="sec-sub">7 竞对 + V503 · 最新月（2026-05 / V503 06/01-14）对比</div>
+    </div>
+    <div class="kpi-grid" id="execKpi"></div>
+    <div class="charts-grid" style="margin-top:16px;">
+      <div class="card card-pad chart-box">
+        <div class="sec-title" style="font-size:14px;">市场格局定位：平均成交价 × 广告得分占比（气泡 = 月销量）</div>
+        <div id="marketBubble"></div>
+        <div class="legend"><span class="muted">左下角 = 低价低广告依赖（健康）；右上角 = 高价高广告依赖（危险）· 气泡越大月销越高</span></div>
+      </div>
+      <div class="card card-pad chart-box">
+        <div class="sec-title" style="font-size:14px;">Built-in Bra 赛道 ABA 搜索热度（排名越小 = 搜索越热）</div>
+        <div id="abaChart"></div>
+        <div class="legend"><span class="muted">2025/5 → 2026/5：built-in bra 词根排名大幅上升（搜索量爆发），是 2026 春夏换季的高增长细分赛道</span></div>
+      </div>
+    </div>
+    <div class="card-pad" style="padding:16px 0 0;">
+      <div class="sec-title" style="font-size:14px; margin-bottom:10px;">TOP 核心结论</div>
+      <div class="watch-note" style="font-size:13px;" id="topConclusions"></div>
+    </div>
+  </section>
+
+  <!-- ==================== 贰 横向对比 ==================== -->
+  <section class="card card-pad" id="compare">
+    <div class="sec-head">
+      <div class="sec-title"><span class="part-badge" style="background:#0891b2;">贰</span> 横向对比（总）</div>
+      <div class="sec-sub">运营决策入口 · 月度趋势 · 广告效率 · 词根策略矩阵 · 价格结构 · 动作证据</div>
+    </div>
+    <div class="card-pad" style="padding:0 0 16px;">
+      <div class="sec-title" style="font-size:14px; margin-bottom:10px;">运营决策入口总表（2026年5月 / 竞5-7 含4月）</div>
+      <div style="overflow-x:auto;"><table class="cmp-table" id="decisionTable"></table></div>
+    </div>
+    <div class="charts-grid" style="margin-bottom:16px;">
+      <div class="card card-pad chart-box" style="border:none; box-shadow:none; padding:0;">
+        <div class="sec-title" style="font-size:14px; margin-bottom:8px;">月度销量趋势（2025-12 ~ 2026-05）</div>
+        <div id="salesTrend"></div>
+        <div class="legend"><span class="muted">竞1 全年冲刺（5月 64,888）；竞2/竞3 存量震荡；竞4 广告爬坡；竞5-7 新链接 4-5 月起量</span></div>
+      </div>
+      <div class="card card-pad chart-box" style="border:none; box-shadow:none; padding:0;">
+        <div class="sec-title" style="font-size:14px; margin-bottom:8px;">广告效率：月广告花费 vs 月销量（单均获客成本等值线）</div>
+        <div id="adEfficiency"></div>
+        <div class="legend"><span class="muted">虚线 = 单均获客成本 $1 / $3 / $8 · 越靠近右下角广告效率越高（花得少卖得多）</span></div>
+      </div>
+    </div>
+    <div class="card-pad" style="padding:0 0 16px;">
+      <div class="sec-title" style="font-size:14px; margin-bottom:10px;">词根策略对比矩阵（词根销量占比 % · 全量口径 Σ=100%）</div>
+      <div style="overflow-x:auto;"><table class="cmp-table" id="matrixTable"></table></div>
+      <div class="tooltip-note">※ 竞1/竞4 为 2026-05 归因；竞5/竞6/竞7 为 2026-05 归因；竞2/竞3 无关键词级归因数据（仅月度画像）。「除前3页」= 第4页及以后极长尾自然流量。</div>
+    </div>
+    <div class="card-pad" style="padding:0;">
+      <div class="charts-grid" style="margin:0;">
+        <div class="card card-pad chart-box" style="border:none; box-shadow:none; padding:0;">
+          <div class="sec-title" style="font-size:14px; margin-bottom:10px;">三层价格结构对比（最新月价格带 / 成交价）</div>
+          <div style="overflow-x:auto;"><table class="cmp-table" id="priceTable"></table></div>
+        </div>
+        <div class="card card-pad chart-box" style="border:none; box-shadow:none; padding:0;">
+          <div class="sec-title" style="font-size:14px; margin-bottom:10px;">动作证据矩阵（价格 / 促销 / 广告 / 站外 / 评价）</div>
+          <div style="overflow-x:auto;"><table class="cmp-table" id="actionTable"></table></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 叁 单竞对深拆 ==================== -->
+  <section class="card card-pad" id="deep">
+    <div class="sec-head">
+      <div class="sec-title"><span class="part-badge" style="background:#7c3aed;">叁</span> 单竞对深拆（分）</div>
+      <div class="sec-sub">Tab 切换 · 归因竞对含 21 列透视表 + 预警 + 平衡校验</div>
+    </div>
+    <div class="tabs" id="compTabs"></div>
+    <div id="deepBody" style="margin-top:14px;"></div>
+  </section>
+
+  <!-- ==================== 肆 策略素材 ==================== -->
+  <section class="card card-pad" id="strategy">
+    <div class="sec-head">
+      <div class="sec-title"><span class="part-badge" style="background:#059669;">肆</span> 可复用策略素材（总）</div>
+      <div class="sec-sub">V503 自身复盘 + 利润测算计划 + 打法 SOP</div>
+    </div>
+    <div class="charts-grid" style="margin-bottom:16px;">
+      <div class="card card-pad chart-box">
+        <div class="sec-title" style="font-size:14px; margin-bottom:8px;">V503 推广期运营复盘（5 阶段）</div>
+        <div style="overflow-x:auto;"><table class="cmp-table" id="stageTable"></table></div>
+        <div class="watch-note" id="v503Note"></div>
+      </div>
+      <div class="card card-pad chart-box">
+        <div class="sec-title" style="font-size:14px; margin-bottom:8px;">PS-V503 利润测算路径（2026/12 → 2027/10）</div>
+        <div id="profitChart"></div>
+        <div class="legend"><span><i style="background:#2563eb;"></i>日均销量</span><span><i style="background:#10b981;"></i>月利润($)</span><span class="muted">2027/04 起转正 · 单均获客成本 $15.7 · CPC $1.26</span></div>
+      </div>
+    </div>
+    <div class="sec-title" style="font-size:14px; margin-bottom:10px;">打法 SOP 卡（Built-in Bra 细分赛道）</div>
+    <div class="sop-grid" id="sopGrid"></div>
+  </section>
+
+  <!-- ==================== 追溯底稿 ==================== -->
+  <details class="card" id="audit">
+    <summary>追溯底稿 · 数据边界与口径修正（Specification 4 / 9）</summary>
+    <div class="card-pad" style="padding-top:0;">
+      <div class="foot" id="auditBody"></div>
+    </div>
+  </details>
+
+  <details class="card" id="dictSec">
+    <summary>字段数据字典（21 项指标 · 5 大模块）与计算模型</summary>
+    <div class="formula-grid" id="formulaGrid"></div>
+    <div class="card-pad" style="padding-top:0;">
+      <div style="overflow-x:auto;"><table class="dict-table" id="dictTable"></table></div>
+    </div>
+  </details>
+
+  <footer class="foot">
+    <b>归因模型：</b>总展示 = 自然展示 + 广告展示；总点击 = 总展示 × CTR；自然单 = 自然展示 × CTR × 转化率；广告单 = 广告展示 × CTR × 转化率；总单量 = 自然单 + 广告单；花费 = 广告点击量 × CPC；日均花费 = 花费 ÷ 有效统计天数。CTR / 转化率默认 4% / 10%，可被源数据覆盖（竞4 三月起 2%-2.5% / 8%-9%，竞5-7 品牌词 8%，竞6 品牌词 6%）。
+    <br><b>平衡校验：</b>每月 Σ 词根总单量 = 竞品总销量（100% 闭环）；「除前3页」= 销量 − 前4项合计，无广告展现。竞1·2025年12月为已验证锚点（614 件 / $679.88 / 自然 88.13%）。
+  </footer>
+</main>
+
+<script>
+"use strict";
+/* ================= 数据 ================= */
+const DATA = {"competitors":{"c1":{"id":"c1","name":"竞1","brand":"Trendy Queen","asin":"B0G13Z2LD7","type":"无衬垫","tag":"成熟自然权重型","tagCls":"c1","color":"#2563eb","months":[{"id":"2025-12","label":"2025年12月","days":23,"sales":614.0,"dailySales":26.695652173913043,"rows":[{"group":"属性精准词","keyword":"square neck tops for women\\nsquare neck top\\nsquare neck tank top","searchFreq":"31828\\n194008\\n250437","searchVol":"25772\\n4012\\n3072","orgImp":2152.0,"adImp":2741.0,"totImp":4893.0,"orgOrders":8.608,"adOrders":10.964,"totOrders":19.572,"clicks":195.72,"cpc":0.8,"spend":87.712,"cvr":0.1,"ctr":0.04,"flowShare":6.834467056835165,"salesShare":3.1876221498371335},{"group":"品牌防御词","keyword":"trendy queen\\n","searchFreq":"6910","searchVol":"80592","orgImp":26942.99456,"adImp":658.00544,"totImp":27601.0,"orgOrders":107.77197824,"adOrders":2.63202176,"totOrders":110.404,"clicks":1104.04,"cpc":0.8,"spend":21.05617408,"cvr":0.1,"ctr":0.04,"flowShare":38.552651795566604,"salesShare":17.981107491856676},{"group":"品类核心大词","keyword":"tank tops for women\\ntank tops\\nwhite tank top woman","searchFreq":"3380\\n10855\\n14717","searchVol":"151268\\n56724\\n44272","orgImp":15193.0,"adImp":12073.0,"totImp":27266.0,"orgOrders":60.772,"adOrders":48.292,"totOrders":109.064,"clicks":1090.64,"cpc":1.0,"spend":482.92,"cvr":0.1,"ctr":0.04,"flowShare":38.08472895394801,"salesShare":17.7628664495114},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":9076.997479,"adImp":2756.002521,"totImp":11833.0,"orgOrders":36.307989916,"adOrders":11.024010084,"totOrders":47.332,"clicks":473.32,"cpc":0.8,"spend":88.192080672,"cvr":0.1,"ctr":0.04,"flowShare":16.528152193650218,"salesShare":7.708794788273615},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":91007.77777777778,"adImp":0,"totImp":91007.77777777778,"orgOrders":327.628,"adOrders":0,"totOrders":327.628,"clicks":3640.311111111111,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":53.35960912052117}],"totals":{"totOrders":614.0,"orgOrders":541.087968156,"adOrders":72.912031844,"spend":679.880254752,"dailySpend":29.560011076173915,"avgCpc":0.9324664771469374,"orgShare":88.12507624690554,"adShare":11.874923753094462,"top3Daily":12.45095652173913},"correction":{"mode":"derive","scale":1.0,"origSum":286.372,"beyondOrders":327.628,"beyondRawReading":76.3072419462677,"beyondRawShare":0.533596091205212}},{"id":"2026-01","label":"2026年01月","days":31,"sales":4739.0,"dailySales":152.8709677419355,"rows":[{"group":"属性精准词","keyword":"summer clearance women's clothing\\n\\nsummer tops for women\\n\\nsummer tops\\n","searchFreq":"16507\\n\\n14444\\n\\n12548\\n","searchVol":"40524\\n\\n44932\\n\\n50252\\n","orgImp":81944.1128594286,"adImp":5634.528418856671,"totImp":87578.64127828529,"orgOrders":327.77645143771446,"adOrders":22.538113675426686,"totOrders":350.3145651131411,"clicks":3503.1456511314113,"cpc":1.0,"spend":225.38113675426686,"cvr":0.1,"ctr":0.04,"flowShare":7.392162167401163,"salesShare":7.392162167401163},{"group":"品牌防御词","keyword":"trendy queen\\n","searchFreq":"5875","searchVol":"90804","orgImp":51289.08670133086,"adImp":15503.73111908115,"totImp":66792.817820412,"orgOrders":205.1563468053234,"adOrders":62.014924476324595,"totOrders":267.17127128164805,"clicks":2671.7127128164802,"cpc":0.8,"spend":496.11939581059676,"cvr":0.1,"ctr":0.04,"flowShare":5.637714101743997,"salesShare":5.637714101743998},{"group":"品类核心大词","keyword":"tank tops for women\\ntank\\ntank tops","searchFreq":"1602\\n3161\\n6598","searchVol":"316784\\n212596\\n82384","orgImp":673078.4533348166,"adImp":35628.560917703515,"totImp":708707.0142525202,"orgOrders":2692.3138133392663,"adOrders":142.51424367081407,"totOrders":2834.8280570100806,"clicks":28348.280570100804,"cpc":1.0,"spend":1425.1424367081406,"cvr":0.1,"ctr":0.04,"flowShare":59.81911916037309,"salesShare":59.81911916037309},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":269468.7420798511,"adImp":52202.78456893143,"totImp":321671.52664878254,"orgOrders":1077.8749683194044,"adOrders":208.8111382757257,"totOrders":1286.68610659513,"clicks":12866.861065951301,"cpc":0.8,"spend":1670.4891062058057,"cvr":0.1,"ctr":0.04,"flowShare":27.151004570481746,"salesShare":27.151004570481746},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":0,"adImp":0,"totImp":0,"orgOrders":0.0,"adOrders":0,"totOrders":0.0,"clicks":0,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":0.0}],"totals":{"totOrders":4738.999999999999,"orgOrders":4303.121579901708,"adOrders":435.87842009829103,"spend":3817.13207547881,"dailySpend":123.13329275738096,"avgCpc":0.875733208957223,"orgShare":90.80231230009936,"adShare":9.197687699900635,"top3Daily":152.8709677419355},"correction":{"mode":"scale","scale":0.9985023518217453,"origSum":4746.108,"beyondOrders":0.0,"beyondRawReading":null,"beyondRawShare":null}},{"id":"2026-02","label":"2026年02月","days":28,"sales":8573.0,"dailySales":306.17857142857144,"rows":[{"group":"属性精准词","keyword":"summer tops for women\\n\\nsummer tops\\n","searchFreq":"4498\\n\\n5677\\n","searchVol":"173244\\n\\n104596\\n","orgImp":76699.008363,"adImp":6646.991637,"totImp":83346.0,"orgOrders":306.796033452,"adOrders":26.587966548,"totOrders":333.384,"clicks":3333.84,"cpc":0.8,"spend":212.703732384,"cvr":0.1,"ctr":0.04,"flowShare":7.921042377472178,"salesShare":3.8887670593724484},{"group":"品类核心大词","keyword":"tank tops for women\\nwhite tank top woman\\nwomens tank tops","searchFreq":"903\\n3778\\n4525","searchVol":"453832\\n141172\\n120940","orgImp":566659.0,"adImp":39633.0,"totImp":606292.0,"orgOrders":2266.636,"adOrders":158.532,"totOrders":2425.168,"clicks":24251.68,"cpc":0.8,"spend":1268.256,"cvr":0.1,"ctr":0.04,"flowShare":57.62081713726348,"salesShare":28.288440452583696},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":278045.022863,"adImp":84526.977137,"totImp":362572.0,"orgOrders":1112.180091452,"adOrders":338.107908548,"totOrders":1450.288,"clicks":14502.88,"cpc":0.8,"spend":2704.863268384,"cvr":0.1,"ctr":0.04,"flowShare":34.45814048526435,"salesShare":16.91692523037443},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":1212266.6666666667,"adImp":0,"totImp":1212266.6666666667,"orgOrders":4364.16,"adOrders":0,"totOrders":4364.16,"clicks":48490.666666666664,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":50.90586725766942}],"totals":{"totOrders":8573.0,"orgOrders":8049.772124904,"adOrders":523.227875096,"spend":4185.823000768,"dailySpend":149.49367859885714,"avgCpc":0.8000000000000002,"orgShare":93.89679371169952,"adShare":6.103206288300479,"top3Daily":150.31571428571428},"correction":{"mode":"derive","scale":1.0,"origSum":4208.84,"beyondOrders":4364.16,"beyondRawReading":1017.42344290847,"beyondRawShare":0.509058672576695}},{"id":"2026-03","label":"2026年03月","days":31,"sales":22436.0,"dailySales":723.741935483871,"rows":[{"group":"品类核心大词","keyword":"tank tops for women\\nwhite tank top woman\\nwomens tank tops","searchFreq":"277\\n\\n1813\\n\\n1525\\n","searchVol":"635820\\n\\n275440\\n\\n335160\\n","orgImp":1776513.92727,"adImp":12258.07273,"totImp":1788772.0,"orgOrders":7106.05570908,"adOrders":49.03229092,"totOrders":7155.088,"clicks":71550.88,"cpc":0.8,"spend":392.25832736,"cvr":0.1,"ctr":0.04,"flowShare":39.76064110591801,"salesShare":31.891103583526476},{"group":"属性精准词","keyword":"summer tops for women\\n\\nsummer tops\\n\\nwomens summer tops\\n","searchFreq":"710\\n\\n1653\\n\\n2045\\n","searchVol":"491624\\n\\n310396\\n\\n270632\\n","orgImp":683658.009697,"adImp":7634.990303,"totImp":691293.0,"orgOrders":2734.632038788,"adOrders":30.539961212,"totOrders":2765.172,"clicks":27651.72,"cpc":0.9,"spend":274.859650908,"cvr":0.1,"ctr":0.04,"flowShare":15.365990116143022,"salesShare":12.32471028703869},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":1968621.91867599,"adImp":50164.081324,"totImp":2018786.0,"orgOrders":7874.48767470396,"adOrders":200.656325296,"totOrders":8075.14399999996,"clicks":80751.44,"cpc":0.8,"spend":1605.250602368,"cvr":0.1,"ctr":0.04,"flowShare":44.87336877793896,"salesShare":35.99190586557301},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":1233498.8888889004,"adImp":0,"totImp":1233498.8888889004,"orgOrders":4440.596000000041,"adOrders":0,"totOrders":4440.596000000041,"clicks":49339.955555556015,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":19.792280263861837}],"totals":{"totOrders":22436.0,"orgOrders":22155.771422572,"adOrders":280.228577428,"spend":2272.368580636,"dailySpend":73.30221227858064,"avgCpc":0.8108982322546481,"orgShare":98.75098690752363,"adShare":1.2490130924763774,"top3Daily":580.4969032258052},"correction":{"mode":"derive","scale":1.0,"origSum":17995.40399999996,"beyondOrders":4440.596000000041,"beyondRawReading":110.342759891852,"beyondRawShare":0.197922802638618}},{"id":"2026-04","label":"2026年04月","days":30,"sales":26181.0,"dailySales":872.7,"rows":[{"group":"品类核心大词","keyword":"tank tops for women\\n\\nwomens tank tops\\n\\ntank tops\\n","searchFreq":"207\\n\\n1246\\n\\n1479\\n","searchVol":"725940\\n\\n386460\\n\\n340728\\n","orgImp":2301803.611355719,"adImp":71298.2754013855,"totImp":2373290.341550624,"orgOrders":9207.214445422876,"adOrders":285.19310160554204,"totOrders":9492.407547028417,"clicks":94931.61366202496,"cpc":0.8,"spend":2281.5448128443363,"cvr":0.1,"ctr":0.04,"flowShare":36.25685629665948,"salesShare":36.25685629665947},{"group":"属性精准词","keyword":"summer tops for women\\n\\nwomens summer tops\\n","searchFreq":"521\\n\\n563\\n","searchVol":"530028\\n\\n584012\\n","orgImp":1075023.361571867,"adImp":10964.237229122287,"totImp":1085987.5988009893,"orgOrders":4300.093446287468,"adOrders":43.856948916489145,"totOrders":4343.950395203958,"clicks":43439.50395203957,"cpc":0.9,"spend":394.7125402484024,"cvr":0.1,"ctr":0.04,"flowShare":16.59199570376975,"salesShare":16.59199570376975},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":3032419.730001516,"adImp":53740.78444038024,"totImp":3085972.058942372,"orgOrders":12129.678920006101,"adOrders":214.96313776152093,"totOrders":12344.642057767622,"clicks":123438.88235769488,"cpc":0.8,"spend":1719.7051020921674,"cvr":0.1,"ctr":0.04,"flowShare":47.15114799957077,"salesShare":47.15114799957077},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":0,"adImp":0,"totImp":0,"orgOrders":0.0,"adOrders":0,"totOrders":0.0,"clicks":0,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":0.0}],"totals":{"totOrders":26180.999999999996,"orgOrders":25636.986811716444,"adOrders":544.0131882835522,"spend":4395.9624551849065,"dailySpend":146.5320818394969,"avgCpc":0.8080617436968514,"orgShare":97.92210691614702,"adShare":2.0778930838529934,"top3Daily":872.6999999999999},"correction":{"mode":"scale","scale":0.9192892093184395,"origSum":28479.612003072,"beyondOrders":0.0,"beyondRawReading":null,"beyondRawShare":null}},{"id":"2026-05","label":"2026年05月","days":31,"sales":64888.0,"dailySales":2093.1612903225805,"rows":[{"group":"品类核心大词","keyword":"tank tops for women\\n\\nwomens tank tops\\n\\ntank tops\\n","searchFreq":"130\\n\\n868\\n\\n955\\n","searchVol":"1166752\\n\\n461240\\n\\n443556\\n","orgImp":3865887.312613,"adImp":21865.687643,"totImp":3887753.0,"orgOrders":15463.549250452,"adOrders":87.462750572,"totOrders":15551.012001024,"clicks":155510.12,"cpc":0.8,"spend":699.702004576,"cvr":0.1,"ctr":0.04,"flowShare":28.287215258684117,"salesShare":23.965928986906672},{"group":"属性精准词","keyword":"womens summer tops\\n\\nsummer tops\\n\\nsummer tops for women\\n","searchFreq":"76\\n\\n825\\n\\n446\\n","searchVol":"1717804\\n\\n469192\\n\\n547536\\n","orgImp":2414311.217992,"adImp":55940.782136,"totImp":2470252.0,"orgOrders":9657.244871968,"adOrders":223.763128544,"totOrders":9881.008000512,"clicks":98810.08,"cpc":0.9,"spend":2013.868156896,"cvr":0.1,"ctr":0.04,"flowShare":17.973505535514857,"salesShare":15.227789422561951},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":7105785.489141,"adImp":280061.511115,"totImp":7385847.0,"orgOrders":28423.141956564,"adOrders":1120.24604446,"totOrders":29543.388001024,"clicks":295433.88,"cpc":0.8,"spend":8961.96835568,"cvr":0.1,"ctr":0.04,"flowShare":53.739279205801026,"salesShare":45.529817533325115},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":2753497.7770666676,"adImp":0,"totImp":2753497.7770666676,"orgOrders":9912.591997440002,"adOrders":0,"totOrders":9912.591997440002,"clicks":110139.9110826667,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":15.276464057206265}],"totals":{"totOrders":64888.0,"orgOrders":63456.528076424,"adOrders":1431.4719235759999,"spend":11675.538517152,"dailySpend":376.63027474683867,"avgCpc":0.815631681268677,"orgShare":97.79393428126002,"adShare":2.2060657187399824,"top3Daily":1773.4002581470968},"correction":{"mode":"derive","scale":1.0,"origSum":54975.40800256,"beyondOrders":9912.591997440002,"beyondRawReading":375.872326325372,"beyondRawShare":0.152764640572062}}]},"c4":{"id":"c4","name":"竞4","brand":"OwnTime","asin":"B0G39N131T","type":"有衬垫","tag":"广告依赖型","tagCls":"c4","color":"#dc2626","months":[{"id":"2025-12","label":"2025年12月","days":31,"sales":0,"dailySales":0.0,"rows":[{"group":"属性精准词","keyword":"tops with built in bra\\nbuilt in bra","searchFreq":"294232\\n372613","searchVol":"2700\\n2040","orgImp":0,"adImp":62.0,"totImp":62.0,"orgOrders":0.0,"adOrders":0.0,"totOrders":0.0,"clicks":2.48,"cpc":0.9,"spend":0.0,"cvr":0.1,"ctr":0.04,"flowShare":null,"salesShare":0},{"group":"属性精准词","keyword":"tank tops with built in bras\\nwomens tank tops with built in bra\\ntank top bra","searchFreq":"27388\\n218580\\n488532","searchVol":"29296\\n3500\\n1564","orgImp":0,"adImp":21.0,"totImp":21.0,"orgOrders":0.0,"adOrders":0.0,"totOrders":0.0,"clicks":0.84,"cpc":0.9,"spend":0.0,"cvr":0.1,"ctr":0.04,"flowShare":null,"salesShare":0},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":0,"adImp":10.0,"totImp":10.0,"orgOrders":0.0,"adOrders":0.0,"totOrders":0.0,"clicks":0.4,"cpc":0.8,"spend":0.0,"cvr":0.1,"ctr":0.04,"flowShare":null,"salesShare":0},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":0,"adImp":0,"totImp":0,"orgOrders":0.0,"adOrders":0,"totOrders":0.0,"clicks":0,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":0}],"totals":{"totOrders":0.0,"orgOrders":0.0,"adOrders":0.0,"spend":0.0,"dailySpend":0.0,"avgCpc":0.0,"orgShare":0,"adShare":0,"top3Daily":0.0},"correction":{"mode":"derive","scale":1.0,"origSum":0.372,"beyondOrders":0.0,"beyondRawReading":null,"beyondRawShare":null}},{"id":"2026-01","label":"2026年01月","days":27,"sales":481.0,"dailySales":17.814814814814813,"rows":[{"group":"属性精准词","keyword":"built in bra tank tops for women\\n\\nbuilt in bra tops for women\\n","searchFreq":"17601\\n\\n46994\\n","searchVol":"38684\\n\\n19324\\n","orgImp":4606.998434,"adImp":6060.001566,"totImp":10667.0,"orgOrders":18.427993736,"adOrders":24.240006264,"totOrders":42.668,"clicks":426.68,"cpc":1.0,"spend":242.40006264,"cvr":0.1,"ctr":0.04,"flowShare":12.770720844756786,"salesShare":8.870686070686071},{"group":"品类核心大词","keyword":"white tank top woman\\n\\ntank tops for women\\n\\ntank tops\\n","searchFreq":"7405\\n\\n1602\\n\\n6598\\n","searchVol":"74920\\n\\n316784\\n\\n82384\\n","orgImp":14944.992182,"adImp":31586.007946,"totImp":46531.0,"orgOrders":59.779968728,"adOrders":126.344031784,"totOrders":186.124,"clicks":1861.24,"cpc":1.0,"spend":1263.44031784,"cvr":0.1,"ctr":0.04,"flowShare":55.70773522334095,"salesShare":38.69521829521829},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":15387.000535,"adImp":10941.999465,"totImp":26329.0,"orgOrders":61.54800214,"adOrders":43.76799786,"totOrders":105.316,"clicks":1053.16,"cpc":0.8,"spend":350.14398288,"cvr":0.1,"ctr":0.04,"flowShare":31.52154393190226,"salesShare":21.895218295218296},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":40803.333333333336,"adImp":0,"totImp":40803.333333333336,"orgOrders":146.892,"adOrders":0,"totOrders":146.892,"clicks":1632.1333333333334,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":30.53887733887734}],"totals":{"totOrders":481.000000512,"orgOrders":286.647964604,"adOrders":194.352035908,"spend":1855.98436336,"dailySpend":68.74016160592593,"avgCpc":0.9549600829695261,"orgShare":59.594171371908075,"adShare":40.405828628091925,"top3Daily":12.37437037037037},"correction":{"mode":"derive","scale":1.0,"origSum":334.108,"beyondOrders":146.892,"beyondRawReading":61.046457723908,"beyondRawShare":0.305388773388773}},{"id":"2026-02","label":"2026年02月","days":28,"sales":1599.0,"dailySales":57.107142857142854,"rows":[{"group":"属性精准词","keyword":"built in bra tank tops for women\\n\\nbuilt in bra tops for women\\n\\ncamisole with built in bra\\n","searchFreq":"10861\\n32414\\n\\n31068\\n","searchVol":"59268\\n25856\\n\\n27812\\n","orgImp":22013.996348,"adImp":30221.004164,"totImp":52235.0,"orgOrders":88.055985392,"adOrders":120.884016656,"totOrders":208.94,"clicks":2089.4,"cpc":1.0,"spend":1208.84016656,"cvr":0.1,"ctr":0.04,"flowShare":14.192519413334203,"salesShare":13.066916823014385},{"group":"品类核心大词","keyword":"tank tops for women\\n\\nwhite tank top woman\\n\\ntank tops\\n","searchFreq":"903\\n\\n3778\\n\\n4487\\n","searchVol":"453832\\n\\n141172\\n\\n118788\\n","orgImp":63975.027272,"adImp":183861.972728,"totImp":247837.0,"orgOrders":255.900109088,"adOrders":735.447890912,"totOrders":991.348,"clicks":9913.48,"cpc":1.0,"spend":7354.47890912,"cvr":0.1,"ctr":0.04,"flowShare":67.33859354537205,"salesShare":61.99799874921826},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":19694.009065,"adImp":48279.990935,"totImp":67974.0,"orgOrders":78.77603626,"adOrders":193.11996374,"totOrders":271.896,"clicks":2718.96,"cpc":0.8,"spend":1544.95970992,"cvr":0.1,"ctr":0.04,"flowShare":18.46888704129375,"salesShare":17.00412757973734},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":35226.66666666668,"adImp":0,"totImp":35226.66666666668,"orgOrders":126.81600000000003,"adOrders":0,"totOrders":126.81600000000003,"clicks":1409.066666666667,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":7.930956848030021}],"totals":{"totOrders":1599.0000020480002,"orgOrders":549.54813074,"adOrders":1049.4518713080001,"spend":10108.2787856,"dailySpend":361.0099566285714,"avgCpc":0.9631960323250837,"orgShare":34.368238276181266,"adShare":65.63176172381874,"top3Daily":52.577999999999996},"correction":{"mode":"derive","scale":1.0,"origSum":1472.184,"beyondOrders":126.81600000000003,"beyondRawReading":90.0737830701881,"beyondRawShare":0.0793095684803}},{"id":"2026-03","label":"2026年03月","days":31,"sales":2016.0,"dailySales":65.03225806451613,"rows":[{"group":"属性精准词","keyword":"built in bra tank tops for women\\n\\nbuilt in bra tops for women\\n\\ncamisole with built in bra\\n","searchFreq":"3724\\n16945\\n\\n16118\\n","searchVol":"140220\\n40296\\n\\n41204\\n","orgImp":36529.986984,"adImp":86008.013016,"totImp":122538.0,"orgOrders":65.7539765712,"adOrders":154.8144234288,"totOrders":220.5684,"clicks":2450.76,"cpc":1.0,"spend":1720.16026032,"cvr":0.09,"ctr":0.02,"flowShare":12.858076746083757,"salesShare":10.940892857142858},{"group":"品类核心大词","keyword":"tank tops for women\\n\\nwhite tank top woman\\n\\nwomens tank tops\\n","searchFreq":"277\\n\\n1813\\n\\n1525\\n","searchVol":"635820\\n\\n275440\\n\\n335160\\n","orgImp":102791.050626,"adImp":450196.949374,"totImp":552988.0,"orgOrders":231.2798639085,"adOrders":1012.9431360915,"totOrders":1244.223,"clicks":13824.7,"cpc":1.0,"spend":11254.92373435,"cvr":0.09,"ctr":0.025,"flowShare":72.53221596222565,"salesShare":61.71741071428571},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":27515.993369,"adImp":129119.006631,"totImp":156635.0,"orgOrders":44.0255893904,"adOrders":206.5904106096,"totOrders":250.616,"clicks":3132.7,"cpc":0.8,"spend":2065.904106096,"cvr":0.08,"ctr":0.02,"flowShare":14.60970729169059,"salesShare":12.431349206349207},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":93935.18749999999,"adImp":0,"totImp":93935.18749999999,"orgOrders":300.59259999999995,"adOrders":0,"totOrders":300.59259999999995,"clicks":3757.4074999999993,"cpc":null,"spend":0,"cvr":0.08,"ctr":0.04,"flowShare":null,"salesShare":14.91034722222222}],"totals":{"totOrders":2016.0,"orgOrders":641.6520298700999,"adOrders":1374.3479701299,"spend":15040.988100766,"dailySpend":485.1931645408387,"avgCpc":0.966802042910192,"orgShare":31.82797767212797,"adShare":68.17202232787201,"top3Daily":55.33572258064516},"correction":{"mode":"derive","scale":1.0,"origSum":1715.4074,"beyondOrders":300.59259999999995,"beyondRawReading":247.787645881377,"beyondRawShare":0.149103472222222}},{"id":"2026-04","label":"2026年04月","days":30,"sales":3569.0,"dailySales":118.96666666666667,"rows":[{"group":"属性精准词","keyword":"built in bra tank tops for women\\n\\nbuilt in bra tops for women\\n\\ncamisole with built in bra\\n","searchFreq":"2675\\n13476\\n\\n13606\\n","searchVol":"182460\\n11750\\n\\n11672\\n","orgImp":58465.01787,"adImp":202401.98213,"totImp":260867.0,"orgOrders":105.237032166,"adOrders":364.323567834,"totOrders":469.5606,"clicks":5217.34,"cpc":1.0,"spend":4048.0396426,"cvr":0.09,"ctr":0.02,"flowShare":14.070873589591953,"salesShare":13.15664331745587},{"group":"品类核心大词","keyword":"tank tops for women\\n\\nwomens tank tops\\n\\ntank tops\\n","searchFreq":"207\\n\\n1246\\n\\n1479\\n","searchVol":"725940\\n\\n386460\\n\\n340728\\n\\n","orgImp":188982.934365,"adImp":885911.065763001,"totImp":1074894.0,"orgOrders":425.21160232125,"adOrders":1993.29989796675,"totOrders":2418.5115,"clicks":26872.35,"cpc":1.0,"spend":22147.776644075,"cvr":0.09,"ctr":0.025,"flowShare":72.47322196852637,"salesShare":67.76440179321939},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":72118.021038,"adImp":208530.978962,"totImp":280649.0,"orgOrders":115.3888336608,"adOrders":333.6495663392,"totOrders":449.0384,"clicks":5612.98,"cpc":0.8,"spend":3336.495663392,"cvr":0.08,"ctr":0.02,"flowShare":13.455904441881684,"salesShare":12.581630708882042},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":72465.46874999993,"adImp":0,"totImp":72465.46874999993,"orgOrders":231.88949999999977,"adOrders":0,"totOrders":231.88949999999977,"clicks":2898.618749999997,"cpc":null,"spend":0,"cvr":0.08,"ctr":0.04,"flowShare":null,"salesShare":6.497324180442694}],"totals":{"totOrders":3569.0000002879997,"orgOrders":877.7269681480498,"adOrders":2691.27303213995,"spend":29532.311950067,"dailySpend":984.4103983355667,"avgCpc":0.972531385654505,"orgShare":24.593078399473853,"adShare":75.40692160052615,"top3Daily":111.23701666666668},"correction":{"mode":"derive","scale":1.0,"origSum":3337.1105000000002,"beyondOrders":231.88949999999977,"beyondRawReading":172.301146435615,"beyondRawShare":0.064973241804427}},{"id":"2026-05","label":"2026年05月","days":31,"sales":5063.0,"dailySales":163.32258064516128,"rows":[{"group":"属性精准词","keyword":"built in bra tank tops for women\\n\\nbuilt in bra tops for women\\n\\ncamisole with built in bra\\n","searchFreq":"2044\\n13855\\n\\n12427\\n","searchVol":"258212\\n45992\\n\\n50648\\n","orgImp":59504.012192,"adImp":185302.987808,"totImp":244807.0,"orgOrders":107.1072219456,"adOrders":333.5453780544,"totOrders":440.6526,"clicks":4896.14,"cpc":1.0,"spend":3706.05975616,"cvr":0.09,"ctr":0.02,"flowShare":13.419441185363477,"salesShare":8.703389294884456},{"group":"品类核心大词","keyword":"tank tops for women\\n\\nwomens tank tops\\n\\ntank tops\\n","searchFreq":"130\\n\\n868\\n\\n955\\n","searchVol":"1166752\\n\\n461240\\n\\n443556\\n\\n\\n","orgImp":204582.946886,"adImp":835708.053114001,"totImp":1040291.0,"orgOrders":460.3116304935,"adOrders":1880.3431195065,"totOrders":2340.65475,"clicks":26007.275,"cpc":1.0,"spend":20892.70132785,"cvr":0.09,"ctr":0.025,"flowShare":71.28127407591978,"salesShare":46.23058957140036},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":75483.956232,"adImp":238504.043768,"totImp":313988.0,"orgOrders":120.7743299712,"adOrders":381.6064700288,"totOrders":502.3808,"clicks":6279.76,"cpc":0.8,"spend":3816.064700288,"cvr":0.08,"ctr":0.02,"flowShare":15.29928473871674,"salesShare":9.922591349002568},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":556034.953125,"adImp":0,"totImp":556034.953125,"orgOrders":1779.31185,"adOrders":0,"totOrders":1779.31185,"clicks":22241.398125,"cpc":null,"spend":0,"cvr":0.08,"ctr":0.04,"flowShare":null,"salesShare":35.14342978471262}],"totals":{"totOrders":5063.0,"orgOrders":2467.5050324103,"adOrders":2595.4949675897,"spend":28414.825784298002,"dailySpend":916.6072833644516,"avgCpc":0.9675160438265885,"orgShare":48.73602671163934,"adShare":51.26397328836065,"top3Daily":105.9254241935484},"correction":{"mode":"derive","scale":1.0,"origSum":3283.68815,"beyondOrders":1779.31185,"beyondRawReading":1351.55824856147,"beyondRawShare":0.351434297847125}}]},"c5":{"id":"c5","name":"竞5","brand":"QINSEN(带垫)","asin":"B0GV41HN7Q","type":"有衬垫","tag":"秒杀+站外爆发型","tagCls":"c5","color":"#7c3aed","months":[{"id":"2026-04","label":"2026年04月","days":14,"sales":261.0,"dailySales":18.642857142857142,"rows":[{"group":"属性精准词","keyword":"tank tops for women\\ntank tops\\nwhite tank top woman\\ntank tops with built in bras","searchFreq":"207\\n1479\\n1619\\n1667","searchVol":"725940\\n340728\\n313416\\n305260","orgImp":33992.15320819285,"adImp":5484.957044228179,"totImp":39477.11025242104,"orgOrders":135.9686128327714,"adOrders":21.939828176912716,"totOrders":157.90844100968414,"clicks":1579.0844100968413,"cpc":1.0,"spend":219.39828176912715,"cvr":0.1,"ctr":0.04,"flowShare":60.50131839451499,"salesShare":60.50131839451499},{"group":"属性精准词","keyword":"built in bra tank tops for women\\n\\nbuilt in bra tops for women\\n\\nbuilt in bra tank\\n","searchFreq":"2673\\n\\n13476\\n\\n32254\\n","searchVol":"182460\\n\\n47000\\n\\n25428\\n","orgImp":6977.494709277585,"adImp":1553.9101050273682,"totImp":8531.404814304953,"orgOrders":27.909978837110337,"adOrders":6.215640420109472,"totOrders":34.12561925721981,"clicks":341.2561925721981,"cpc":1.0,"spend":62.15640420109472,"cvr":0.1,"ctr":0.04,"flowShare":13.07494990698077,"salesShare":13.07494990698077},{"group":"品牌防御词","keyword":"qinsen tank top\\n\\nquinsen\\n\\nqinsen\\n","searchFreq":"77590\\n\\n53483\\n\\n34999\\n","searchVol":"11920\\n\\n17384\\n\\n24000\\n","orgImp":5145.9267133902895,"adImp":488.0933895131645,"totImp":5634.020102903453,"orgOrders":16.466965482848924,"adOrders":1.5618988464421264,"totOrders":18.028864329291054,"clicks":225.36080411613813,"cpc":0.6,"spend":11.714241348315946,"cvr":0.08,"ctr":0.04,"flowShare":6.907610854134504,"salesShare":6.907610854134504},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":10221.71051267704,"adImp":6757.314621924616,"totImp":16979.02513460166,"orgOrders":30.665131538031122,"adOrders":20.27194386577385,"totOrders":50.937075403804975,"clicks":509.37075403804977,"cpc":0.8,"spend":162.1755509261908,"cvr":0.1,"ctr":0.03,"flowShare":19.516120844369723,"salesShare":19.516120844369723},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":0,"adImp":0,"totImp":0,"orgOrders":0.0,"adOrders":0,"totOrders":0.0,"clicks":0,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":0.0}],"totals":{"totOrders":261.0,"orgOrders":211.0106886907618,"adOrders":49.98931130923816,"spend":455.4444782447286,"dailySpend":32.53174844605204,"avgCpc":0.9040222561807859,"orgShare":80.84700716121142,"adShare":19.152992838788567,"top3Daily":18.642857142857142},"correction":{"mode":"scale","scale":0.974238302421486,"origSum":267.90160000000003,"beyondOrders":0.0,"beyondRawReading":null,"beyondRawShare":null}},{"id":"2026-05","label":"2026年05月","days":31,"sales":3479.0,"dailySales":112.2258064516129,"rows":[{"group":"属性精准词","keyword":"tank tops for women\\ntank tops\\nwhite tank top woman\\ntank tops with built in bras","searchFreq":"130\\n955\\n1543\\n1275","searchVol":"1166752\\n443556\\n328296\\n380776","orgImp":119565.014757,"adImp":181331.985243,"totImp":300897.0,"orgOrders":478.260059028,"adOrders":725.327940972,"totOrders":1203.588,"clicks":12035.88,"cpc":1.0,"spend":7253.27940972,"cvr":0.1,"ctr":0.04,"flowShare":49.043611509263016,"salesShare":34.59580339177924},{"group":"属性精准词","keyword":"built in bra tank tops for women\\n\\nbuilt in bra tops for women\\n\\nbuilt in bra tank\\n","searchFreq":"2044\\n\\n13855\\n\\n20325\\n","searchVol":"258212\\n\\n45992\\n\\n38576\\n","orgImp":32858.002161,"adImp":28877.997839,"totImp":61736.0,"orgOrders":131.432008644,"adOrders":115.511991356,"totOrders":246.944,"clicks":2469.44,"cpc":1.0,"spend":1155.11991356,"cvr":0.1,"ctr":0.04,"flowShare":10.062434654170236,"salesShare":7.098131647025006},{"group":"品牌防御词","keyword":"qinsen tank top\\n\\nquinsen\\n\\nqinsen\\n","searchFreq":"70582\\n\\n48978\\n\\n32632\\n","searchVol":"13308\\n\\n18716\\n\\n25296\\n","orgImp":39180.00333,"adImp":13013.99667,"totImp":52194.0,"orgOrders":125.376010656,"adOrders":41.644789344,"totOrders":167.0208,"clicks":2087.76,"cpc":0.6,"spend":312.33592008,"cvr":0.08,"ctr":0.04,"flowShare":6.805736871060793,"salesShare":4.800827824087381},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":80730.003847,"adImp":198124.996281,"totImp":278855.0,"orgOrders":242.190011541,"adOrders":594.374988843,"totOrders":836.565000384,"clicks":8365.65,"cpc":0.8,"spend":4754.999910744,"cvr":0.1,"ctr":0.03,"flowShare":34.08821696550594,"salesShare":24.046133957574014},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":284689.49989333336,"adImp":0,"totImp":284689.49989333336,"orgOrders":1024.882199616,"adOrders":0,"totOrders":1024.882199616,"clicks":11387.579995733333,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":29.459103179534345}],"totals":{"totOrders":3479.0,"orgOrders":2002.140289485,"adOrders":1476.859710515,"spend":13475.735154104,"dailySpend":434.70113400335487,"avgCpc":0.9060713204950317,"orgShare":57.54930409557344,"adShare":42.45069590442656,"top3Daily":79.16509033496774},"correction":{"mode":"derive","scale":1.0,"origSum":2454.117800384,"beyondOrders":1024.882199616,"beyondRawReading":728.173358534641,"beyondRawShare":0.294591031795344}}]},"c6":{"id":"c6","name":"竞6","brand":"C202","asin":"B0GQGX4PYV","type":"有衬垫","tag":"站内承接+站外冲量型","tagCls":"c6","color":"#0d9488","months":[{"id":"2026-04","label":"2026年04月","days":5,"sales":34.0,"dailySales":6.8,"rows":[{"group":"品牌防御词","keyword":"C202","searchFreq":"1172900","searchVol":"588","orgImp":108.999924,"adImp":74.000076,"totImp":183.0,"orgOrders":0.1961998632,"adOrders":0.1332001368,"totOrders":0.3294,"clicks":5.49,"cpc":0.7,"spend":1.554001596,"cvr":0.06,"ctr":0.03,"flowShare":8.610864223349193,"salesShare":0.9688235294117649},{"group":"属性精准词","keyword":"camisole with built in bra\\nlace camisole tops for women\\nlace camisole","searchFreq":"13606\\n32186\\n91549","searchVol":"46688\\n25464\\n9344","orgImp":215.0,"adImp":303.0,"totImp":518.0,"orgOrders":0.86,"adOrders":1.212,"totOrders":2.072,"clicks":20.72,"cpc":1.0,"spend":12.12,"cvr":0.1,"ctr":0.04,"flowShare":54.1642704030951,"salesShare":6.094117647058823},{"group":"属性精准词","keyword":"lace tank top\\ntanktops with built in bras\\nwhite lace tank top","searchFreq":"13517\\n78935\\n88159","searchVol":"46860\\n11668\\n9968","orgImp":191.0,"adImp":118.0,"totImp":309.0,"orgOrders":0.764,"adOrders":0.472,"totOrders":1.236,"clicks":12.36,"cpc":1.0,"spend":4.72,"cvr":0.1,"ctr":0.04,"flowShare":32.31034663041773,"salesShare":3.635294117647059},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":20.000076,"adImp":26.999924,"totImp":47.0,"orgOrders":0.080000304,"adOrders":0.107999696,"totOrders":0.188,"clicks":1.88,"cpc":0.8,"spend":0.863997568,"cvr":0.1,"ctr":0.04,"flowShare":4.914518743137973,"salesShare":0.5529411764705883},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":8381.833333333334,"adImp":0,"totImp":8381.833333333334,"orgOrders":30.174599999999998,"adOrders":0,"totOrders":30.174599999999998,"clicks":335.2733333333333,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":88.74882352941175}],"totals":{"totOrders":33.99999999999999,"orgOrders":32.074800167199996,"adOrders":1.9251998328,"spend":19.257999163999997,"dailySpend":3.8515998327999994,"avgCpc":0.9562065486949838,"orgShare":94.33764755058824,"adShare":5.662352449411766,"top3Daily":0.76508},"correction":{"mode":"derive","scale":1.0,"origSum":3.8254,"beyondOrders":30.174599999999998,"beyondRawReading":17.3342958878809,"beyondRawShare":0.887488235294118}},{"id":"2026-05","label":"2026年05月","days":31,"sales":1347.0,"dailySales":43.45161290322581,"rows":[{"group":"属性精准词","keyword":"camisole tops for women\\ncamisole with built in bra\\ncamisoles for women for under clothes","searchFreq":"3687\\n12427\\n19259","searchVol":"136124\\n50648\\n36792","orgImp":44233.008212,"adImp":80298.991916,"totImp":124532.0,"orgOrders":176.932032848,"adOrders":321.195967664,"totOrders":498.128000512,"clicks":4981.28,"cpc":1.0,"spend":3211.95967664,"cvr":0.1,"ctr":0.04,"flowShare":50.097554525472844,"salesShare":36.980549406978476},{"group":"属性精准词","keyword":"tank tops with built in bras\\nwhite tank top woman\\nbuilt in bra tank tops for women","searchFreq":"1275\\n1543\\n2044","searchVol":"380776\\n328296\\n258212","orgImp":34781.006495,"adImp":64641.993505,"totImp":99423.0,"orgOrders":139.12402598,"adOrders":258.56797402,"totOrders":397.692,"clicks":3976.92,"cpc":1.0,"spend":2585.6797402,"cvr":0.1,"ctr":0.04,"flowShare":39.99654031467036,"salesShare":29.524276169265036},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":9521.99991900001,"adImp":15102.000081,"totImp":24624.0,"orgOrders":38.087999676,"adOrders":60.408000324,"totOrders":98.496,"clicks":984.96,"cpc":0.8,"spend":483.264002592,"cvr":0.1,"ctr":0.04,"flowShare":9.905905159856802,"salesShare":7.3122494432071266},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":97967.77763555554,"adImp":0,"totImp":97967.77763555554,"orgOrders":352.6839994879999,"adOrders":0,"totOrders":352.6839994879999,"clicks":3918.7111054222214,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":26.182924980549366}],"totals":{"totOrders":1347.0,"orgOrders":706.8280579919999,"adOrders":640.1719420080001,"spend":6280.903419432,"dailySpend":202.6097877236129,"avgCpc":0.9811275701541929,"orgShare":52.47424335501113,"adShare":47.52575664498887,"top3Daily":32.07470969393548},"correction":{"mode":"derive","scale":1.0,"origSum":994.3160005120001,"beyondOrders":352.6839994879999,"beyondRawReading":216.302541781806,"beyondRawShare":0.261829249805494}}]},"c7":{"id":"c7","name":"竞7","brand":"Avidlove","asin":"B0GKF2115B","type":"有衬垫","tag":"品牌词防御型","tagCls":"c7","color":"#b45309","months":[{"id":"2026-04","label":"2026年04月","days":9,"sales":636.0,"dailySales":70.66666666666667,"rows":[{"group":"属性精准词","keyword":"tube top with built in bra\\nbuilt in bra tops for women\\ncamisole with built in bra","searchFreq":"11671\\n13476\\n13606","searchVol":"52612\\n47000\\n46688","orgImp":7340.0,"adImp":7478.0,"totImp":14818.0,"orgOrders":29.36,"adOrders":29.912,"totOrders":59.272,"clicks":592.72,"cpc":1.0,"spend":299.12,"cvr":0.1,"ctr":0.04,"flowShare":19.75786020960559,"salesShare":9.319496855345912},{"group":"属性精准词","keyword":"tank tops\\ntank tops with built in bras\\ntank top","searchFreq":"1479\\n1667\\n2430","searchVol":"340728\\n305260\\n202520","orgImp":21217.0,"adImp":28528.0,"totImp":49745.0,"orgOrders":84.868,"adOrders":114.112,"totOrders":198.98,"clicks":1989.8,"cpc":1.0,"spend":1141.12,"cvr":0.1,"ctr":0.04,"flowShare":66.32843542494467,"salesShare":31.28616352201258},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":2475.0,"adImp":7960.0,"totImp":10435.0,"orgOrders":9.9,"adOrders":31.84,"totOrders":41.74,"clicks":417.4,"cpc":0.8,"spend":254.72,"cvr":0.1,"ctr":0.04,"flowShare":13.913704365449748,"salesShare":6.562893081761007},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":93335.55555555556,"adImp":0,"totImp":93335.55555555556,"orgOrders":336.00800000000004,"adOrders":0,"totOrders":336.00800000000004,"clicks":3733.422222222223,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":52.83144654088051}],"totals":{"totOrders":636.0,"orgOrders":460.136,"adOrders":175.864,"spend":1694.9599999999998,"dailySpend":188.32888888888886,"avgCpc":0.9637902015193557,"orgShare":72.34842767295598,"adShare":27.65157232704403,"top3Daily":33.33244444444444},"correction":{"mode":"derive","scale":1.0,"origSum":299.99199999999996,"beyondOrders":336.00800000000004,"beyondRawReading":256.312762817442,"beyondRawShare":0.528314465408805}},{"id":"2026-05","label":"2026年05月","days":31,"sales":1280.0,"dailySales":41.29032258064516,"rows":[{"group":"属性精准词","keyword":"tube top with built in bra\\ncamisole with built in bra\\nbuilt in bra tops for women","searchFreq":"8448\\n12427\\n13855","searchVol":"70372\\n50648\\n45992","orgImp":32499.37086906845,"adImp":6649.639153638112,"totImp":39149.01002270656,"orgOrders":129.9974834762738,"adOrders":26.598556614552447,"totOrders":156.59604009082625,"clicks":1565.9604009082625,"cpc":1.0,"spend":265.9855661455245,"cvr":0.1,"ctr":0.04,"flowShare":12.2340656320958,"salesShare":12.2340656320958},{"group":"属性精准词","keyword":"tank tops for women\\ntank tops with built in bras\\nwhite tank top woman","searchFreq":"130\\n1275\\n1543","searchVol":"1166752\\n380776\\n328296","orgImp":203396.20785907464,"adImp":34569.05254327987,"totImp":237965.26040235453,"orgOrders":813.5848314362987,"adOrders":138.27621017311947,"totOrders":951.8610416094182,"clicks":9518.610416094181,"cpc":1.0,"spend":1382.7621017311947,"cvr":0.1,"ctr":0.04,"flowShare":74.3641438757358,"salesShare":74.3641438757358},{"group":"前3页其他","keyword":"前3页其他关键词","searchFreq":null,"searchVol":null,"orgImp":31864.396974386415,"adImp":11021.332600552478,"totImp":42885.729574938894,"orgOrders":127.45758789754565,"adOrders":44.085330402209905,"totOrders":171.54291829975557,"clicks":1715.4291829975557,"cpc":0.8,"spend":352.68264321767924,"cvr":0.1,"ctr":0.04,"flowShare":13.401790492168406,"salesShare":13.401790492168402},{"group":"前3页其他","keyword":"第4页及以后极长尾自然流量","searchFreq":null,"searchVol":null,"orgImp":0,"adImp":0,"totImp":0,"orgOrders":0.0,"adOrders":0,"totOrders":0.0,"clicks":0,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":0.0}],"totals":{"totOrders":1280.0,"orgOrders":1071.039902810118,"adOrders":208.96009718988182,"spend":2001.4303110943983,"dailySpend":64.5622680998193,"avgCpc":0.9578050249831674,"orgShare":83.67499240704048,"adShare":16.325007592959516,"top3Daily":41.29032258064516},"correction":{"mode":"scale","scale":0.92561792227702,"origSum":1382.8600000000001,"beyondOrders":0.0,"beyondRawReading":null,"beyondRawShare":null}}]}},"profiles":{"c1":{"brand":"Trendy Queen","asin":"B0G13Z2LD7","type":"无衬垫","price":"12.99-17.99","rating":"4.4 (522)","smallRank":"16","colors":"19个","sizes":"XS-XXL","list":"2025-11-27","mainKw":"womens summer tops / tank tops for women / top / summer tops / tops","title":"Trendy Queen Womens Double Lined Tank Tops Crop Summer Fashion Clothing 2026","note":"无衬垫双层防透 · 自带品牌权重 · 高频秒杀+标题迭代","tag":"成熟自然权重型","months":[{"id":"2025-12","label":"2025年12月","adScore":480,"orgScore":1498,"totScore":1978,"adShareScore":24.27,"sales":614,"daily":19.81,"rank":2774,"deal":12.87,"kw":"207","spendDaily":60,"spendMonth":1380,"spendRevShare":17.46,"cpu":2.25,"profit":1076,"note":""},{"id":"2026-01","label":"2026年01月","adScore":2860,"orgScore":27390,"totScore":30250,"adShareScore":9.45,"sales":4739,"daily":152.87,"rank":61,"deal":11.66,"kw":"1846","spendDaily":123,"spendMonth":3822,"spendRevShare":6.92,"cpu":0.81,"profit":15134,"note":""},{"id":"2026-02","label":"2026年02月","adScore":3444,"orgScore":23521,"totScore":26965,"adShareScore":12.77,"sales":8573,"daily":276.55,"rank":88,"deal":12.23,"kw":"2487","spendDaily":472,"spendMonth":13229,"spendRevShare":12.62,"cpu":1.54,"profit":21063,"note":""},{"id":"2026-03","label":"2026年03月","adScore":1904,"orgScore":111375,"totScore":113279,"adShareScore":1.68,"sales":22436,"daily":723.74,"rank":22,"deal":11.6,"kw":"5050","spendDaily":107,"spendMonth":3293,"spendRevShare":1.27,"cpu":0.15,"profit":86451,"note":""},{"id":"2026-04","label":"2026年04月","adScore":3846,"orgScore":175094,"totScore":178940,"adShareScore":2.15,"sales":26181,"daily":872.7,"rank":18,"deal":12.96,"kw":"6834","spendDaily":160,"spendMonth":4782,"spendRevShare":1.41,"cpu":0.18,"profit":99942,"note":""},{"id":"2026-05","label":"2026年05月","adScore":9349,"orgScore":347324,"totScore":356673,"adShareScore":2.62,"sales":64888,"daily":2093.16,"rank":9,"deal":11.45,"kw":"10000","spendDaily":485,"spendMonth":15016,"spendRevShare":2.02,"cpu":0.23,"profit":244536,"note":""}]},"c2":{"brand":"QINSEN(无垫)","asin":"B0CTQ25W4F","type":"无衬垫","price":"19.99-25.99","rating":"4.2 (4116)","smallRank":"48","colors":"33个","sizes":"XS-XL","list":"2024-03-14","mainKw":"tank tops / tank top / tank tops for women / square neck tops for women","title":"QINSEN Women's Double Layer Tank Tops Square Neck Sleeveless Basic Tight T Shirts","note":"无衬垫 · 2024年7-12月巅峰月销4万+，进入2025年后排名下滑 · 烧广告维持排名即亏损","tag":"存量下滑型","months":[{"id":"2025-12","label":"2025年12月","adScore":33471,"orgScore":39287,"totScore":72758,"adShareScore":46.0,"sales":14548,"daily":469.29,"rank":7.67,"deal":19.98,"kw":"10000","spendDaily":2509,"spendMonth":77788,"spendRevShare":26.76,"cpu":5.35,"profit":-12322,"note":""},{"id":"2026-01","label":"2026年01月","adScore":56792,"orgScore":54416,"totScore":111208,"adShareScore":51.07,"sales":12601,"daily":406.48,"rank":12.53,"deal":20.04,"kw":"10000","spendDaily":4258,"spendMonth":131987,"spendRevShare":52.27,"cpu":10.47,"profit":-75282,"note":""},{"id":"2026-02","label":"2026年02月","adScore":59041,"orgScore":55321,"totScore":114362,"adShareScore":51.63,"sales":15325,"daily":547.32,"rank":13.29,"deal":20.48,"kw":"10000","spendDaily":4426,"spendMonth":123935,"spendRevShare":39.49,"cpu":8.09,"profit":-54972,"note":""},{"id":"2026-03","label":"2026年03月","adScore":95364,"orgScore":92507,"totScore":187871,"adShareScore":50.76,"sales":21463,"daily":692.35,"rank":19.65,"deal":21.22,"kw":"10000","spendDaily":7149,"spendMonth":221630,"spendRevShare":48.66,"cpu":10.33,"profit":-125046,"note":""},{"id":"2026-04","label":"2026年04月","adScore":113898,"orgScore":93651,"totScore":207549,"adShareScore":54.88,"sales":22779,"daily":759.3,"rank":24.87,"deal":20.5,"kw":"10000","spendDaily":8539,"spendMonth":256165,"spendRevShare":54.85,"cpu":11.25,"profit":-153659,"note":""},{"id":"2026-05","label":"2026年05月","adScore":80700,"orgScore":129673,"totScore":210373,"adShareScore":38.36,"sales":24371,"daily":786.16,"rank":28.47,"deal":20.56,"kw":"10000","spendDaily":6050,"spendMonth":187550,"spendRevShare":37.42,"cpu":7.7,"profit":-77881,"note":""}]},"c3":{"brand":"Artfish","asin":"B09FF12Q3N","type":"无衬垫","price":"19.99","rating":"4.2 (10047)","smallRank":"62","colors":"22个","sizes":"XS-L","list":"2021-09-05","mainKw":"white tank top woman / tank tops for women / tank top / cropped tank tops","title":"Artfish Women's Sleeveless Strappy Tank Square Neck Double Layer Workout Fitness Casual Basic Crop Tops","note":"无衬垫 · 月销1.2万-3.5万波动 · 广告得分常年在3万-11万，自然从未成为主力","tag":"广告烧量震荡型","months":[{"id":"2025-12","label":"2025年12月","adScore":12448,"orgScore":4529,"totScore":16977,"adShareScore":73.32,"sales":3933,"daily":126.87,"rank":55.52,"deal":19.95,"kw":"6370","spendDaily":933,"spendMonth":28913,"spendRevShare":36.85,"cpu":7.35,"profit":-11215,"note":""},{"id":"2026-01","label":"2026年01月","adScore":56326,"orgScore":7258,"totScore":63584,"adShareScore":88.59,"sales":5409,"daily":174.48,"rank":47.9,"deal":19.41,"kw":"10000","spendDaily":4220,"spendMonth":130829,"spendRevShare":124.59,"cpu":24.19,"profit":-106488,"note":""},{"id":"2026-02","label":"2026年02月","adScore":28059,"orgScore":9729,"totScore":37788,"adShareScore":74.25,"sales":7206,"daily":257.36,"rank":50.15,"deal":19.65,"kw":"8693","spendDaily":2102,"spendMonth":58866,"spendRevShare":41.58,"cpu":8.17,"profit":-26439,"note":""},{"id":"2026-03","label":"2026年03月","adScore":21189,"orgScore":18978,"totScore":40167,"adShareScore":52.75,"sales":10891,"daily":351.32,"rank":59.13,"deal":19.66,"kw":"9789","spendDaily":1588,"spendMonth":49216,"spendRevShare":22.99,"cpu":4.52,"profit":-206,"note":""},{"id":"2026-04","label":"2026年04月","adScore":32691,"orgScore":18352,"totScore":51043,"adShareScore":64.05,"sales":12239,"daily":407.97,"rank":66.5,"deal":19.51,"kw":"10000","spendDaily":2449,"spendMonth":73482,"spendRevShare":30.78,"cpu":6.0,"profit":-18407,"note":""},{"id":"2026-05","label":"2026年05月","adScore":4738,"orgScore":21465,"totScore":26203,"adShareScore":18.08,"sales":15911,"daily":513.26,"rank":60.58,"deal":19.57,"kw":"6947","spendDaily":355,"spendMonth":11005,"spendRevShare":3.53,"cpu":0.69,"profit":60595,"note":""}]},"c4":{"brand":"OwnTime","asin":"B0G39N131T","type":"有衬垫","price":"16.99-19.99","rating":"4.1 (140)","smallRank":"52","colors":"18个","sizes":"XS-XXL","list":"2026-01-03","mainKw":"tank tops with built in bras / built in bra tank tops for women","title":"OwnTime Womens Tank Tops with Built in Bras Summer Square Neck Sleeveless Shirts Ribbed Fitted Basic Casual Tops","note":"有衬垫 · 广告占比78-100% · 广告一停单量即崩，未建立自然流量入口","tag":"广告依赖型","months":[{"id":"2025-12","label":"2025年12月","adScore":5,"orgScore":0,"totScore":5,"adShareScore":100.0,"sales":0,"daily":0,"rank":0,"deal":19.99,"kw":"6","spendDaily":0,"spendMonth":0,"spendRevShare":null,"cpu":null,"profit":0,"note":""},{"id":"2026-01","label":"2026年01月","adScore":1389,"orgScore":981,"totScore":2370,"adShareScore":58.61,"sales":481,"daily":15.52,"rank":227.49,"deal":15.3,"kw":"594","spendDaily":89,"spendMonth":2399,"spendRevShare":32.6,"cpu":4.99,"profit":-235,"note":""},{"id":"2026-02","label":"2026年02月","adScore":6943,"orgScore":2841,"totScore":9784,"adShareScore":70.96,"sales":1599,"daily":57.11,"rank":96.87,"deal":15.23,"kw":"2137","spendDaily":390,"spendMonth":10909,"spendRevShare":44.8,"cpu":6.82,"profit":-3714,"note":""},{"id":"2026-03","label":"2026年03月","adScore":17220,"orgScore":4523,"totScore":21743,"adShareScore":79.2,"sales":2016,"daily":65.03,"rank":80.89,"deal":16.99,"kw":"2788","spendDaily":566,"spendMonth":17519,"spendRevShare":51.15,"cpu":8.69,"profit":-8447,"note":""},{"id":"2026-04","label":"2026年04月","adScore":32962,"orgScore":8399,"totScore":41361,"adShareScore":79.69,"sales":3569,"daily":118.97,"rank":57.3,"deal":16.92,"kw":"3289","spendDaily":985,"spendMonth":29544,"spendRevShare":48.92,"cpu":8.28,"profit":-13484,"note":""},{"id":"2026-05","label":"2026年05月","adScore":32105,"orgScore":9221,"totScore":41326,"adShareScore":77.69,"sales":5063,"daily":168.77,"rank":42.77,"deal":18.1,"kw":"4147","spendDaily":1353,"spendMonth":41930,"spendRevShare":45.75,"cpu":8.28,"profit":-19147,"note":""}]},"c5":{"brand":"QINSEN(带垫)","asin":"B0GV41HN7Q","type":"有衬垫","price":"19.99-38.99","rating":"4.4 (45)","smallRank":"320","colors":"14个","sizes":"XS-XL","list":"2026-04-18","mainKw":"built in bra tank tops for women / qinsen tank top / tank tops for women","title":"QINSEN Womens Tank Tops with Built in Bras Square Neck Double Lined Basic Sleeveless Workout Tops","note":"有衬垫 · 秒杀+站外（5月站外30%）引爆 · 广告占比34-60% · 排名不稳","tag":"秒杀+站外爆发型","months":[{"id":"2026-04","label":"2026年04月","adScore":1147,"orgScore":2268,"totScore":3415,"adShareScore":33.59,"sales":261,"daily":18.64,"rank":1362,"deal":24.88,"kw":"877","spendDaily":35,"spendMonth":3064,"spendRevShare":27.5,"cpu":6.55,"profit":-819,"note":""},{"id":"2026-05","label":"2026年05月","adScore":2501,"orgScore":1739,"totScore":4240,"adShareScore":58.99,"sales":3479,"daily":112.23,"rank":517,"deal":21.04,"kw":"5246","spendDaily":644,"spendMonth":19949,"spendRevShare":28.44,"cpu":5.56,"profit":5323,"note":""}]},"c6":{"brand":"C202","asin":"B0GQGX4PYV","type":"有衬垫","price":"19.99","rating":"5.0→4.3","smallRank":"1033","colors":"8个","sizes":"XS-3XL","list":"2026-05-01","mainKw":"camisole tops for women / tank tops with built in bras","title":"C202 Womens Tank Tops with Built in Bras Camisole Square Neck Padded Sleeveless","note":"有衬垫 · SP纯广告承接+站外冲量 · 5月关键词从90→1958 泛化拓词 · 评分下滑","tag":"站内承接+站外冲量型","months":[{"id":"2026-04","label":"2026年04月","adScore":176,"orgScore":197,"totScore":373,"adShareScore":47.18,"sales":34,"daily":6.8,"rank":4951,"deal":24.99,"kw":"90","spendDaily":35,"spendMonth":962,"spendRevShare":20.6,"cpu":5.15,"profit":-647,"note":""},{"id":"2026-05","label":"2026年05月","adScore":2017,"orgScore":640,"totScore":2657,"adShareScore":75.91,"sales":1347,"daily":43.45,"rank":1176,"deal":19.99,"kw":"1958","spendDaily":265,"spendMonth":8990,"spendRevShare":30.46,"cpu":6.09,"profit":1747,"note":""}]},"c7":{"brand":"Avidlove","asin":"B0GKF2115B","type":"有衬垫","price":"22.98","rating":"4.4→4.0","smallRank":"150","colors":"8个","sizes":"XS-2XL","list":"2026-04-20","mainKw":"built-in bra + tank tops / tube top with built in bra","title":"Avidlove Womens Tank Tops with Built in Bras Square Neck Double Lined Padded","note":"有衬垫 · 站外占比40%→12%递减 · 品牌词防御（qinsen/avidlove 词根） · 评分持续下滑","tag":"品牌词防御型","months":[{"id":"2026-04","label":"2026年04月","adScore":591,"orgScore":170,"totScore":761,"adShareScore":77.66,"sales":636,"daily":70.67,"rank":99,"deal":22.98,"kw":"809","spendDaily":441,"spendMonth":7580,"spendRevShare":27.19,"cpu":6.25,"profit":-1175,"note":""},{"id":"2026-05","label":"2026年05月","adScore":438,"orgScore":2206,"totScore":2644,"adShareScore":16.57,"sales":1280,"daily":41.29,"rank":53,"deal":22.98,"kw":"1843","spendDaily":95,"spendMonth":3606,"spendRevShare":7.35,"cpu":1.58,"profit":4774,"note":""}]}},"v503":{"brand":"Upushall(V503)","asin":"B0GSJRYXJB / B0GSJN3843","type":"有衬垫","price":"19.99-24.99","rating":"4.8 (8)","smallRank":"3416","colors":"3个","sizes":"S-XL","list":"2026-04-11","mainKw":"built in bra / tank top bra / bra tank / crop top with built in bra","title":"Upushall Tank Top with Built in Bra for Women Square Neck Crop Top Padded Sleeveless Summer Tops","note":"自身链接 · 上架2026-04-11 · 处于推广验证期","periods":[{"label":"2026/03（46082）","sales":2,"daily":1.0,"adShare":0,"spendDaily":4.02,"spend":12.07,"profit":-92.67,"score":5},{"label":"04/01-19","sales":16,"daily":0.84,"adShare":53.95,"spendDaily":8.71,"spend":174.16,"profit":-146.13,"score":76},{"label":"04/20-05/03","sales":20,"daily":1.43,"adShare":56.88,"spendDaily":10.74,"spend":150.38,"profit":-140.77,"score":109},{"label":"05/04-17","sales":77,"daily":5.5,"adShare":84.6,"spendDaily":71.83,"spend":1005.56,"profit":-889.74,"score":435},{"label":"05/18-31","sales":105,"daily":7.5,"adShare":75.49,"spendDaily":90.74,"spend":1270.35,"profit":-1132.6,"score":506},{"label":"06/01-14","sales":130,"daily":9.29,"adShare":62.72,"spendDaily":118.86,"spend":1664.05,"profit":-1405.25,"score":405}],"stages":[{"p":"4.22-5.4","daily":1.4,"ctr":0.35,"cvr":5.2,"story":"跑基础流量测CPC匹配度（自动高/中/低 0.65/0.55/0.45），曝光不足，预算烧不完——CPC够不着类目基础曝光。"},{"p":"5.5-5.11","daily":2.2,"ctr":0.23,"cvr":3.8,"story":"自动紧密+手动大词框架、价格恢复24.99——CVR腰斩，广告架构不适配。"},{"p":"5.12-5.20","daily":10.3,"ctr":0.24,"cvr":6.9,"story":"降价至19.99 + 低/中/高三档自动（0.6/0.7/0.8出价）：低价组CPC<0.74验证无效，CPC基准线=0.8；自动中组ACoS 39.11%、CVR 9.52%、16单。19.99是驱动价。"},{"p":"5.21-5.27","daily":5.1,"ctr":0.21,"cvr":4.8,"story":"复盘认为crop词表现好，改标题五点靠拢crop——词类目过窄圈死大盘流量，单量下滑，迅速止损改回。"},{"p":"5.28-6.14","daily":8.2,"ctr":0.42,"cvr":5.5,"story":"衬垫展示图改模特掀开展示，CTR 0.24%→0.48%近翻倍，自然流量拓宽，单量回升至8.2。"}],"ops":"散投每日预算30起步 → 4.22 三档自动测CPC → 5.12 降19.99+0.8基准线三组 → 5.21 crop方向试错止损 → 6.11 主图优化CTR翻倍。结论：19.99最优定价、CPC必须≥0.8、利润需≥$5/单、缺核心白色、用户画像偏30+成熟女性。"},"profitPlan":[{"m":"2026/12","daily":20,"month":620,"adOrders":17,"orgOrders":3,"spend":198.19,"adShare":0.85,"profit":-2422.24,"cpu":9.91,"cpc":0.94},{"m":"2027/01","daily":50,"month":1550,"adOrders":35,"orgOrders":15,"spend":543.63,"adShare":0.7,"profit":-7499.9,"cpu":10.87,"cpc":1.26},{"m":"2027/02","daily":80,"month":2480,"adOrders":40,"orgOrders":40,"spend":621.29,"adShare":0.5,"profit":-4544.4,"cpu":7.77,"cpc":1.26},{"m":"2027/03","daily":120,"month":3720,"adOrders":48,"orgOrders":72,"spend":753.0,"adShare":0.4,"profit":-1448.68,"cpu":6.28,"cpc":1.26},{"m":"2027/04","daily":160,"month":4960,"adOrders":48,"orgOrders":112,"spend":753.0,"adShare":0.3,"profit":5598.43,"cpu":4.71,"cpc":1.26},{"m":"2027/05","daily":200,"month":6200,"adOrders":60,"orgOrders":140,"spend":941.25,"adShare":0.3,"profit":6998.04,"cpu":4.71,"cpc":1.26},{"m":"2027/06-08","daily":200,"month":6200,"adOrders":50,"orgOrders":150,"spend":784.38,"adShare":0.25,"profit":11704.29,"cpu":3.92,"cpc":1.26},{"m":"2027/09","daily":150,"month":4650,"adOrders":37.5,"orgOrders":112.5,"spend":588.28,"adShare":0.25,"profit":8778.22,"cpu":3.92,"cpc":1.26},{"m":"2027/10","daily":120,"month":3720,"adOrders":30,"orgOrders":90,"spend":470.63,"adShare":0.25,"profit":7022.57,"cpu":3.92,"cpc":1.26}],"profitBench":[{"kw":"tank tops for women","comp":"竞1","daily":23,"total":88,"target":44},{"kw":"built in bra tops for women / camisole with built in bra","comp":"竞4","daily":239,"total":1317,"target":658},{"kw":"womens summer tops / summer tops for women","comp":"竞1","daily":65,"total":88,"target":44}],"aba":{"months":["2025/5","2025/6","2025/7","2025/8","2025/9","2025/10","2025/11","2025/12","2026/1","2026/2","2026/3","2026/4","2026/5"],"kws":{"tank tops with built in bras":[10375,7578,9383,10062,12182,14165,22594,24332,9303,5550,2403,1623,1245],"built in bra tank tops for women":[5090,3503,4799,10288,22549,28226,45221,49544,17778,9907,3498,2675,1938],"tank tops for women":[2927,1458,2143,5221,4624,3611,3389,3223,1637,860,257,194,113],"white tank top built in bra":[475382,322259,369470,377884,368888,358387,871402,785589,409270,134700,33482,23990,19815],"white tank top woman":[1770,1229,1745,2710,3308,3902,12063,14420,7661,3548,1778,1526,1527],"going out tops for women":[2027,2096,1714,1146,1115,2159,3615,3680,1837,1028,1061,930,1301],"red top":[28863,17315,21708,16360,11866,6110,39146,20002,22481,6006,18578,7365,8615]}},"summary":[{"brand":"Trendy Queen","asin":"B0G13Z2LD7","rank":"16","rating":"4.4(522)","price":"12.99-17.99","type":"无衬垫","kw7":"womens summer tops 等","kwStruct":"品牌+核心大词+中词+小词/年份"},{"brand":"QINSEN","asin":"B0CTQ25W4F","rank":"48","rating":"4.2(4116)","price":"19.99-25.99","type":"无衬垫","kw7":"tank tops 等","kwStruct":"品牌+核心大词+大词+中词+衍生大词"},{"brand":"Artfish","asin":"B09FF12Q3N","rank":"62","rating":"4.2(10047)","price":"19.99","type":"无衬垫","kw7":"white tank top woman 等","kwStruct":"品牌+核心大词+中词+密集场景词"},{"brand":"OwnTime","asin":"B0G39N131T","rank":"52","rating":"4.1(140)","price":"18.99-19.99","type":"有衬垫","kw7":"tank tops with built in bras 等","kwStruct":"品牌+核心大词+中词+衍生大词"},{"brand":"C202","asin":"B0GQGX4PYV","rank":"1033","rating":"—","price":"24.99","type":"有衬垫","kw7":"—","kwStruct":"—"},{"brand":"Avidlove","asin":"B0GKF2115B","rank":"150","rating":"—","price":"27.99","type":"有衬垫","kw7":"—","kwStruct":"—"},{"brand":"QINSEN(带垫)","asin":"B0GV41HN7Q","rank":"320","rating":"4.4(45)","price":"23.99-38.99","type":"有衬垫","kw7":"tank tops with built in bras 等","kwStruct":"品牌+核心大词+中词+场景大词"},{"brand":"V503(Upushall)","asin":"B0GSJRYXJB","rank":"3416","rating":"4.8(8)","price":"19.99","type":"有衬垫","kw7":"built in bra 等","kwStruct":"品牌+核心大词+中词+属性小词"}],"weekly":{"c5":{"weeks":["04/13-19","04/20-26","04/27-05/03","05/04-10","05/11-17","05/18-24","05/25-31","06/01-07"],"sales":[19,14,224,811,702,712,723,1136],"rank":[5338,6001,1362,404,456,477,517,343],"adShare":[0,17.0,33.6,49.4,59.8,26.2,59.0,54.8],"deal":[37.28,19.99,19.99,19.55,19.99,19.99,24.05,24.78]},"c6":{"weeks":["04/21-26","04/27-05/03","05/04-10","05/11-17","05/18-24","05/25-31","06/01-07","06/08-14"],"sales":[3,36,85,123,317,424,442,358],"rank":[5189,4951,2692,1839,1176,839,813,1018],"adShare":[23.5,47.2,57.6,56.8,75.9,52.4,37.9,42.2],"deal":[24.99,19.99,19.99,19.99,19.99,19.99,16.99,16.99]},"c7":{"weeks":["04/13-19","04/20-26","04/27-05/03","05/04-10","05/11-17","05/18-24","05/25-31","06/01-07"],"sales":[0,158,424,415,375,311,286,446],"rank":[null,99,49,46,53,66,65,null],"adShare":[32.3,77.7,31.4,26.1,16.6,12.9,13.8,null],"deal":[27.99,24.99,22.98,22.98,16.09,16.09,19.99,19.99]}}};
+const CFG = { ctr: 0.04, cvr: 0.10, cpcWarnRatio: 1.3, cvrFloor: 0.08 };
+const GROUP_COLORS = { "品牌防御词":"#f59e0b", "品类核心大词":"#ef4444", "属性精准词":"#8b5cf6", "前3页其他":"#38bdf8", "除前3页":"#10b981" };
+const GROUP_CLS = { "品牌防御词":"group-brand", "品类核心大词":"group-core", "属性精准词":"group-attr", "前3页其他":"group-other", "除前3页":"group-beyond" };
+const COMP_ORDER = ["c1","c2","c3","c4","c5","c6","c7"];
+const COMP_COLOR = { c1:"#2563eb", c2:"#64748b", c3:"#0ea5e9", c4:"#dc2626", c5:"#7c3aed", c6:"#0d9488", c7:"#b45309" };
+const state = { tab: "c1", mi: 0, sortKey: "flowShare", sortDir: -1, logImp: true, logOrd: false };
+
+/* ================= 格式化 ================= */
+const f2 = v => Number(v).toFixed(2);
+const f1 = v => Number(v).toFixed(1);
+const fi = v => Math.round(v).toLocaleString("zh-CN");
+const fde = v => Number(v).toLocaleString("zh-CN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const pct = (v, d = 2) => (v == null ? "—" : v.toFixed(d) + "%");
+const usd = (v, d = 2) => (v == null || isNaN(v) ? "—" : "$" + Number(v).toFixed(d));
+const dash = v => (v == null || v === "" ? "—" : v);
+const curComp = () => DATA.competitors[state.tab];
+const curMonth = () => curComp().months[state.mi];
+function monthTot(m){
+  const T = {};
+  ["orgImp","adImp","totImp","clicks","orgOrders","adOrders","totOrders","spend"].forEach(k =>
+    T[k] = m.rows.reduce((s, r) => s + (r[k] ?? 0), 0));
+  T.adClicks = m.rows.reduce((s, r) => s + (r.adImp ?? 0) * r.ctr, 0);
+  T.dailySales = m.days > 0 ? m.sales / m.days : 0;
+  T.avgCpc = T.adClicks > 0 ? T.spend / T.adClicks : 0;
+  T.dailySpend = m.days > 0 ? T.spend / m.days : 0;
+  T.orgShare = T.totOrders > 0 ? T.orgOrders / T.totOrders * 100 : 0;
+  T.adShare = T.totOrders > 0 ? T.adOrders / T.totOrders * 100 : 0;
+  return T;
+}
+
+/* ================= 壹 执行摘要 ================= */
+function renderExecKpi(){
+  const rows = [
+    { comp:"c1", label:"竞1 Trendy Queen", type:"无衬垫", cls:"c1", latest: DATA.profiles.c1.months[5], price: DATA.profiles.c1.price },
+    { comp:"c2", label:"竞2 QINSEN", type:"无衬垫", cls:"c2", latest: DATA.profiles.c2.months[5], price: DATA.profiles.c2.price },
+    { comp:"c3", label:"竞3 Artfish", type:"无衬垫", cls:"c3", latest: DATA.profiles.c3.months[5], price: DATA.profiles.c3.price },
+    { comp:"c4", label:"竞4 OwnTime", type:"有衬垫", cls:"c4", latest: DATA.profiles.c4.months[5], price: DATA.profiles.c4.price },
+    { comp:"c5", label:"竞5 QINSEN·带垫", type:"有衬垫", cls:"c5", latest: DATA.profiles.c5.months[1], price: DATA.profiles.c5.price },
+    { comp:"c6", label:"竞6 C202", type:"有衬垫", cls:"c6", latest: DATA.profiles.c6.months[1], price: DATA.profiles.c6.price },
+    { comp:"c7", label:"竞7 Avidlove", type:"有衬垫", cls:"c7", latest: DATA.profiles.c7.months[1], price: DATA.profiles.c7.price },
+  ];
+  const vp = DATA.v503.periods[5];
+  const cards = rows.map(r => {
+    const m = r.latest;
+    return `<div class="card kpi" style="border-top:3px solid ${COMP_COLOR[r.comp]};">
+      <div class="ico" style="background:#f1f5f9;">${r.type === "有衬垫" ? "🩱" : "👚"}</div>
+      <div class="lab">${r.label} <span class="muted">(${r.type})</span></div>
+      <div class="val" style="font-size:17px;">月销 ${fi(m.sales)}</div>
+      <div class="sub">日均 ${f1(m.daily)} · 排名 ${fi(m.rank)} · 广告占比 ${pct(m.adShareScore)}</div>
+      <div class="sub">月花费 ${usd(m.spendMonth)} · 利润 ${usd(m.profit)} · CPU ${f2(m.cpu)}</div>
+      <div class="bar" style="background:${COMP_COLOR[r.comp]};"></div>
+    </div>`;
+  }).join("") + `
+    <div class="card kpi" style="border-top:3px solid #059669;">
+      <div class="ico" style="background:#f1f5f9;">⭐</div>
+      <div class="lab">V503 (Upushall) 自身</div>
+      <div class="val" style="font-size:17px;">期销量 ${fi(vp.sales)}</div>
+      <div class="sub">日均 ${f1(vp.daily)} · 排名 3416 · 广告占比 ${pct(vp.adShare)}</div>
+      <div class="sub">日均花费 ${usd(vp.spendDaily)} · 利润 ${usd(vp.profit)}</div>
+      <div class="bar" style="background:#059669;"></div>
+    </div>`;
+  document.getElementById("execKpi").innerHTML = cards;
+}
+function marketBubble(){
+  const pts = [
+    ...COMP_ORDER.map(cid => {
+      const p = DATA.profiles[cid], m = p.months[p.months.length - 1];
+      return { x: m.deal, y: m.adShareScore, r: Math.sqrt(m.sales) * 1.6, label: p.brand, cid, c: COMP_COLOR[cid], sub: "月销 " + fi(m.sales) };
+    }),
+    { x: DATA.v503.periods[5].daily * 1.0, y: DATA.v503.periods[5].adShare, r: Math.sqrt(130) * 1.6, label: "V503", cid: "v503", c: "#059669", sub: "期销 130" }
+  ];
+  const W = 720, H = 420, padL = 56, padB = 50, padT = 20, padR = 140;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const xMax = Math.max(...pts.map(p => p.x)) * 1.15, yMax = 100;
+  const X = v => padL + v / xMax * pw, Y = v => padT + ph - v / yMax * ph;
+  let g = "";
+  for (let i = 0; i <= 4; i++) {
+    const y = padT + ph - (i / 4) * ph;
+    g += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7"/>`;
+    g += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${i * 25}%</text>`;
+  }
+  for (let i = 0; i <= 4; i++) {
+    const xv = xMax * i / 4;
+    g += `<line x1="${X(xv)}" y1="${padT}" x2="${X(xv)}" y2="${padT + ph}" stroke="#eef2f7"/>`;
+    g += `<text x="${X(xv)}" y="${padT + ph + 16}" text-anchor="middle" font-size="10" fill="#94a3b8">${xv.toFixed(1)}</text>`;
+  }
+  const mx = X(xMax * 0.5), my = Y(50);
+  g += `<line x1="${mx}" y1="${padT}" x2="${mx}" y2="${padT + ph}" stroke="#cbd5e1" stroke-dasharray="5 4"/>`;
+  g += `<line x1="${padL}" y1="${my}" x2="${W - padR}" y2="${my}" stroke="#cbd5e1" stroke-dasharray="5 4"/>`;
+  g += `<text x="${mx + 4}" y="${padT + 10}" font-size="10" fill="#94a3b8">成交价 $${(xMax * 0.5).toFixed(1)}</text>`;
+  g += `<text x="${padL + 4}" y="${my - 5}" font-size="10" fill="#94a3b8">广告占比 50%</text>`;
+  g += `<text x="${padL + pw / 2}" y="${H - 8}" text-anchor="middle" font-size="11.5" fill="#64748b" font-weight="600">平均成交价（$）</text>`;
+  g += `<text x="14" y="${padT + ph / 2}" text-anchor="middle" font-size="11.5" fill="#64748b" font-weight="600" transform="rotate(-90 14 ${padT + ph / 2})">广告得分占比</text>`;
+  pts.forEach(p => {
+    g += `<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="${p.r}" fill="${p.c}" opacity=".75" stroke="#fff" stroke-width="2"><title>${p.label} · 成交价 $${p.x.toFixed(2)} · 广告占比 ${p.y.toFixed(1)}% · ${p.sub}</title></circle>`;
+    const lx = X(p.x) + p.r + 6;
+    g += `<text x="${lx > W - padR - 40 ? X(p.x) - p.r - 6 : lx}" y="${Y(p.y) + 4}" text-anchor="${lx > W - padR - 40 ? "end" : "start"}" font-size="11.5" font-weight="800" fill="${p.c}">${p.label}</text>`;
+  });
+  document.getElementById("marketBubble").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`;
+}
+function abaChart(){
+  const aba = DATA.aba;
+  const W = 720, H = 340, padL = 56, padB = 42, padT = 20, padR = 20;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const kws = Object.entries(aba.kws).filter(([, v]) => Math.max(...v) < 300000);
+  const n = aba.months.length;
+  const X = i => padL + i / (n - 1) * pw;
+  const Y = v => padT + ph - (Math.log10(v) - Math.log10(50)) / (Math.log10(60000) - Math.log10(50)) * ph;
+  const colors = ["#dc2626", "#7c3aed", "#2563eb", "#0d9488", "#b45309"];
+  let g = "";
+  [1, 10, 100, 1000, 10000, 100000].forEach(v => {
+    const y = Y(v);
+    if (y < padT - 4 || y > padT + ph + 4) return;
+    g += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7"/>`;
+    g += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${v >= 1000 ? (v / 1000) + "k" : v}</text>`;
+  });
+  kws.forEach(([kw, vals], ki) => {
+    const path = vals.map((v, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1)).join(" ");
+    g += `<path d="${path}" fill="none" stroke="${colors[ki % colors.length]}" stroke-width="2" opacity=".9"><title>${kw}</title></path>`;
+    g += `<text x="${X(n - 1) + 6}" y="${Y(vals[n - 1]) + 4}" font-size="11" font-weight="700" fill="${colors[ki % colors.length]}">${kw.split(" ")[0]} ${kw.split(" ")[1] || ""}</text>`;
+  });
+  aba.months.forEach((m, i) => {
+    g += `<text x="${X(i)}" y="${padT + ph + 16}" text-anchor="middle" font-size="9.5" fill="#94a3b8">${m}</text>`;
+  });
+  g += `<text x="${padL + pw / 2}" y="${H - 6}" text-anchor="middle" font-size="11" fill="#64748b" font-weight="600">时间（ABA 搜索频率排名，对数轴，数值越小搜索越热）</text>`;
+  document.getElementById("abaChart").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`;
+}
+function renderTopConclusions(){
+  document.getElementById("topConclusions").innerHTML = `
+  1. <b>赛道判断：</b>「built-in bra（带胸垫背心）」是 2026 春夏高增长细分——ABA 排名一年内 8~25 倍级跃升（如 tank tops with built in bras 10375→1245），新链接（竞4-7）均在 2025-12 ~ 2026-04 集中上架卡位，V503 处于「后发跟进」窗口。
+  <br>2. <b>赢家范式（竞1 Trendy Queen 可复制）：</b>5 个月 614→64,888 单、自然占比 88%→97.8%、单均获客成本 $0.18——靠「高频秒杀 + 关键词海量覆盖（67→10,000）+ 标题/主图高频迭代 + 降预算转自然」完成自然权重积累，广告仅剩防御职能。
+  <br>3. <b>输家范式（竞2/竞3/竞4 反面教材）：</b>竞2 烧广告维持存量排名（5月亏 $7.8 万）、竞3 广告占比 88%（1月花费为营收 124%）、竞4 广告占比 78-100% 且「广告一停单量即崩」——无衬垫存量链接与纯广告依赖链接均不可复制。
+  <br>4. <b>带垫赛道最优路径（竞5 QINSEN·带垫）：</b>4/14 上架 → 4/20 降价 19.99 + 标题植入 Bra → 5/4 秒杀（2天）+ 站外 30% → 5月单日 112 单、周排名 404——「价格一步到位 + 秒杀引爆 + 站外拉量 + 承接换季流量」是带垫新品最快起量路径。
+  <br>5. <b>价格锚点：</b>带垫组成交价集中在 $19.99（V503 已验证为驱动价），竞5 用 38.99 高划线制造折扣空间；V503 利润测算以 $19.99 定价、单件毛利 $5.87、单均获客成本 $15.7 为盈亏基准。
+  <br>6. <b>对 V503 的直接启示：</b>CPC 基准线 0.8（低价捡漏无效）、三档自动广告（0.6/0.7/0.8）跑通、crop 方向试错已止损、主图改模特掀垫展示 CTR 0.24%→0.48%——下一步按利润测算路径 20→200 单/日爬坡（2027/04 转正）。`;
+}
+
+/* ================= 贰 横向对比 ================= */
+function renderDecisionTable(){
+  const heads = ["竞对","类型","主打词根","月销量","日均","月均排名","成交价$","广告占比","月花费$","CPU$","利润$","关键词数","广告结构","定位"];
+  const rows = COMP_ORDER.map(cid => {
+    const p = DATA.profiles[cid];
+    const m = p.months[p.months.length - 1];
+    const c = DATA.competitors[cid];
+    const kwCount = c ? (c.months[c.months.length - 1].rows.length + " 词根") : m.kw;
+    const struct = { c1:"SP 99%+SBV1%", c4:"SP26/SB48/SBV26", c5:"SP83/SB14/SBV3", c6:"SP 100%", c7:"SP 100%" }[cid] || "SP 100%";
+    return `<tr><td class="l" style="color:${COMP_COLOR[cid]}; font-weight:800;">${p.brand}</td>
+      <td>${p.type}</td><td class="l" style="font-size:11px; max-width:170px;">${p.mainKw.slice(0, 24)}</td>
+      <td class="big">${fi(m.sales)}</td><td>${f1(m.daily)}</td><td>${fi(m.rank)}</td>
+      <td>${usd(m.deal)}</td>
+      <td class="${m.adShareScore > 60 ? "bad" : m.adShareScore > 40 ? "hot" : m.adShareScore < 15 ? "good" : ""}">${pct(m.adShareScore)}</td>
+      <td>${usd(m.spendMonth)}</td><td>${f2(m.cpu)}</td>
+      <td class="${m.profit > 0 ? "good" : "bad"}">${usd(m.profit)}</td>
+      <td style="font-size:11px;">${m.kw}</td><td style="font-size:11px;">${struct}</td>
+      <td class="l" style="font-size:11px;">${p.tag}</td></tr>`;
+  }).join("");
+  const vp = DATA.v503.periods[5];
+  const rows2 = `<tr><td class="l" style="color:#059669; font-weight:800;">V503(自身)</td>
+    <td>有衬垫</td><td class="l" style="font-size:11px;">built in bra / bra tank</td>
+    <td class="big">${fi(vp.sales)}（期）</td><td>${f1(vp.daily)}</td><td>3,416</td>
+    <td>${usd(19.99)}</td><td class="bad">${pct(vp.adShare)}</td>
+    <td>${usd(vp.spend)}（期）</td><td>${f2(12.8)}</td>
+    <td class="bad">${usd(vp.profit)}</td><td style="font-size:11px;">354（5月）</td><td style="font-size:11px;">SP 100%</td>
+    <td class="l" style="font-size:11px;">推广验证期</td></tr>`;
+  document.getElementById("decisionTable").innerHTML =
+    `<thead><tr>${heads.map(h => `<th class="l" style="text-align:left;">${h}</th>`).join("")}</tr></thead>
+     <tbody>${rows}${rows2}</tbody>`;
+}
+function salesTrend(){
+  const W = 760, H = 360, padL = 64, padB = 44, padT = 20, padR = 20;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const months = ["2025-12","2026-01","2026-02","2026-03","2026-04","2026-05"];
+  const series = COMP_ORDER.map(cid => {
+    const p = DATA.profiles[cid];
+    const vals = months.map(m => {
+      const mm = p.months.find(x => x.id === m);
+      return mm ? mm.sales : null;
+    });
+    return { label: p.brand, vals, c: COMP_COLOR[cid] };
+  });
+  const maxV = Math.max(...series.flatMap(s => s.vals).filter(v => v != null));
+  const X = i => padL + i / (months.length - 1) * pw;
+  const Y = v => padT + ph - v / maxV * ph;
+  let g = "";
+  [0, .25, .5, .75, 1].forEach(f => {
+    const y = padT + ph - f * ph;
+    g += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7"/>`;
+    const val = f * maxV;
+    g += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${val >= 1000 ? (val / 1000).toFixed(0) + "k" : Math.round(val)}</text>`;
+  });
+  months.forEach((m, i) => {
+    g += `<text x="${X(i)}" y="${padT + ph + 16}" text-anchor="middle" font-size="10.5" fill="#475569">${m}</text>`;
+  });
+  series.forEach(s => {
+    const pts = s.vals.map((v, i) => v == null ? null : [X(i), Y(v)]);
+    const path = pts.filter(Boolean).map((p, i, arr) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+    g += `<path d="${path}" fill="none" stroke="${s.c}" stroke-width="2.2" opacity=".92"><title>${s.label}</title></path>`;
+    pts.forEach((p, i) => {
+      if (p) g += `<circle cx="${p[0]}" cy="${p[1]}" r="3.2" fill="${s.c}" stroke="#fff" stroke-width="1"><title>${s.label} ${months[i]}：${fi(s.vals[i])}</title></circle>`;
+    });
+    const last = s.vals[s.vals.length - 1];
+    if (last != null) g += `<text x="${X(5) + 6}" y="${Y(last) + 4}" font-size="11" font-weight="700" fill="${s.c}">${s.label}</text>`;
+  });
+  document.getElementById("salesTrend").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`;
+}
+function adEfficiency(){
+  const W = 720, H = 420, padL = 64, padB = 50, padT = 20, padR = 20;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const pts = COMP_ORDER.map(cid => {
+    const p = DATA.profiles[cid], m = p.months[p.months.length - 1];
+    return { x: m.spendMonth, y: m.sales, label: p.brand, cid, c: COMP_COLOR[cid], cpu: m.spendMonth / m.sales };
+  });
+  const xMax = Math.max(...pts.map(p => p.x)) * 1.15 || 1;
+  const yMax = Math.max(...pts.map(p => p.y)) * 1.15 || 1;
+  const X = v => padL + v / xMax * pw, Y = v => padT + ph - v / yMax * ph;
+  let g = "";
+  for (let i = 0; i <= 4; i++) {
+    const y = padT + ph - (i / 4) * ph;
+    g += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7"/>`;
+    g += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${Math.round(yMax * i / 4) >= 1000 ? (yMax * i / 4 / 1000).toFixed(0) + "k" : Math.round(yMax * i / 4)}</text>`;
+    const xv = xMax * i / 4;
+    g += `<line x1="${X(xv)}" y1="${padT}" x2="${X(xv)}" y2="${padT + ph}" stroke="#eef2f7"/>`;
+    g += `<text x="${X(xv)}" y="${padT + ph + 16}" text-anchor="middle" font-size="10" fill="#94a3b8">${xv >= 1000 ? (xv / 1000).toFixed(0) + "k" : Math.round(xv)}</text>`;
+  }
+  [1, 3, 8].forEach(cpu => {
+    const pts2 = [];
+    for (let x = 0; x <= xMax; x += xMax / 200) pts2.push([X(x), Y(x / cpu)]);
+    const path = pts2.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+    g += `<path d="${path}" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4"/><text x="${X(xMax) - 6}" y="${Y(xMax / cpu) - 6}" text-anchor="end" font-size="10" fill="#94a3b8">CPU $${cpu}</text>`;
+  });
+  pts.forEach(p => {
+    g += `<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="7" fill="${p.c}" opacity=".8" stroke="#fff" stroke-width="2"><title>${p.label} · 花费 ${usd(p.x)} · 销量 ${fi(p.y)} · 单均获客 $${p.cpu.toFixed(2)}</title></circle>`;
+    g += `<text x="${X(p.x) + 10}" y="${Y(p.y) + 4}" font-size="11.5" font-weight="800" fill="${p.c}">${p.label}</text>`;
+  });
+  g += `<text x="${padL + pw / 2}" y="${H - 8}" text-anchor="middle" font-size="11.5" fill="#64748b" font-weight="600">月广告花费（$）</text>`;
+  g += `<text x="14" y="${padT + ph / 2}" text-anchor="middle" font-size="11.5" fill="#64748b" font-weight="600" transform="rotate(-90 14 ${padT + ph / 2})">月销量（件）</text>`;
+  document.getElementById("adEfficiency").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`;
+}
+function renderMatrix(){
+  const groups = ["品牌防御词", "品类核心大词", "属性精准词", "前3页其他", "除前3页"];
+  const heads = ["词根分组"].concat(COMP_ORDER.map(cid => DATA.profiles[cid].brand)).concat(["V503 借鉴"]);
+  const refs = { "品牌防御词": "品牌词锁位 · 竞5 用 qinsen 词根承接复购", "品类核心大词": "tank tops 是最大流量口，但竞争激烈 CPC 高", "属性精准词": "built in bra 是赛道差异化词根，增速最快", "前3页其他": "长尾底盘 · 竞1 5月占 45.5% 是自然基本盘", "除前3页": "极长尾纯自然单 · 竞4 5月占 35.1%" };
+  const rows = groups.map(gr => {
+    const cells = COMP_ORDER.map(cid => {
+      const c = DATA.competitors[cid];
+      if (!c) return "<td>—</td>";
+      const m = c.months[c.months.length - 1];
+      const r = m.rows.find(x => x.group === gr);
+      const v = r ? r.salesShare : 0;
+      return `<td class="${v > 30 ? "hot" : v > 15 ? "" : "muted"}" style="font-size:11.5px;">${r ? pct(v, 1) : "—"}</td>`;
+    }).join("");
+    return `<tr><td class="l" style="font-weight:700;">${gr}</td>${cells}<td class="l" style="font-size:11px; color:#065f46;">${refs[gr]}</td></tr>`;
+  }).join("");
+  document.getElementById("matrixTable").innerHTML =
+    `<thead><tr>${heads.map(h => `<th class="${h === "词根分组" || h === "V503 借鉴" ? "l" : ""}" style="text-align:${h === "词根分组" || h === "V503 借鉴" ? "left" : "right"};">${h}</th>`).join("")}</tr></thead><tbody>${rows}</tbody>`;
+}
+function renderPriceTable(){
+  const rows = COMP_ORDER.map(cid => {
+    const p = DATA.profiles[cid], m = p.months[p.months.length - 1];
+    return `<tr><td class="l" style="color:${COMP_COLOR[cid]}; font-weight:800;">${p.brand}</td>
+      <td>${p.price}</td><td>${usd(m.deal)}</td><td class="${m.deal < 16 ? "good" : ""}">${pct((1 - m.deal / (p.price.split("-")[0] ? parseFloat(p.price.split("-")[0]) : 19.99)) * 100)}</td>
+      <td class="l" style="font-size:11px;">${p.note.slice(0, 30)}</td></tr>`;
+  }).join("");
+  document.getElementById("priceTable").innerHTML =
+    `<thead><tr><th class="l">竞对</th><th>价格带（$）</th><th>成交价（$）</th><th>折扣深度</th><th class="l">价格策略</th></tr></thead><tbody>${rows}</tbody>`;
+}
+function renderActionTable(){
+  const acts = [
+    ["竞1 Trendy Queen", "秒杀每月1-2次(14天为主)", "日均$60→485", "关键词 67→10000", "站外 5-22%", "4.91→4.46", "有效", "秒杀+海量词+转自然"],
+    ["竞2 QINSEN", "几乎每月(14天+1天)", "日均$2509→6050", "关键词 10000 常满", "低", "4.2 稳定", "低效", "烧广告维持排名即亏损"],
+    ["竞3 Artfish", "每月(14天为主)", "日均$933→355", "关键词 6370→6947", "低", "4.2 稳定", "低效", "广告占比高，自然未成主力"],
+    ["竞4 OwnTime", "每月1-2次(1-7天)", "日均$89→1353", "关键词 6→4147", "3-34%", "3.82→4.11", "中", "广告依赖，一停即崩"],
+    ["竞5 QINSEN带垫", "5/4-5 秒杀", "日均$35→644", "关键词 877→5246", "7-31%", "4.68→4.54", "高效", "秒杀+站外+标题植入Bra"],
+    ["竞6 C202", "无站内秒杀", "日均$35→265", "关键词 90→1958", "7-33%", "5.0→4.3", "中", "站外冲量+SP承接"],
+    ["竞7 Avidlove", "无秒杀", "日均$441→95", "关键词 809→1843", "40%→9%", "4.4→4.0", "中", "品牌词防御+站外递减"],
+  ];
+  const heads = ["竞对", "价格/促销", "广告预算", "关键词扩张", "站外", "评价", "有效性", "打法定性"];
+  const rows = acts.map(a => `<tr>${a.map((v, i) => i === 0 ? `<td class="l" style="font-weight:700;">${v}</td>` : `<td class="l" style="font-size:11px;">${v}</td>`).join("")}</tr>`).join("");
+  document.getElementById("actionTable").innerHTML =
+    `<thead><tr>${heads.map(h => `<th class="l">${h}</th>`).join("")}</tr></thead><tbody>${rows}</tbody>`;
+}
+
+/* ================= 叁 单竞对深拆 ================= */
+const COLS = [
+  { key:"time", mod:"维度标识", lab:"选取时间", fmt:() => curMonth().label, sortable:false, align:"l" },
+  { key:"group", mod:"维度标识", lab:"词根分组", fmt:r => `<span class="chip ${GROUP_CLS[r.group]}">${r.group}</span>`, sortable:false, align:"l", sticky:true },
+  { key:"totalSales", mod:"总体表现", lab:"竞品总销量", fmt:() => fi(curMonth().sales), sortable:false },
+  { key:"dailySales", mod:"总体表现", lab:"日均销量", fmt:() => f1(curMonth().sales / curMonth().days), sortable:false },
+  { key:"keyword", mod:"词根归因", lab:"主打关键词", fmt:r => r.keyword, sortable:false, align:"l", sticky2:true },
+  { key:"dailyOrders", mod:"词根归因", lab:"词根日均", fmt:r => f2(r.totOrders / curMonth().days), sortable:true },
+  { key:"flowShare", mod:"词根归因", lab:"流量占比", fmt:r => pct(r.flowShare), sortable:true, tip:"词根日均 ÷ 前3页口径日均合计" },
+  { key:"searchFreq", mod:"词根归因", lab:"搜索频率", fmt:r => dash(r.searchFreq == null ? null : fi(parseFloat(r.searchFreq))), sortable:true },
+  { key:"searchVol", mod:"词根归因", lab:"搜索量", fmt:r => dash(r.searchVol == null ? null : fi(parseFloat(r.searchVol))), sortable:true },
+  { key:"totImp", mod:"曝光与出单归因", lab:"总展示量", fmt:r => fi(r.totImp), sortable:true },
+  { key:"orgImp", mod:"曝光与出单归因", lab:"自然展示量", fmt:r => fi(r.orgImp), sortable:true },
+  { key:"adImp", mod:"曝光与出单归因", lab:"广告展示量", fmt:r => fi(r.adImp), sortable:true },
+  { key:"orgOrders", mod:"曝光与出单归因", lab:"词根自然单", fmt:r => f2(r.orgOrders), sortable:true },
+  { key:"adOrders", mod:"曝光与出单归因", lab:"词根广告单", fmt:r => f2(r.adOrders), sortable:true },
+  { key:"totOrders", mod:"曝光与出单归因", lab:"词根总单量", fmt:r => f2(r.totOrders), sortable:true },
+  { key:"salesShare", mod:"曝光与出单归因", lab:"词根销量占比", fmt:r => pct(r.salesShare), sortable:true, tip:"词根总单量 ÷ 月总销量（全量口径）" },
+  { key:"cvr", mod:"曝光与出单归因", lab:"词根转化率", fmt:r => pct(r.cvr * 100), sortable:false, tip:"源数据提供的自然/广告统一转化率" },
+  { key:"clicks", mod:"曝光与出单归因", lab:"词根总点击量", fmt:r => fi(r.clicks), sortable:true },
+  { key:"ctr", mod:"投效转化", lab:"点击率 CTR", fmt:r => pct(r.ctr * 100), sortable:false, tip:"源数据提供的点击率" },
+  { key:"cpc", mod:"投效转化", lab:"CPC", fmt:r => usd(r.cpc), sortable:true },
+  { key:"spend", mod:"投效转化", lab:"花费 ($)", fmt:r => usd(r.spend), sortable:true },
+  { key:"dailySpend", mod:"投效转化", lab:"日均花费 ($)", fmt:r => usd(r.spend / curMonth().days), sortable:true },
+  { key:"tag", mod:"策略标签", lab:"策略标签", fmt:r => tagChip(r), sortable:false, align:"l" }
+];
+function tagChip(r){
+  const m = curMonth(), T = monthTot(m);
+  const adImpShare = r.totImp > 0 ? r.adImp / r.totImp * 100 : 0;
+  const spendShare = T.spend > 0 ? r.spend / T.spend * 100 : 0;
+  if (adImpShare > 40 && spendShare > 50) return `<span class="chip tag-attack">🎯 战略攻坚词</span>`;
+  if (r.flowShare != null && r.flowShare > 15 && r.spend < 30) return `<span class="chip tag-free">🌿 高权重自然词</span>`;
+  return `<span class="chip tag-none">—</span>`;
+}
+function deepKpi(m, T){
+  const cards = [
+    { lab:"竞品总销量", val:fi(m.sales), sub:"有效天数 " + m.days + " 天", ico:"🛒", c:"#eef2ff", bar:"#6366f1" },
+    { lab:"日均销量", val:f1(T.dailySales), sub:m.sales + " ÷ " + m.days, ico:"📅", c:"#e0f2fe", bar:"#0ea5e9" },
+    { lab:"总广告花费(归因)", val:usd(T.spend), sub:"日均 " + usd(T.dailySpend), ico:"💸", c:"#fef3c7", bar:"#f59e0b" },
+    { lab:"平均 CPC", val:usd(T.avgCpc, 2), sub:"加权", ico:"🎯", c:"#fce7f3", bar:"#ec4899" },
+    { lab:"自然订单", val:fi(T.orgOrders) + " 单", sub:"占比 " + pct(T.orgShare), ico:"🌿", c:"#d1fae5", bar:"#10b981" },
+    { lab:"广告订单", val:fi(T.adOrders) + " 单", sub:"占比 " + pct(T.adShare), ico:"📣", c:"#fee2e2", bar:"#ef4444" }
+  ];
+  return `<div class="kpi-grid">${cards.map(x => `
+    <div class="card kpi"><div class="ico" style="background:${x.c};">${x.ico}</div>
+      <div class="lab">${x.lab}</div><div class="val">${x.val}</div>
+      <div class="sub">${x.sub}</div><div class="bar" style="background:${x.bar};"></div></div>`).join("")}</div>`;
+}
+function deepAlerts(m, T){
+  const out = [];
+  m.rows.forEach(r => {
+    const adImpShare = r.totImp > 0 ? r.adImp / r.totImp * 100 : 0;
+    const spendShare = T.spend > 0 ? r.spend / T.spend * 100 : 0;
+    if (adImpShare > 40 && spendShare > 50) out.push({ tag:"战略攻坚词", cls:"tag-attack", head:"🎯 战略攻坚词", kw:r.keyword,
+      why:`广告展示占比 ${pct(adImpShare)} ＞ 40% 且 广告花费占比 ${pct(spendShare)} ＞ 50%`,
+      rule:"规则：广告展示量/总展示量 > 40% 且 广告花费占比 > 50%" });
+    if (r.flowShare != null && r.flowShare > 15 && r.spend < 30) out.push({ tag:"高权重自然词", cls:"tag-free", head:"🌿 高权重自然词", kw:r.keyword,
+      why:`流量占比 ${pct(r.flowShare)} ＞ 15% 且 广告花费 ${usd(r.spend)} ＜ $30`,
+      rule:"规则：流量占比 > 15% 且 广告花费 < $30" });
+  });
+  const cpcThreshold = T.avgCpc * CFG.cpcWarnRatio;
+  const badCpc = m.rows.filter(r => r.cpc != null && r.cpc > cpcThreshold && r.cvr < CFG.cvrFloor);
+  if (badCpc.length) badCpc.forEach(r => out.push({ tag:"广告效率低下", cls:"tag-warn", head:"⚠️ 广告效率低下预警", kw:r.keyword,
+    why:`CPC ${usd(r.cpc)} ＞ ${usd(cpcThreshold)}（品类平均 ${usd(T.avgCpc)} × 1.3）且 转化率 ${pct(r.cvr * 100)} ＜ 8%`,
+    rule:"规则：CPC > 品类平均 × 130% 且 转化率 < 8%" }));
+  else out.push({ tag:"未触发", cls:"tag-none", head:"✅ CPC 预警未触发", kw:"全部词根正常",
+    why:`品类平均 CPC ${usd(T.avgCpc)} × 1.3 = ${usd(cpcThreshold)}，最高 CPC ${usd(Math.max(0, ...m.rows.map(r => r.cpc ?? 0)))}`,
+    rule:"规则：CPC > 品类平均 × 130% 且 转化率 < 8%" });
+  if (!out.length) out.push({ tag:"无命中", cls:"tag-none", head:"✅ 无预警命中", kw:"当前词根健康", why:"未触发攻坚/白嫖/CPC 预警", rule:"规则详见 §5" });
+  return `<div class="alert-grid">${out.map(a => `
+    <div class="alert"><div class="a-head">${a.head}<span class="a-tag ${a.cls}">${a.tag}</span></div>
+      <div class="a-kw">关键词：${a.kw}</div><div class="a-why">${a.why}</div>
+      <div class="a-rule">${a.rule}</div></div>`).join("")}</div>`;
+}
+function deepBalance(m, T){
+  const diff = T.totOrders - m.sales;
+  const ok = Math.abs(diff) < 0.001;
+  const segs = m.rows.map(r => ({ label:r.group, v:r.totOrders, c:GROUP_COLORS[r.group] }));
+  const c = m.correction;
+  let note = "";
+  if (c.mode === "derive" && c.beyondOrders > 0) {
+    note = `📌 平衡推导「除前3页」= ${fde(c.beyondOrders)} 单（${pct(c.beyondOrders / m.sales * 100)}）。原始读数 ${fde(c.beyondRawReading)} 单与该行占比 ${pct((c.beyondRawShare ?? 0) * 100)} 不闭合（${fde(c.beyondRawReading)}/${fi(m.sales)} ≈ ${pct((c.beyondRawReading ?? 0) / m.sales * 100)}），以推导值为准。`;
+  } else if (c.mode === "scale") {
+    note = `📌 前3页原始 Σ ${fde(c.origSum)} 件 ＞ 月总销量 ${fi(m.sales)}（超 ${pct((c.origSum / m.sales - 1) * 100, 2)}），等比缩放 ×${c.scale.toFixed(5)} 闭合，「除前3页」= 0。`;
+  }
+  return `<div class="bal-wrap">
+    <div class="bal-line"><span>自然单 <b>${fde(T.orgOrders)}</b> + 广告单 <b>${fde(T.adOrders)}</b> = 词根总单量 <b>${fde(T.totOrders)}</b> 件</span>
+      <span>竞品总销量 <b>${fi(m.sales)}</b> 件</span>
+      <span class="bal-check ${ok ? "" : "bad"}">${ok ? "✓ 校验通过" : "✗ 校验失败 Δ" + fde(diff)} · 100% 归因闭环</span></div>
+    <div class="stackbar">${segs.map(s => `<div style="width:${(s.v / T.totOrders * 100).toFixed(2)}%; background:${s.c};" title="${s.label}：${fde(s.v)}"></div>`).join("")}</div>
+    <div class="bal-legend">${segs.map(s => `<span><i style="background:${s.c};"></i>${s.label} ${fde(s.v)} 单 · ${pct(s.v / T.totOrders * 100)}</span>`).join("")}</div>
+    ${note ? `<div class="bal-note">${note}</div>` : ""}</div>`;
+}
+function deepTable(m){
+  const T = monthTot(m);
+  let data = m.rows.slice();
+  const sk = state.sortKey, sd = state.sortDir;
+  if (sk) data = data.slice().sort((a, b) => ((a[sk] ?? -Infinity) - (b[sk] ?? -Infinity)) * sd);
+  const segs = [];
+  let curMod = null;
+  COLS.forEach(c => { if (!curMod || curMod.name !== c.mod) { curMod = { name:c.mod, cols:[] }; segs.push(curMod); } curMod.cols.push(c); });
+  const modRow = "<tr>" + segs.map(s => `<th class="mod" colspan="${s.cols.length}" style="background:#64748b;">${s.name} (${s.cols.length}项)</th>`).join("") + "</tr>";
+  const fldRow = "<tr>" + COLS.map(c => {
+    const sticky = c.sticky ? " sticky" : c.sticky2 ? " sticky2" : "";
+    const arr = c.sortable ? `<span class="arr">${state.sortKey === c.key ? (state.sortDir === 1 ? "▲" : "▼") : "⇅"}</span>` : "";
+    return `<th class="fld${sticky} ${c.align === "l" ? "l" : ""}" data-key="${c.key}" title="${c.tip || ""}">${c.lab}${arr}</th>`;
+  }).join("") + "</tr>";
+  const body = data.map(r => `<tr>${COLS.map(c => {
+    const sticky = c.sticky ? " sticky" : c.sticky2 ? " sticky2" : "";
+    return `<td class="${c.align === "l" ? "l" : ""}${sticky}" title="${c.tip || ""}">${c.fmt(r)}</td>`;
+  }).join("")}</tr>`).join("");
+  const sums = {};
+  ["orgImp","adImp","totImp","orgOrders","adOrders","totOrders","clicks","spend"].forEach(k =>
+    sums[k] = data.reduce((s, r) => s + (r[k] ?? 0), 0));
+  const totalRow = COLS.map(c => {
+    let v = "—";
+    if (c.key === "time") v = m.label;
+    else if (c.key === "group") v = "合计";
+    else if (c.key === "keyword") v = data.length + " 个词根分组";
+    else if (c.key === "totalSales") v = fi(m.sales);
+    else if (c.key === "dailySales") v = f1(T.dailySales);
+    else if (c.key === "flowShare") v = pct(m.rows.filter(r => r.group !== "除前3页").reduce((s, r) => s + r.flowShare, 0)) + "（前3页口径）";
+    else if (c.key === "salesShare") v = "100.00%";
+    else if (c.key === "cvr") v = "源数据口径";
+    else if (c.key === "ctr") v = "源数据口径";
+    else if (c.key === "cpc") v = T.adClicks > 0 ? usd(T.spend / T.adClicks) : "—";
+    else if (c.key === "tag") v = "";
+    else if (c.key in sums) v = ["totImp","orgImp","adImp","clicks"].includes(c.key) ? fi(sums[c.key]) : f2(sums[c.key]);
+    return `<td class="${c.align === "l" ? "l" : ""}">${v}</td>`;
+  }).join("");
+  return `<div class="tbl-scroll"><table style="min-width:1580px;">
+    <thead>${modRow}${fldRow}</thead><tbody>${body}</tbody>
+    <tfoot><tr>${totalRow}</tr></tfoot></table></div>`;
+}
+function deepCharts(m){
+  const T = monthTot(m);
+  const imp = m.rows.map(r => ({ label:r.group, a:r.orgImp, b:r.adImp }));
+  const ord = m.rows.map(r => ({ label:r.group, a:r.orgOrders, b:r.adOrders }));
+  let g = "";
+  g += stacked("ch1", imp, state.logImp, fi);
+  g += stacked("ch2", ord, state.logOrd, f2);
+  // donut
+  const items = m.rows.map(r => ({ label:r.group, v:r.totOrders, c:GROUP_COLORS[r.group] }));
+  const total = items.reduce((s, i) => s + i.v, 0);
+  const R = 64, C = 2 * Math.PI * R, cx = 100, cy = 100, sw = 24;
+  let offset = 0, segs = "";
+  items.forEach(it => { const share = it.v / total; const len = share * C;
+    segs += `<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="${it.c}" stroke-width="${sw}" stroke-dasharray="${len} ${C - len + 1}" stroke-dashoffset="${-offset}" transform="rotate(-90 ${cx} ${cy})"><title>${it.label} ${pct(share * 100)}</title></circle>`; offset += len; });
+  g += `<div class="card card-pad chart-box"><div class="sec-title" style="font-size:14px;">销量贡献分布</div>
+    <svg viewBox="0 0 200 200" role="img">${segs}<text x="${cx}" y="${cy + 5}" text-anchor="middle" font-size="24" font-weight="800" fill="#0f172a">${fi(total)}</text></svg>
+    <div class="legend">${items.map(it => `<span><i style="background:${it.c};"></i>${it.label} ${pct(it.v / total * 100)}</span>`).join("")}</div></div>`;
+  // spend bars
+  const sp = m.rows.slice().sort((a, b) => b.spend - a.spend);
+  const maxSp = Math.max(...sp.map(r => r.spend)) || 1;
+  const H2 = 30 + sp.length * 40, padL2 = 110;
+  let spg = "";
+  sp.forEach((r, i) => { const y = 16 + i * 40, bw = (560 - padL2 - 90) * (r.spend / maxSp);
+    spg += `<text x="${padL2 - 10}" y="${y + 13}" text-anchor="end" font-size="11" fill="#475569">${r.group}</text>
+      <rect x="${padL2}" y="${y}" width="${Math.max(bw, r.spend > 0 ? 3 : 0)}" height="20" rx="5" fill="${GROUP_COLORS[r.group]}"><title>${r.group} ${usd(r.spend)}</title></rect>
+      <text x="${padL2 + bw + 8}" y="${y + 15}" font-size="11" font-weight="700">${usd(r.spend)}</text>`; });
+  g += `<div class="card card-pad chart-box"><div class="sec-title" style="font-size:14px;">广告花费构成（归因口径 ${usd(T.spend)}）</div>
+    <svg viewBox="0 0 560 ${H2}" role="img">${spg}</svg></div>`;
+  return `<div class="charts-grid">${g}</div>`;
+  function stacked(id, items, log, fmt){
+    const W = 560, H = 260, padL = 120, padR = 14, padT = 16, padB = 42;
+    const pw = W - padL - padR, ph = H - padT - padB;
+    const maxV = Math.max(...items.map(i => i.a + i.b));
+    const sc = v => log ? Math.log10(1 + v) / Math.log10(1 + maxV) : v / maxV;
+    const n = items.length, slot = pw / n, bw = Math.min(64, slot * 0.56);
+    let gg = "";
+    [0, .25, .5, .75, 1].forEach(f => { const y = padT + ph - f * ph;
+      gg += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7"/>`;
+      const val = log ? Math.pow(10, f * Math.log10(1 + maxV)) - 1 : f * maxV;
+      gg += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${val >= 1000 ? (val / 1000).toFixed(0) + "k" : Math.round(val)}</text>`; });
+    items.forEach((it, i) => { const cx = padL + slot * i + slot / 2, x = cx - bw / 2;
+      const ha = sc(it.a) * ph, hb = sc(it.b) * ph, ya = padT + ph - ha, yb = ya - hb;
+      gg += `<rect x="${x}" y="${ya}" width="${bw}" height="${ha}" rx="3" fill="#3b82f6"><title>${it.label} 自然 ${fi(it.a)}</title></rect>`;
+      gg += `<rect x="${x}" y="${yb}" width="${bw}" height="${hb}" rx="3" fill="#f59e0b"><title>${it.label} 广告 ${fi(it.b)}</title></rect>`;
+      gg += `<text x="${cx}" y="${yb - 7}" text-anchor="middle" font-size="11" font-weight="700">${fmt(it.a + it.b)}</text>`;
+      gg += `<text x="${cx}" y="${padT + ph + 16}" text-anchor="middle" font-size="10.5" fill="#475569">${it.label}</text>`; });
+    return `<div class="card card-pad chart-box"><div class="sec-head"><div class="sec-title" style="font-size:14px;">${id === "ch1" ? "流量来源构成（展示量）" : "出单归因（自然单 vs 广告单）"}</div>
+      <div class="toggle">${["线性","对数"].map((t, ti) => `<button data-v="${ti === 0 ? "linear" : "log"}" class="${log === (ti === 1) ? "on" : ""}">${t}</button>`).join("")}</div></div>
+      <svg viewBox="0 0 ${W} ${H}" role="img">${gg}</svg>
+      <div class="legend"><span><i style="background:#3b82f6;"></i>${id === "ch1" ? "自然展示量" : "词根自然单"}</span><span><i style="background:#f59e0b;"></i>${id === "ch1" ? "广告展示量" : "词根广告单"}</span></div></div>`;
+  }
+}
+function weeklyChart(cid){
+  const w = DATA.weekly[cid];
+  const W = 720, H = 260, padL = 52, padB = 38, padT = 16, padR = 16;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const maxV = Math.max(...w.sales);
+  const X = i => padL + i / (w.weeks.length - 1) * pw;
+  const Y = v => padT + ph - v / maxV * ph;
+  let g = "";
+  [0, .25, .5, .75, 1].forEach(f => { const y = padT + ph - f * ph;
+    g += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7"/>`;
+    g += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${Math.round(maxV * f)}</text>`; });
+  const path = w.sales.map((v, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1)).join(" ");
+  g += `<path d="${path}" fill="none" stroke="${COMP_COLOR[cid]}" stroke-width="2.4"/>`;
+  w.sales.forEach((v, i) => {
+    g += `<circle cx="${X(i)}" cy="${Y(v)}" r="4" fill="${COMP_COLOR[cid]}" stroke="#fff" stroke-width="1.5"><title>${w.weeks[i]}：${v} 单 · 排名 ${w.rank[i] ?? "—"} · 广告占比 ${w.adShare[i] ?? "—"}%</title></circle>`;
+    g += `<text x="${X(i)}" y="${Y(v) - 8}" text-anchor="middle" font-size="9.5" fill="#475569">${v}</text>`;
+    g += `<text x="${X(i)}" y="${padT + ph + 14}" text-anchor="middle" font-size="9" fill="#94a3b8">${w.weeks[i]}</text>`;
+  });
+  document.getElementById("weeklyChart").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`;
+}
+function renderDeep(){
+  const tabs = COMP_ORDER.map(cid => {
+    const p = DATA.profiles[cid];
+    return `<button class="tab-btn ${state.tab === cid ? "on" : ""}" data-tab="${cid}">
+      <span class="dot" style="background:${COMP_COLOR[cid]};"></span>${p.brand}</button>`;
+  }).join("");
+  document.getElementById("compTabs").innerHTML = tabs;
+  document.querySelectorAll("#compTabs .tab-btn").forEach(b =>
+    b.addEventListener("click", () => { state.tab = b.dataset.tab; state.mi = 0; renderDeep(); }));
+
+  const cid = state.tab;
+  const p = DATA.profiles[cid];
+  const hasAttr = !!DATA.competitors[cid] && DATA.competitors[cid].months.length > 0;
+  let body = `<div class="card card-pad" style="margin-bottom:14px;">
+    <div class="kpi-grid" style="margin-bottom:12px;">
+      <div class="card kpi"><div class="lab">品牌 / ASIN</div><div class="val" style="font-size:16px;">${p.brand}</div><div class="sub">${p.asin} · ${p.type}</div></div>
+      <div class="card kpi"><div class="lab">小类排名 / 评分</div><div class="val" style="font-size:16px;">${p.smallRank}</div><div class="sub">${p.rating}</div></div>
+      <div class="card kpi"><div class="lab">价格带</div><div class="val" style="font-size:16px;">${p.price}</div><div class="sub">${p.colors} / ${p.sizes}</div></div>
+      <div class="card kpi"><div class="lab">上架 / 定位</div><div class="val" style="font-size:16px;">${p.list}</div><div class="sub">${p.tag}</div></div>
+    </div>
+    <div class="watch-note"><b>画像：</b>${p.note}</div>
+    <div class="tooltip-note" style="margin-top:6px;"><b>标题：</b>${p.title}</div>
+    <div class="tooltip-note"><b>7天主要流量词：</b>${p.mainKw}</div>
+  </div>`;
+
+  if (hasAttr) {
+    const comp = DATA.competitors[cid];
+    const mOpts = comp.months.map((m, i) => `<option value="${i}" ${i === state.mi ? "selected" : ""}>${m.label}（月销 ${fi(m.sales)}）</option>`).join("");
+    body += `<div class="card card-pad" style="margin-bottom:14px;">
+      <div class="sec-head"><div class="sec-title">月度归因看板</div>
+        <div class="ctl" style="display:flex; align-items:center; gap:8px;"><label>选取时间</label>
+        <select id="deepMonth" style="border:1px solid #cbd5e1; border-radius:8px; padding:5px 10px; font-size:13px;">${mOpts}</select></div>
+      </div>
+      <div id="deepMonthBody"></div></div>`;
+    body += `<div class="card card-pad" id="deepExtra" style="margin-top:14px;"></div>`;
+  } else {
+    // profile-only competitors (c2/c3): monthly trend table
+    const heads = ["月份","总得分","广告占比","月销量","日均","月均排名","成交价$","月花费$","CPU","利润$","关键词数"];
+    const trs = p.months.map(m => `<tr>
+      <td class="l" style="font-weight:700;">${m.label}</td><td>${fi(m.totScore)}</td>
+      <td class="${m.adShareScore > 60 ? "bad" : m.adShareScore > 40 ? "hot" : ""}">${pct(m.adShareScore)}</td>
+      <td class="big">${fi(m.sales)}</td><td>${f1(m.daily)}</td><td>${fi(m.rank)}</td>
+      <td>${usd(m.deal)}</td><td>${usd(m.spendMonth)}</td><td>${f2(m.cpu)}</td>
+      <td class="${m.profit > 0 ? "good" : "bad"}">${usd(m.profit)}</td><td style="font-size:11px;">${m.kw}</td></tr>`).join("");
+    body += `<div class="card card-pad">
+      <div class="sec-title" style="font-size:14px; margin-bottom:10px;">月度运营趋势（2025-12 ~ 2026-05 · 无关键词级归因数据）</div>
+      <div style="overflow-x:auto;"><table class="cmp-table">
+        <thead><tr>${heads.map(h => `<th class="${h === "月份" ? "l" : ""}" style="text-align:${h === "月份" ? "left" : "right"};">${h}</th>`).join("")}</tr></thead>
+        <tbody>${trs}</tbody></table></div>
+      <div class="warn-note" style="margin-top:10px;"><b>运营解读：</b>${cid === "c2" ? "QINSEN 无衬垫链接：2024 年巅峰月销 4 万+，2025 年起排名从第 4 跌至第 28，靠高频秒杀+高广告花费维持排名（广告占比常年 36-55%），5月亏损 $7.8 万——「维持排名必须烧广告、烧广告就亏损」的恶性循环，对 V503 无复制价值。" : "Artfish 无衬垫链接：月销 1.2 万-3.5 万震荡，广告得分常年在 3 万-11 万（占比最高 88%），推词“很散”无聚焦，自然流量从未成为主力；5月广告预算骤降（日均 $355）后利润转正 $6.1 万——验证降广告后自然流量仍可支撑，但排名不稳定。"}</div>
+    </div>`;
+  }
+  document.getElementById("deepBody").innerHTML = body;
+  if (hasAttr) {
+    renderMonthBody();
+    const sel = document.getElementById("deepMonth");
+    if (sel) sel.addEventListener("change", e => { state.mi = Number(e.target.value); renderMonthBody(); renderDeepExtra(); });
+    renderDeepExtra();
+    // weekly ramp for c5/c6/c7
+    if (DATA.weekly[cid]) {
+      const wcard = document.createElement("div");
+      wcard.className = "card card-pad";
+      wcard.style.marginTop = "14px";
+      wcard.innerHTML = `<div class="sec-title" style="font-size:14px; margin-bottom:8px;">周度起量曲线（周销量 / 周排名 / 广告占比）</div><div id="weeklyChart"></div>`;
+      document.getElementById("deepBody").appendChild(wcard);
+      weeklyChart(cid);
+    }
+  }
+}
+function renderMonthBody(){
+  const m = curMonth(), T = monthTot(m);
+  document.getElementById("deepMonthBody").innerHTML =
+    deepKpi(m, T) +
+    `<div class="sec-head" style="margin-top:16px;"><div class="sec-title" style="font-size:14px;">自动化策略预警</div></div>` +
+    deepAlerts(m, T) +
+    `<div class="sec-head" style="margin-top:16px;"><div class="sec-title" style="font-size:14px;">全表平衡校验</div></div>` +
+    deepBalance(m, T) +
+    `<div class="sec-head" style="margin-top:16px;"><div class="sec-title" style="font-size:14px;">主数据透视表（21 项核心指标 · 5 大模块）</div>
+     <div class="sec-sub">点击表头排序 · 默认按流量占比降序</div></div>` +
+    deepTable(m) +
+    `<div class="sec-head" style="margin-top:16px;"><div class="sec-title" style="font-size:14px;">归因图表</div></div>` +
+    deepCharts(m);
+  document.getElementById("deepMonthBody").querySelectorAll("th[data-key]").forEach(th =>
+    th.addEventListener("click", () => {
+      const k = th.dataset.key;
+      if (!COLS.find(c => c.key === k)?.sortable) return;
+      if (state.sortKey === k) state.sortDir *= -1; else { state.sortKey = k; state.sortDir = -1; }
+      renderMonthBody();
+    }));
+}
+function renderDeepExtra(){
+  const p = DATA.profiles[state.tab];
+  const m = p.months[p.months.length - 1];
+  document.getElementById("deepExtra").innerHTML = `
+    <div class="sec-title" style="font-size:14px; margin-bottom:10px;">最新月运营上下文（${m.label}）</div>
+    <div class="kpi-grid">
+      ${[
+        ["月均排名", fi(m.rank), "卖家精灵"],
+        ["平均成交价", usd(m.deal), "价格带 " + p.price],
+        ["广告关键词数", m.kw, "自然 + 广告"],
+        ["月广告花费", usd(m.spendMonth), "日均 " + usd(m.spendDaily)],
+        ["月利润", usd(m.profit), "CPU " + f2(m.cpu)],
+        ["广告花费占营收", pct(m.spendRevShare), "广告得分占比 " + pct(m.adShareScore)],
+      ].map(x => `<div class="card kpi"><div class="lab">${x[0]}</div><div class="val" style="font-size:18px;">${x[1]}</div><div class="sub">${x[2]}</div></div>`).join("")}
+    </div>
+    <div class="watch-note" style="margin-top:10px;">${p.note}</div>`;
+}
+
+/* ================= 肆 策略素材 ================= */
+function renderStages(){
+  const v = DATA.v503;
+  const heads = ["阶段","日均销量","CTR","CVR","决策因果（依据与成效）"];
+  const rows = v.stages.map((s, i) => `<tr>
+    <td class="l" style="font-weight:700;">${s.p}</td><td class="big">${s.daily}</td>
+    <td>${(s.ctr * 100).toFixed(2)}%</td><td>${(s.cvr).toFixed(1)}%</td>
+    <td class="l" style="font-size:11.5px; text-align:left;">${s.story}</td></tr>`).join("");
+  document.getElementById("stageTable").innerHTML =
+    `<thead><tr>${heads.map(h => `<th class="l">${h}</th>`).join("")}</tr></thead><tbody>${rows}</tbody>`;
+  document.getElementById("v503Note").innerHTML = `<b>V503 推广复盘结论：</b>${v.ops}`;
+}
+function profitChart(){
+  const plan = DATA.profitPlan;
+  const W = 720, H = 300, padL = 56, padB = 42, padT = 18, padR = 20;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const maxDaily = Math.max(...plan.map(p => p.daily));
+  const maxProfit = Math.max(...plan.map(p => p.profit), 1);
+  const minProfit = Math.min(...plan.map(p => p.profit));
+  const X = i => padL + i / (plan.length - 1) * pw;
+  const Yd = v => padT + ph - v / maxDaily * ph;
+  const Yp = v => padT + ph - (v - minProfit) / (maxProfit - minProfit) * ph;
+  let g = "";
+  [0, .25, .5, .75, 1].forEach(f => { const y = padT + ph - f * ph;
+    g += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7"/>`;
+    g += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${Math.round(maxDaily * f)}</text>`; });
+  const bars = plan.map((p, i) => {
+    const bw = 22;
+    return `<rect x="${X(i) - bw / 2}" y="${Yd(p.daily)}" width="${bw}" height="${padT + ph - Yd(p.daily)}" rx="3" fill="#2563eb" opacity=".85"><title>${p.m} 日均 ${p.daily}</title></rect>`;
+  }).join("");
+  const line = plan.map((p, i) => (i ? "L" : "M") + X(i).toFixed(1) + " " + Yp(p.profit).toFixed(1)).join(" ");
+  g += bars;
+  g += `<path d="${line}" fill="none" stroke="#10b981" stroke-width="2.5"/>`;
+  plan.forEach((p, i) => {
+    g += `<circle cx="${X(i)}" cy="${Yp(p.profit)}" r="4" fill="${p.profit >= 0 ? "#10b981" : "#ef4444"}" stroke="#fff" stroke-width="1.5"><title>${p.m} 利润 ${usd(p.profit)}</title></circle>`;
+    g += `<text x="${X(i)}" y="${padT + ph + 16}" text-anchor="middle" font-size="9.5" fill="#94a3b8">${p.m}</text>`;
+  });
+  g += `<line x1="${padL}" y1="${Yp(0)}" x2="${W - padR}" y2="${Yp(0)}" stroke="#ef4444" stroke-dasharray="4 4"/>`;
+  g += `<text x="${padL + 4}" y="${Yp(0) - 5}" font-size="10" fill="#ef4444">盈亏平衡线（2027/04 转正）</text>`;
+  document.getElementById("profitChart").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`;
+}
+function renderSOP(){
+  const sops = [
+    { t: "🎯 品牌防御打法", c: "竞5/竞7 用 qinsen / avidlove 品牌词根锁定复购与防御（竞5 品牌词月投 $12-312）；V503 应在标题/五点持续植入 Upushall 品牌词，承接站外与复购流量。" },
+    { t: "⚔️ 大词攻坚打法", c: "tank tops for women 是最大流量口（竞1 5月 15551 单、竞4 5月 2341 单），但 CPC 高（$1.0-1.4）。V503 按利润测算以 tank top + built in bra 为主打词组合，0.8 CPC 基准线三档出价测试。" },
+    { t: "🌿 长尾底盘打法", c: "竞1 5月「前3页其他+除前3页」占销量 60.8%——海量关键词覆盖（10000 个）撑起长尾自然基本盘。V503 关键词数 354→305 严重不足，需从「精打」转「广撒网」矩阵扩张。" },
+    { t: "💰 价格结构打法", c: "带垫组统一 19.99 驱动价（V503 已验证）+ 高划线价制造折扣空间（竞5 用 38.99 划线）；利润测算以 $19.99、单件毛利 $5.87、单均获客成本 $15.7 为基准，$5 毛利/单为可盈利红线。" },
+    { t: "🧪 属性词验证打法", c: "built in bra 是增速最快的差异化词根（ABA 一年 8-25 倍跃升）；竞6 从 lace 精准词转 camisole/tank 大词实现量级突破；V503 应重仓 built in bra + crop 属性矩阵，crop 方向已验证过窄需慎用。" },
+    { t: "🚫 风险红线", c: "① 不学竞2/竞3 散投大词烧量（广告占比>50% 即亏损）；② 不学竞4 纯广告依赖（广告一停单量即崩）；③ 站外流量占比控制 20-30%（竞5 用站外拉量但排名不稳）；④ 评分是生命线（竞5/竞6/竞7 评分下滑均伴随排名波动）。" },
+  ];
+  document.getElementById("sopGrid").innerHTML = sops.map(s =>
+    `<div class="sop-card"><div class="sop-title">${s.t}</div><div class="sop-body">${s.c}</div></div>`).join("");
+}
+
+/* ================= 追溯底稿 / 字典 ================= */
+function renderAudit(){
+  const rowsAll = [];
+  COMP_ORDER.forEach(cid => {
+    const c = DATA.competitors[cid];
+    if (!c) return;
+    c.months.forEach(m => {
+      const cc = m.correction;
+      let act;
+      if (cc.mode === "derive" && cc.beyondOrders > 0) act = `推导「除前3页」${fde(cc.beyondOrders)} 单（${pct(cc.beyondOrders / m.sales * 100)}）`;
+      else if (cc.mode === "scale") act = `原始 Σ ${fde(cc.origSum)} 件 ＞ 销量 ${fi(m.sales)}，等比缩放 ×${cc.scale.toFixed(5)}`;
+      else act = "前3页已覆盖 100%";
+      rowsAll.push(`<tr><td>${DATA.profiles[cid].brand}</td><td>${m.label}</td><td>${fi(m.sales)}</td><td>${act}</td>
+        <td>${cc.beyondRawReading == null || cc.beyondRawReading === 0 ? "—" : fde(cc.beyondRawReading) + " 单（占比 " + pct((cc.beyondRawShare ?? 0) * 100) + "）"}</td></tr>`);
+    });
+  });
+  document.getElementById("auditBody").innerHTML = `
+    <b>① 数据来源：</b>《V503-修身方领背心-竞对分析.xlsx》（16 个 sheet：竞品汇总 / V503-分析 / 利润测算 / 竞1-竞7 分析 / 竞1、4、5、6、7 推广数据 / 广告关键词ABA排名），评分、销量、BSR、花费、利润为西柚洞察 + 卖家精灵第三方估算，需后台人工复核。
+    <br><b>② 竞对分组：</b>无衬垫组（竞1 Trendy Queen / 竞2 QINSEN / 竞3 Artfish）为存量成熟链接；有衬垫组（竞4 OwnTime / 竞5 QINSEN带垫 / 竞6 C202 / 竞7 Avidlove + V503）为 2025-12 至 2026-04 集中上架的新品——V503 的真实竞争集是带衬垫组。
+    <br><b>③ 归因覆盖：</b>竞1/竞4 有 6 个月（2025-12 ~ 2026-05）21 列归因；竞5/竞6/竞7 有 2 个月（2026-04/05）；竞2/竞3 仅有月度画像（无关键词级归因），横向对比中以画像字段呈现。
+    <br><b>④ 平衡校验修正（强制规则）：</b>「除前3页」= 月总销量 − 前4项合计；原始读数与占比不闭合时以推导值为准。
+    <div style="overflow-x:auto; margin-top:8px;"><table class="audit-table">
+      <thead><tr><th>竞对</th><th>月份</th><th>总销量</th><th>修正动作</th><th>原始读数（修正前）</th></tr></thead>
+      <tbody>${rowsAll.join("")}</tbody></table></div>
+    <br><b>⑤ 口径差异：</b>CTR/转化率默认 4%/10%（竞1/竞5/竞6/竞7 主词根）；竞4 三月起源数据用 2%-2.5% CTR、8%-9% 转化率；竞5/竞6/竞7 品牌词 8%、竞6 品牌词 6%——透视表按源数据逐行展示。有效统计天数按各月日均销量反推（12月 23 天因 12.9 开推；竞5 4月 14 天、竞6 4月 5 天、竞7 4月 9 天为周度起量期）。
+    <br><b>⑥ 锚点验证：</b>竞1·2025年12月 = 614 件 / $679.88 / 自然 88.13%，与源数据逐项一致。
+    <br><b>⑦ 数据边界：</b>V503 期销量为双周颗粒度、利润测算为测算值（非实测）；竞5/竞6/竞7 的周均排名、评分波动为周度采样。`;
+}
+const DICT = [
+  ["选取时间", "维度标识", "String/Date", "统计月份（竞1/竞4 6 个月；竞5-7 2 个月）"],
+  ["竞品总销量", "总体表现", "Integer", "该 ASIN 全渠道预估总销售件数"],
+  ["日均销量", "总体表现", "Float", "总销量 ÷ 有效统计天数"],
+  ["主打关键词", "词根归因", "Text Group", "按词根归拢的关键词集合"],
+  ["词根日均", "词根归因", "Float", "词根每日贡献预估出单量"],
+  ["流量占比", "词根归因", "Percentage", "词根日均 ÷ 前3页口径日均合计（前3页口径 Σ=100%）"],
+  ["搜索频率 / 搜索量", "词根归因", "Integer Multi", "ABA 排名（市场级）与站内月度估算搜索量"],
+  ["总/自然/广告展示量", "曝光与出单归因", "Integer", "自然 + 广告曝光构成"],
+  ["词根自然单 / 广告单", "曝光与出单归因", "Float", "展示量 × CTR × 转化率（源数据口径）"],
+  ["词根总单量 / 销量占比", "曝光与出单归因", "Float / %", "总单量 = 自然单 + 广告单；占比 = 总单量 ÷ 月总销量（全量口径 Σ=100%）"],
+  ["词根转化率 / 点击率", "曝光与出单归因", "%", "源数据逐行提供（4%/10% 默认，竞4 三月起 2-2.5%/8-9%）"],
+  ["CPC / 花费 / 日均花费", "投效转化", "$", "广告点击成本、广告点击量 × CPC、总花费 ÷ 有效天数"],
+  ["策略标签", "策略标签", "Text", "攻坚词 / 高权重自然词 / 效率预警"],
+];
+function renderDict(){
+  document.getElementById("dictTable").innerHTML =
+    `<thead><tr><th>字段</th><th>模块</th><th>类型</th><th>含义</th></tr></thead>
+     <tbody>${DICT.map(d => `<tr><td class="v">${d[0]}</td><td>${d[1]}</td><td>${d[2]}</td><td>${d[3]}</td></tr>`).join("")}</tbody>`;
+  const F = [
+    ["词根总展示量", "自然展示量 + 广告展示量", "例：竞1 5月 tank 组 3,887,753"],
+    ["词根自然单", "自然展示量 × CTR × 转化率", "例：3,865,887 × 4% × 10% = 15,463.6"],
+    ["词根广告单", "广告展示量 × CTR × 转化率", "例：21,866 × 4% × 10% = 87.5"],
+    ["除前3页推导", "月总销量 − 前4项合计", "例：竞1 12月 614 − 286.37 = 327.63"],
+    ["平均 CPC", "Σ 花费 ÷ Σ 广告点击量（加权）", "例：竞1 12月 $679.88 ÷ 729.1 = $0.93"],
+    ["单均获客成本", "总广告花费 ÷ 总销量", "例：竞1 5月 $11,675.5 ÷ 64,888 = $0.18"],
+  ];
+  document.getElementById("formulaGrid").innerHTML = F.map(f =>
+    `<div class="f-card"><div class="f-name">${f[0]}</div><div class="f-eq">${f[1]}</div><div class="f-note">${f[2]}</div></div>`).join("");
+}
+
+/* ================= init ================= */
+function init(){
+  renderExecKpi(); marketBubble(); abaChart(); renderTopConclusions();
+  renderDecisionTable(); salesTrend(); adEfficiency(); renderMatrix(); renderPriceTable(); renderActionTable();
+  renderDeep(); renderStages(); profitChart(); renderSOP(); renderAudit(); renderDict();
+}
+document.addEventListener("DOMContentLoaded", init);
+</script>
+</body>
+</html>

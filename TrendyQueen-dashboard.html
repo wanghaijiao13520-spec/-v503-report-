@@ -1,0 +1,1044 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>竞品关键词流量拆解归因看板 · Trendy Queen（2025-12 ~ 2026-05）</title>
+<style>
+  :root{
+    --blue:#2563eb; --sky:#38bdf8; --amber:#f59e0b; --emerald:#10b981;
+    --violet:#8b5cf6; --rose:#ef4444; --slate:#64748b;
+    --bg:#f1f5f9; --card:#ffffff; --line:#e2e8f0; --ink:#0f172a; --ink2:#475569; --ink3:#94a3b8;
+    --radius:16px; --shadow:0 1px 3px rgba(15,23,42,.07), 0 8px 24px -12px rgba(15,23,42,.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+    background:var(--bg); color:var(--ink); font-size:14px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* ---------- Header ---------- */
+  header{
+    background:linear-gradient(135deg,#0b1220 0%,#16233f 55%,#1e3a5f 100%);
+    color:#e2e8f0; padding:22px 28px 20px; position:relative; overflow:hidden;
+  }
+  header::after{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:radial-gradient(rgba(148,163,184,.16) 1px, transparent 1px);
+    background-size:22px 22px;
+  }
+  .hd-inner{max-width:1560px; margin:0 auto; position:relative; z-index:1;
+    display:flex; flex-wrap:wrap; align-items:center; gap:14px; justify-content:space-between;}
+  .hd-title{display:flex; align-items:center; gap:12px;}
+  .hd-logo{
+    width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex:none;
+    background:linear-gradient(135deg,var(--sky),var(--blue)); box-shadow:0 4px 14px rgba(37,99,235,.45);
+    font-size:20px; color:#fff;
+  }
+  .hd-title h1{font-size:19px; font-weight:700; letter-spacing:.5px; color:#fff;}
+  .hd-title p{font-size:12px; color:#94a3b8; margin-top:2px;}
+  .hd-controls{display:flex; flex-wrap:wrap; gap:10px; align-items:center;}
+  .ctl{display:flex; align-items:center; gap:7px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14);
+    padding:7px 12px; border-radius:10px; font-size:12.5px; color:#cbd5e1;}
+  .ctl label{color:#94a3b8;}
+  .ctl select{background:#0f172a; color:#e2e8f0; border:1px solid #334155; border-radius:7px; padding:3px 8px; font-size:12.5px; outline:none;}
+  .btn{display:inline-flex; align-items:center; gap:6px; border:none; cursor:pointer; font-size:12.5px;
+    padding:7px 14px; border-radius:10px; font-weight:600; transition:.15s; background:#fff; color:#0f172a;}
+  .btn:hover{transform:translateY(-1px); box-shadow:0 6px 16px -6px rgba(0,0,0,.35);}
+  .btn.ghost{background:transparent; color:#94a3b8; border:1px solid #334155;}
+  /* ---------- Layout ---------- */
+  main{max-width:1560px; margin:0 auto; padding:20px 24px 60px; display:flex; flex-direction:column; gap:18px;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);}
+  .card-pad{padding:18px 20px;}
+  .sec-head{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px; flex-wrap:wrap;}
+  .sec-title{display:flex; align-items:center; gap:9px; font-size:15.5px; font-weight:700; color:var(--ink);}
+  .sec-title::before{content:""; width:4px; height:16px; border-radius:2px; background:linear-gradient(180deg,var(--blue),var(--sky));}
+  .sec-sub{font-size:12px; color:var(--ink3);}
+  /* ---------- KPI ---------- */
+  .kpi-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px;}
+  .kpi{position:relative; overflow:hidden;}
+  .kpi .ico{position:absolute; right:14px; top:14px; width:38px; height:38px; border-radius:11px; display:grid; place-items:center; font-size:18px;}
+  .kpi .lab{font-size:12px; color:var(--ink2); display:flex; align-items:center; gap:5px;}
+  .kpi .val{font-size:27px; font-weight:800; letter-spacing:-.5px; margin:6px 0 2px; font-variant-numeric:tabular-nums;}
+  .kpi .sub{font-size:12px; color:var(--ink3);}
+  .kpi .bar{position:absolute; left:0; right:0; bottom:0; height:3px;}
+  /* ---------- Alerts ---------- */
+  .alert-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px;}
+  .alert{border-left:4px solid var(--line); padding:14px 16px; background:linear-gradient(180deg,#fbfcfe,#f8fafc);}
+  .alert .a-head{display:flex; align-items:center; gap:9px; font-weight:700; font-size:14px;}
+  .alert .a-tag{font-size:11.5px; font-weight:700; padding:2px 9px; border-radius:20px; letter-spacing:.5px;}
+  .tag-attack{background:#fee2e2; color:#b91c1c;}
+  .tag-free{background:#d1fae5; color:#065f46;}
+  .tag-warn{background:#fef3c7; color:#92400e;}
+  .tag-none{background:#f1f5f9; color:#94a3b8;}
+  .alert .a-kw{font-size:12.5px; color:var(--ink2); margin-top:6px;}
+  .alert .a-why{font-size:12px; color:var(--ink3); margin-top:4px; line-height:1.5;}
+  .alert .a-rule{font-size:11.5px; color:var(--ink3); margin-top:8px; padding-top:8px; border-top:1px dashed var(--line);}
+  /* ---------- Balance ---------- */
+  .bal-wrap{display:flex; flex-direction:column; gap:10px;}
+  .bal-line{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13px; align-items:center;}
+  .bal-line b{font-variant-numeric:tabular-nums;}
+  .bal-check{display:inline-flex; align-items:center; gap:6px; background:#ecfdf5; color:#047857; font-weight:700;
+    border:1px solid #a7f3d0; padding:3px 12px; border-radius:20px; font-size:12.5px;}
+  .bal-check.bad{background:#fef2f2; color:#b91c1c; border-color:#fecaca;}
+  .stackbar{display:flex; height:16px; border-radius:8px; overflow:hidden; border:1px solid var(--line);}
+  .stackbar div{height:100%; transition:width .5s ease;}
+  .bal-legend{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:12px; color:var(--ink2);}
+  .bal-legend i{display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; vertical-align:-1px;}
+  .bal-note{margin-top:10px; padding:10px 14px; background:#fffbeb; border:1px solid #fde68a; border-radius:10px; font-size:12px; color:#92400e; line-height:1.7;}
+  /* ---------- Table ---------- */
+  .tbl-scroll{overflow-x:auto; max-height:620px; overflow-y:auto; border-radius:0 0 var(--radius) var(--radius);}
+  table{width:100%; border-collapse:separate; border-spacing:0; font-size:12.5px; min-width:1580px;}
+  thead th{position:sticky; z-index:5; background:#f8fafc; border-bottom:1px solid var(--line); white-space:nowrap;}
+  thead th.mod{top:0; font-size:11.5px; font-weight:700; letter-spacing:.5px; text-align:center; padding:7px 10px; color:#fff;}
+  thead th.fld{top:28px; font-weight:600; color:var(--ink2); padding:8px 10px; text-align:right; cursor:pointer; user-select:none;}
+  thead th.fld:hover{color:var(--blue);}
+  thead th.fld .arr{font-size:10px; margin-left:3px; color:var(--blue);}
+  th.l, td.l{text-align:left !important;}
+  thead th.sticky{left:0; z-index:7;}
+  thead th.sticky2{left:120px; z-index:7;}
+  tbody td{padding:8px 10px; border-bottom:1px solid #f1f5f9; text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  tbody tr:hover td{background:#f0f7ff;}
+  td.sticky{position:sticky; left:0; background:#fff; z-index:2;}
+  td.sticky2{position:sticky; left:120px; background:#fff; z-index:2;}
+  tbody tr:hover td.sticky, tbody tr:hover td.sticky2{background:#f0f7ff;}
+  tfoot td{font-weight:700; background:#f8fafc; border-top:2px solid var(--line); padding:9px 10px; text-align:right; white-space:nowrap;}
+  .chip{display:inline-block; padding:2px 9px; border-radius:20px; font-size:11.5px; font-weight:600; white-space:nowrap;}
+  .chip.group-brand{background:#fef3c7; color:#92400e;}
+  .chip.group-core{background:#fee2e2; color:#b91c1c;}
+  .chip.group-attr{background:#ede9fe; color:#5b21b6;}
+  .chip.group-other{background:#e0f2fe; color:#075985;}
+  .chip.group-beyond{background:#d1fae5; color:#065f46;}
+  .muted{color:var(--ink3);}
+  .pos{color:#b91c1c;} .neg{color:#047857;}
+  /* ---------- Charts ---------- */
+  .charts-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(430px,1fr)); gap:16px;}
+  .chart-box{min-width:0;}
+  .chart-box svg{width:100%; height:auto; display:block;}
+  .legend{display:flex; flex-wrap:wrap; gap:6px 18px; font-size:12.5px; color:var(--ink2); margin-top:8px;}
+  .legend i{display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:6px; vertical-align:-1px;}
+  .toggle{display:inline-flex; background:#f1f5f9; border-radius:9px; padding:2px; border:1px solid var(--line);}
+  .toggle button{border:none; background:transparent; font-size:12px; padding:4px 12px; border-radius:7px; cursor:pointer; color:var(--ink2); font-weight:600;}
+  .toggle button.on{background:#fff; color:var(--blue); box-shadow:0 1px 3px rgba(15,23,42,.15);}
+  /* ---------- Watch ---------- */
+  .watch-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(600px,1fr)); gap:16px;}
+  .watch-table{width:100%; min-width:0; border-collapse:collapse; font-size:11.5px;}
+  .watch-table th,.watch-table td{border:1px solid var(--line); padding:4px 6px; text-align:right; white-space:nowrap;}
+  .watch-table th{background:#f8fafc; font-weight:600; color:var(--ink2);}
+  .watch-table th.m, .watch-table td.m{text-align:center; font-weight:700; background:#f8fafc; color:var(--ink2);}
+  .watch-table td.v{color:var(--ink); font-variant-numeric:tabular-nums;}
+  .watch-table td.hl{background:#fef3c7; color:#92400e; font-weight:700;}
+  .watch-table td.big{background:#fee2e2; color:#b91c1c; font-weight:700;}
+  .watch-note{margin-top:10px; padding:10px 14px; background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; font-size:12px; color:#1e40af; line-height:1.7;}
+  /* ---------- Structure table ---------- */
+  .struct-table{width:100%; min-width:0; border-collapse:collapse; font-size:12.5px;}
+  .struct-table th,.struct-table td{border:1px solid var(--line); padding:7px 9px; text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums;}
+  .struct-table th{background:#f8fafc; font-weight:600; color:var(--ink2);}
+  .struct-table td.m{text-align:center; font-weight:700;}
+  .struct-table td.rank{color:var(--blue); font-weight:700;}
+  .struct-table td.g-brand{color:#92400e; font-weight:700;}
+  .struct-table td.g-core{color:#b91c1c; font-weight:700;}
+  .struct-table td.g-attr{color:#5b21b6; font-weight:700;}
+  .struct-table td.g-other{color:#075985; font-weight:700;}
+  .struct-table td.g-beyond{color:#065f46; font-weight:700;}
+  /* ---------- Model / Dictionary ---------- */
+  details.card{overflow:hidden;}
+  details.card summary{list-style:none; cursor:pointer; padding:16px 20px; font-weight:700; font-size:15px;
+    display:flex; align-items:center; justify-content:space-between;}
+  details.card summary::-webkit-details-marker{display:none;}
+  details.card summary::after{content:"▾"; color:var(--ink3); font-size:14px; transition:.2s;}
+  details.card[open] summary::after{transform:rotate(180deg);}
+  .formula-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; padding:0 20px 20px;}
+  .f-card{border:1px solid var(--line); border-radius:12px; padding:12px 14px; background:#fbfcfe;}
+  .f-card .f-name{font-size:12px; color:var(--ink2); font-weight:700; margin-bottom:4px;}
+  .f-card .f-eq{font-size:13px; font-weight:700; color:var(--blue); font-variant-numeric:tabular-nums;}
+  .f-card .f-note{font-size:11.5px; color:var(--ink3); margin-top:3px;}
+  .dict-table{width:100%; border-collapse:collapse; font-size:12.5px; margin:0 20px 20px; width:calc(100% - 40px);}
+  .dict-table th,.dict-table td{border:1px solid var(--line); padding:7px 10px; text-align:left; vertical-align:top;}
+  .dict-table th{background:#f8fafc; white-space:nowrap;}
+  .dict-table td.v{font-weight:600; color:var(--blue); white-space:nowrap;}
+  .foot{font-size:12px; color:var(--ink3); padding:0 6px; line-height:1.8;}
+  .foot b{color:var(--ink2);}
+  .tooltip-note{font-size:11.5px; color:var(--ink3); margin-top:8px;}
+  .audit-table{width:100%; border-collapse:collapse; font-size:12.5px; margin:0 20px 20px; width:calc(100% - 40px);}
+  .audit-table th,.audit-table td{border:1px solid var(--line); padding:6px 9px; text-align:left; vertical-align:top; font-variant-numeric:tabular-nums;}
+  .audit-table th{background:#f8fafc; white-space:nowrap;}
+  @media (max-width:900px){
+    header{padding:16px;}
+    .hd-inner{flex-direction:column; align-items:flex-start;}
+    main{padding:14px 12px 50px;}
+    .charts-grid{grid-template-columns:1fr;}
+    .watch-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hd-inner">
+    <div class="hd-title">
+      <div class="hd-logo">📊</div>
+      <div>
+        <h1>竞品关键词流量拆解归因看板</h1>
+        <p>Trendy Queen（B0G13Z2LD7 / 变体 B0G13X5K6S）· 2025年12月 ~ 2026年5月 · 数据源：西柚洞察 + 卖家精灵（21 项指标 × 5 大模块）</p>
+      </div>
+    </div>
+    <div class="hd-controls">
+      <div class="ctl"><label>选取时间</label>
+        <select id="selTime"></select>
+      </div>
+      <div class="ctl"><label>词根分组</label>
+        <select id="selGroup">
+          <option value="all" selected>全部词根分组</option>
+        </select>
+      </div>
+      <a class="btn ghost" href="#watchSec">👀 竞对速览</a>
+      <button class="btn" id="btnExport" title="导出当前月份与筛选下的归因数据为 CSV">⬇ 导出 CSV</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- KPI -->
+  <section class="card card-pad" id="kpiSec">
+    <div class="sec-head">
+      <div class="sec-title">核心 KPI 汇总</div>
+      <div class="sec-sub" id="kpiNote"></div>
+    </div>
+    <div class="kpi-grid" id="kpiGrid"></div>
+    <div class="kpi-grid" id="kpiGrid2" style="margin-top:12px;"></div>
+  </section>
+
+  <!-- Strategy alerts -->
+  <section class="card card-pad" id="alertSec">
+    <div class="sec-head">
+      <div class="sec-title">自动化策略预警（规则引擎）</div>
+      <div class="sec-sub">随词根分组筛选联动重算 · 规则：攻坚词=广告展示占比&gt;40% 且 广告花费占比&gt;50%；白嫖词=流量占比&gt;15% 且 广告花费&lt;$30；CPC预警=CPC&gt;品类平均×1.3 且 转化率&lt;8%</div>
+    </div>
+    <div class="alert-grid" id="alertGrid"></div>
+  </section>
+
+  <!-- Balance -->
+  <section class="card card-pad" id="balSec">
+    <div class="sec-head">
+      <div class="sec-title">全表平衡校验（归因闭环）</div>
+      <div class="sec-sub">词根单项 + 前3页其他 + 除前3页 的【词根总单量】= 竞品总销量 = 100%</div>
+    </div>
+    <div class="bal-wrap" id="balWrap"></div>
+  </section>
+
+  <!-- Pivot table -->
+  <section class="card" id="tblSec">
+    <div class="card-pad" style="padding-bottom:12px;">
+      <div class="sec-head">
+        <div class="sec-title">主数据透视表（21 项核心指标 · 5 大模块）</div>
+        <div class="sec-sub">点击表头排序 · 默认按流量占比降序 · 含合计行与口径 tooltip</div>
+      </div>
+    </div>
+    <div class="tbl-scroll" id="tblScroll">
+      <table id="mainTable">
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+        <tfoot id="tfoot"></tfoot>
+      </table>
+    </div>
+    <div class="card-pad" style="padding-top:10px;">
+      <div class="tooltip-note" id="tblNote"></div>
+    </div>
+  </section>
+
+  <!-- Charts -->
+  <section class="charts-grid">
+    <div class="card card-pad chart-box">
+      <div class="sec-head">
+        <div class="sec-title" style="font-size:14px;">流量来源构成（展示量）</div>
+        <div class="toggle" id="tgImp"><button data-v="linear">线性</button><button data-v="log" class="on">对数</button></div>
+      </div>
+      <div id="chImp"></div>
+      <div class="legend"><span><i style="background:#3b82f6;"></i>自然展示量</span><span><i style="background:#f59e0b;"></i>广告展示量</span><span class="muted">对数刻度可避免「除前3页」压扁其他词根</span></div>
+    </div>
+    <div class="card card-pad chart-box">
+      <div class="sec-head">
+        <div class="sec-title" style="font-size:14px;">出单归因（自然单 vs 广告单）</div>
+        <div class="toggle" id="tgOrd"><button data-v="linear" class="on">线性</button><button data-v="log">对数</button></div>
+      </div>
+      <div id="chOrd"></div>
+      <div class="legend"><span><i style="background:#3b82f6;"></i>词根自然单</span><span><i style="background:#f59e0b;"></i>词根广告单</span></div>
+    </div>
+    <div class="card card-pad chart-box">
+      <div class="sec-title" style="font-size:14px;">销量贡献分布（词根销量占比）</div>
+      <div id="chDonut"></div>
+      <div class="legend" id="donutLegend"></div>
+    </div>
+    <div class="card card-pad chart-box">
+      <div class="sec-title" style="font-size:14px;">广告花费构成（归因口径 / 月）</div>
+      <div id="chSpend"></div>
+      <div class="legend"><span><i style="background:#f59e0b;"></i>词根广告花费（$）</span><span class="muted" id="spendNote"></span></div>
+    </div>
+    <div class="card card-pad chart-box" style="grid-column:1 / -1;">
+      <div class="sec-head">
+        <div class="sec-title" style="font-size:14px;">投放效率散点：广告花费 vs 自然单回报</div>
+        <div class="sec-sub" id="scatterNote">气泡大小 = 词根总单量 · 虚线 = 各轴均值</div>
+      </div>
+      <div id="chScatter"></div>
+      <div class="legend"><span><i style="background:#f59e0b;"></i>品牌防御词</span><span><i style="background:#ef4444;"></i>品类核心大词</span><span><i style="background:#8b5cf6;"></i>属性精准词</span><span><i style="background:#38bdf8;"></i>前3页其他</span><span><i style="background:#10b981;"></i>除前3页</span><span class="muted">右上角 = 高投入高自然回报；右下角 = 低投入高自然白嫖</span></div>
+    </div>
+  </section>
+
+  <!-- Trend (multi-month) -->
+  <section class="card card-pad" id="trendSec">
+    <div class="sec-head">
+      <div class="sec-title">月度趋势与词根结构演变（2025-12 ~ 2026-05）</div>
+      <div class="sec-sub">单竞对 × 多月 · 销量 / 流量结构 / 花费 / 词根占比演变</div>
+    </div>
+    <div class="charts-grid" style="margin-bottom:16px;">
+      <div class="card card-pad chart-box" style="border:none; box-shadow:none; padding:0;">
+        <div class="sec-head">
+          <div class="sec-title" style="font-size:14px;">月度销量与自然/广告单结构</div>
+          <div class="toggle" id="tgSales"><button data-v="linear" class="on">线性</button><button data-v="log">对数</button></div>
+        </div>
+        <div id="chTrendSales"></div>
+        <div class="legend"><span><i style="background:#3b82f6;"></i>自然单</span><span><i style="background:#f59e0b;"></i>广告单</span><span class="muted">数字 = 月总销量 · 占比 = 自然单 %</span></div>
+      </div>
+      <div class="card card-pad chart-box" style="border:none; box-shadow:none; padding:0;">
+        <div class="sec-title" style="font-size:14px;">广告花费：归因口径 vs 实际Campaign（$）</div>
+        <div id="chTrendSpend"></div>
+        <div class="legend"><span><i style="background:#2563eb;"></i>归因口径（Σ 词根花费）</span><span><i style="background:#f59e0b;"></i>实际Campaign（日均×天数）</span><span class="muted">差异=归因框外关键词/非词根流量</span></div>
+      </div>
+    </div>
+    <div class="card-pad" style="padding:0 0 16px;">
+      <div class="sec-title" style="font-size:14px; margin-bottom:10px;">词根结构演变表（销量占比 % · 全量口径 Σ=100%）</div>
+      <div style="overflow-x:auto;"><table class="struct-table" id="structTable"></table></div>
+    </div>
+    <div class="card-pad" style="padding:0;">
+      <div class="sec-title" style="font-size:14px; margin-bottom:10px;">日销量曲线（2025-12-09 ~ 2026-06-25 · 含秒杀标记）</div>
+      <div id="chDaily"></div>
+      <div class="legend"><span><i style="background:#64748b;"></i>日销量（件）</span><span><i style="background:#ef4444;"></i>秒杀日</span><span class="muted">5月秒杀（5.11-24）峰值 4,072 件；6月日均约 1,600 件维持高位</span></div>
+    </div>
+  </section>
+
+  <!-- Watch -->
+  <section class="card card-pad" id="watchSec">
+    <div class="sec-head">
+      <div class="sec-title">竞对速览（附加竞对流量监控）</div>
+      <div class="sec-sub">数据源：西柚洞察 流量得分趋势导出 · 月度平均 · 2025-08 ~ 2026-07</div>
+    </div>
+    <div class="watch-grid" id="watchGrid"></div>
+    <div class="watch-note" id="watchNote"></div>
+  </section>
+
+  <!-- Model -->
+  <details class="card" id="modelSec">
+    <summary>业务运算逻辑与数学计算模型（Specification 2.1 / 3）</summary>
+    <div class="formula-grid" id="formulaGrid"></div>
+    <div class="card-pad" style="padding-top:0;">
+      <div class="formula-grid" style="padding:0;">
+        <div class="f-card" style="border-color:#fde68a; background:#fffbeb;">
+          <div class="f-name">兜底逻辑 · 前3页 vs 除前3页</div>
+          <div class="f-eq" style="color:#92400e;">核心词根 + 前3页其他 = 前3页口径</div>
+          <div class="f-note">前3页其他：归集前3页内核心词根以外的全部长尾词；除前3页：第 4 页及以后极长尾，广告展现恒为 0、广告单为 0，纯自然出单。</div>
+        </div>
+        <div class="f-card" style="border-color:#a7f3d0; background:#ecfdf5;">
+          <div class="f-name">全表平衡校验规则（强制）</div>
+          <div class="f-eq" style="color:#047857;">Σ 词根总单量 = 竞品总销量 = 100%（逐月）</div>
+          <div class="f-note">词根单项 + 前3页其他 + 除前3页 严格闭合；「除前3页」= 月总销量 − 前4项合计，再反推其自然展示量。</div>
+        </div>
+        <div class="f-card" style="border-color:#c7d2fe; background:#eef2ff;">
+          <div class="f-name">双向倒推</div>
+          <div class="f-eq" style="color:#4338ca;">自然展示 = 自然单 ÷ (CTR × 转化率)</div>
+          <div class="f-note">CPC = 花费 ÷ 广告点击量；平均CPC = Σ花费 ÷ Σ广告点击量（加权）；单均获客成本 = 总广告花费 ÷ 总销量。</div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- Dictionary -->
+  <details class="card" id="dictSec">
+    <summary>字段数据字典（21 项指标 · 5 大模块）</summary>
+    <div class="card-pad" style="padding-top:0;">
+      <div style="overflow-x:auto;"><table class="dict-table" id="dictTable"></table></div>
+    </div>
+  </details>
+
+  <!-- Audit trail -->
+  <details class="card" id="auditSec">
+    <summary>追溯底稿 · 数据边界与口径修正（Specification 4 / 9）</summary>
+    <div class="card-pad" style="padding-top:0;">
+      <div class="foot" id="auditBody"></div>
+    </div>
+  </details>
+
+  <footer class="foot">
+    <b>归因模型：</b>总展示 = 自然展示 + 广告展示；总点击 = 总展示 × CTR(4%)；自然单 = 自然展示 × CTR × 转化率(10%)；广告单 = 广告展示 × CTR × 转化率；总单量 = 自然单 + 广告单；花费 = 广告点击量 × CPC；日均花费 = 花费 ÷ 有效统计天数。
+    <br><b>平衡校验：</b>每月 Σ 词根总单量 = 竞品总销量（100% 闭环）；「除前3页」按 销量 − 前4项合计 推导，无广告展现。数据区间 2025-12 ~ 2026-05 · 竞品1 = Trendy Queen（B0G13Z2LD7）· 12月为已验证锚点（614 件 / $679.88 / 自然 88.13%）。
+  </footer>
+</main>
+
+<script>
+"use strict";
+/* ================= 数据（由预处理脚本生成，全部指标已按 §3-§4 推导并做平衡修正） ================= */
+const DATA = {"months":[{"id":"2025-12","label":"2025年12月","days":23,"sales":614.0,"dailySales":26.695652173913043,"rows":[{"group":"属性精准词","keyword":"square neck tops for women / square neck top / square neck tank top","groupRaw":"square neck tops for women\nsquare neck top\nsquare neck tank top","searchFreq":31828,"searchVol":25772,"freqRaw":"31828\n194008\n250437","volRaw":"25772\n4012\n3072","orgImp":2152.0,"adImp":2741.0,"totImp":4893.0,"orgOrders":8.608,"adOrders":10.964,"totOrders":19.572000000000003,"clicks":195.72,"cpc":0.8,"spend":87.712,"cvr":0.1,"ctr":0.04,"flowShare":6.834467056835165,"salesShare":3.187622149837134},{"group":"品牌防御词","keyword":"trendy queen","groupRaw":"trendy queen","searchFreq":6910,"searchVol":80592,"freqRaw":"6910","volRaw":"80592","orgImp":26942.99456,"adImp":658.00544,"totImp":27601.0,"orgOrders":107.77197824000001,"adOrders":2.6320217600000007,"totOrders":110.40400000000001,"clicks":1104.04,"cpc":0.8,"spend":21.05617408,"cvr":0.1,"ctr":0.04,"flowShare":38.552651795566604,"salesShare":17.98110749185668},{"group":"品类核心大词","keyword":"tank tops for women / tank tops / white tank top woman","groupRaw":"tank tops for women\ntank tops\nwhite tank top woman","searchFreq":3380,"searchVol":151268,"freqRaw":"3380\n10855\n14717","volRaw":"151268\n56724\n44272","orgImp":15193.0,"adImp":12073.0,"totImp":27266.0,"orgOrders":60.772000000000006,"adOrders":48.292,"totOrders":109.06400000000001,"clicks":1090.64,"cpc":1.0,"spend":482.92,"cvr":0.1,"ctr":0.04,"flowShare":38.08472895394801,"salesShare":17.762866449511403},{"group":"前3页其他","keyword":"前3页其他关键词","groupRaw":"前3页其他关键词","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":9076.997479,"adImp":2756.002521,"totImp":11833.0,"orgOrders":36.307989916,"adOrders":11.024010084,"totOrders":47.331999999999994,"clicks":473.32,"cpc":0.8,"spend":88.192080672,"cvr":0.1,"ctr":0.04,"flowShare":16.528152193650214,"salesShare":7.708794788273615},{"group":"除前3页","keyword":"第4页及以后极长尾自然流量","groupRaw":"除前三页","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":81907.0,"adImp":0,"totImp":81907.0,"orgOrders":327.628,"adOrders":0,"totOrders":327.628,"clicks":3276.2799999999997,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":53.35960912052117}],"totals":{"totOrders":614.0,"orgOrders":541.087968156,"adOrders":72.912031844,"spend":679.880254752,"dailySpend":29.560011076173915,"avgCpc":0.9324664771469374,"orgShare":88.12507624690554,"adShare":11.874923753094462,"top3Daily":12.450956521739132},"correction":{"mode":"derive","scale":1.0,"sumFront":286.372,"origSum":286.372,"beyondOrders":327.628,"beyondRawReading":76.3072419462679,"beyondRawShare":0.533596091205212,"flowOther":16.52815219365023},"ctx":{"rating":4.91,"adScore":480,"orgScore":1498,"totScore":1978,"adShareScore":24.27,"rank":2774,"price":"12.99-14.99","dealPrice":12.87,"kwCount":"207（自然171+广告67）","spendDaily":60,"spendMonth":1380,"spendRevShare":17.46,"cpu":2.25,"profit":1076,"adStruct":"SP 100%","op":"开推月：12.9 开推，12.16 降价/改标题，12.29-1.11 首次14天秒杀（8→299单）；主打词=品牌词+tank tops；广告关键词 67"}},{"id":"2026-01","label":"2026年01月","days":31,"sales":4739.0,"dailySales":152.8709677419355,"rows":[{"group":"属性精准词","keyword":"summer clearance women's clothing / summer tops for women / summer tops","groupRaw":"summer clearance women's clothing\n\nsummer tops for women\n\nsummer tops","searchFreq":16507,"searchVol":40524,"freqRaw":"16507\n\n14444\n\n12548","volRaw":"40524\n\n44932\n\n50252","orgImp":81944.1128594286,"adImp":5634.528418856671,"totImp":87578.64127828529,"orgOrders":327.77645143771446,"adOrders":22.53811367542669,"totOrders":350.3145651131411,"clicks":3503.1456511314113,"cpc":1.0,"spend":225.38113675426686,"cvr":0.1,"ctr":0.04,"flowShare":7.392162167401163,"salesShare":7.392162167401163},{"group":"品牌防御词","keyword":"trendy queen","groupRaw":"trendy queen","searchFreq":5875,"searchVol":90804,"freqRaw":"5875","volRaw":"90804","orgImp":51289.08670133086,"adImp":15503.73111908115,"totImp":66792.817820412,"orgOrders":205.1563468053234,"adOrders":62.0149244763246,"totOrders":267.17127128164805,"clicks":2671.7127128164807,"cpc":0.8,"spend":496.11939581059676,"cvr":0.1,"ctr":0.04,"flowShare":5.637714101743997,"salesShare":5.637714101743998},{"group":"品类核心大词","keyword":"tank tops for women / tank / tank tops","groupRaw":"tank tops for women\ntank\ntank tops","searchFreq":1602,"searchVol":316784,"freqRaw":"1602\n3161\n6598","volRaw":"316784\n212596\n82384","orgImp":673078.4533348166,"adImp":35628.560917703515,"totImp":708707.0142525202,"orgOrders":2692.3138133392667,"adOrders":142.51424367081407,"totOrders":2834.828057010081,"clicks":28348.280570100804,"cpc":1.0,"spend":1425.1424367081406,"cvr":0.1,"ctr":0.04,"flowShare":59.819119160373106,"salesShare":59.81911916037309},{"group":"前3页其他","keyword":"前3页其他关键词","groupRaw":"前3页其他关键词","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":269468.7420798511,"adImp":52202.78456893143,"totImp":321671.52664878254,"orgOrders":1077.8749683194046,"adOrders":208.8111382757257,"totOrders":1286.6861065951302,"clicks":12866.861065951301,"cpc":0.8,"spend":1670.4891062058057,"cvr":0.1,"ctr":0.04,"flowShare":27.151004570481753,"salesShare":27.151004570481753},{"group":"除前3页","keyword":"第4页及以后极长尾自然流量","groupRaw":"除前三页","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":0,"adImp":0,"totImp":0,"orgOrders":0.0,"adOrders":0,"totOrders":0.0,"clicks":0,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":0.0}],"totals":{"totOrders":4739.0,"orgOrders":4303.121579901709,"adOrders":435.8784200982911,"spend":3817.13207547881,"dailySpend":123.13329275738096,"avgCpc":0.875733208957223,"orgShare":90.80231230009936,"adShare":9.197687699900635,"top3Daily":152.8709677419355},"correction":{"mode":"scale","scale":0.9985023518217453,"sumFront":4739.0,"origSum":4746.108,"beyondOrders":0.0,"beyondRawReading":0.0,"beyondRawShare":0.0,"flowOther":27.15100457048173},"ctx":{"rating":4.8,"adScore":2860,"orgScore":27390,"totScore":30250,"adShareScore":9.45,"rank":61,"price":"12.99-14.99","dealPrice":11.66,"kwCount":"1846（880+1353）","spendDaily":123,"spendMonth":3822,"spendRevShare":6.92,"cpu":0.81,"profit":15134,"adStruct":"SP 100%","op":"秒杀+预算翻倍（60→123），关键词 67→1353；站外 5%"}},{"id":"2026-02","label":"2026年02月","days":28,"sales":8573.0,"dailySales":306.17857142857144,"rows":[{"group":"属性精准词","keyword":"summer tops for women / summer tops","groupRaw":"summer tops for women\n\nsummer tops","searchFreq":4498,"searchVol":173244,"freqRaw":"4498\n\n5677","volRaw":"173244\n\n104596","orgImp":76699.008363,"adImp":6646.991637,"totImp":83346.0,"orgOrders":306.796033452,"adOrders":26.587966548000004,"totOrders":333.384,"clicks":3333.84,"cpc":0.8,"spend":212.703732384,"cvr":0.1,"ctr":0.04,"flowShare":7.921042377472178,"salesShare":3.8887670593724484},{"group":"品类核心大词","keyword":"tank tops for women / white tank top woman / womens tank tops","groupRaw":"tank tops for women\nwhite tank top woman\nwomens tank tops","searchFreq":903,"searchVol":453832,"freqRaw":"903\n3778\n4525","volRaw":"453832\n141172\n120940","orgImp":566659.0,"adImp":39633.0,"totImp":606292.0,"orgOrders":2266.636,"adOrders":158.532,"totOrders":2425.168,"clicks":24251.68,"cpc":0.8,"spend":1268.256,"cvr":0.1,"ctr":0.04,"flowShare":57.62081713726348,"salesShare":28.288440452583696},{"group":"前3页其他","keyword":"前3页其他关键词","groupRaw":"前3页其他关键词","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":278045.022863,"adImp":84526.977137,"totImp":362572.0,"orgOrders":1112.180091452,"adOrders":338.107908548,"totOrders":1450.288,"clicks":14502.880000000001,"cpc":0.8,"spend":2704.863268384,"cvr":0.1,"ctr":0.04,"flowShare":34.45814048526435,"salesShare":16.91692523037443},{"group":"除前3页","keyword":"第4页及以后极长尾自然流量","groupRaw":"除前三页","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":1091040.0,"adImp":0,"totImp":1091040.0,"orgOrders":4364.16,"adOrders":0,"totOrders":4364.16,"clicks":43641.6,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":50.90586725766942}],"totals":{"totOrders":8573.0,"orgOrders":8049.772124904,"adOrders":523.227875096,"spend":4185.823000768,"dailySpend":149.49367859885714,"avgCpc":0.8000000000000002,"orgShare":93.89679371169952,"adShare":6.103206288300479,"top3Daily":150.31571428571428},"correction":{"mode":"derive","scale":1.0,"sumFront":4208.84,"origSum":4208.84,"beyondOrders":4364.16,"beyondRawReading":1017.42344290847,"beyondRawShare":0.509058672576694,"flowOther":34.45814048526434},"ctx":{"rating":4.7,"adScore":3444,"orgScore":23521,"totScore":26965,"adShareScore":12.77,"rank":88,"price":"12.99-14.99","dealPrice":12.23,"kwCount":"2487（1538+1537）","spendDaily":472,"spendMonth":13229,"spendRevShare":12.62,"cpu":1.54,"profit":21063,"adStruct":"SP 100%","op":"2.23-3.8 第二次14天秒杀（163→754单），预算翻4倍（123→472），关键词→1537；站外 22%"}},{"id":"2026-03","label":"2026年03月","days":31,"sales":22436.0,"dailySales":723.741935483871,"rows":[{"group":"品类核心大词","keyword":"tank tops for women / white tank top woman / womens tank tops","groupRaw":"tank tops for women\nwhite tank top woman\nwomens tank tops","searchFreq":277,"searchVol":635820,"freqRaw":"277\n\n1813\n\n1525","volRaw":"635820\n\n275440\n\n335160","orgImp":1776513.92727,"adImp":12258.07273,"totImp":1788772.0,"orgOrders":7106.055709080001,"adOrders":49.03229092000001,"totOrders":7155.088000000002,"clicks":71550.88,"cpc":0.8,"spend":392.25832736,"cvr":0.1,"ctr":0.04,"flowShare":39.760641105918026,"salesShare":31.89110358352648},{"group":"属性精准词","keyword":"summer tops for women / summer tops / womens summer tops","groupRaw":"summer tops for women\n\nsummer tops\n\nwomens summer tops","searchFreq":710,"searchVol":491624,"freqRaw":"710\n\n1653\n\n2045","volRaw":"491624\n\n310396\n\n270632","orgImp":683658.009697,"adImp":7634.990303,"totImp":691293.0,"orgOrders":2734.6320387880005,"adOrders":30.539961211999998,"totOrders":2765.1720000000005,"clicks":27651.72,"cpc":0.9,"spend":274.859650908,"cvr":0.1,"ctr":0.04,"flowShare":15.365990116143024,"salesShare":12.32471028703869},{"group":"前3页其他","keyword":"前3页其他关键词","groupRaw":"前3页其他关键词","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":1968621.91867599,"adImp":50164.081324,"totImp":2018785.99999999,"orgOrders":7874.48767470396,"adOrders":200.656325296,"totOrders":8075.14399999996,"clicks":80751.4399999996,"cpc":0.8,"spend":1605.250602368,"cvr":0.1,"ctr":0.04,"flowShare":44.87336877793896,"salesShare":35.99190586557301},{"group":"除前3页","keyword":"第4页及以后极长尾自然流量","groupRaw":"除前三页","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":1110149.0000000093,"adImp":0,"totImp":1110149.0000000093,"orgOrders":4440.596000000038,"adOrders":0,"totOrders":4440.596000000038,"clicks":44405.96000000038,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":19.79228026386182}],"totals":{"totOrders":22435.999999999996,"orgOrders":22155.771422571997,"adOrders":280.228577428,"spend":2272.368580636,"dailySpend":73.30221227858064,"avgCpc":0.8108982322546481,"orgShare":98.75098690752363,"adShare":1.2490130924763774,"top3Daily":580.4969032258052},"correction":{"mode":"derive","scale":1.0,"sumFront":17995.403999999962,"origSum":17995.403999999962,"beyondOrders":4440.596000000038,"beyondRawReading":110.342759891852,"beyondRawShare":0.197922802638618,"flowOther":44.87336877793895},"ctx":{"rating":4.6,"adScore":1904,"orgScore":111375,"totScore":113279,"adShareScore":1.68,"rank":22,"price":"12.99-14.99-17.99","dealPrice":11.6,"kwCount":"5050（3591+2069）","spendDaily":107,"spendMonth":3293,"spendRevShare":1.27,"cpu":0.15,"profit":86451,"adStruct":"SP 100%","op":"3.25-31 第三次秒杀（729→1411单），降预算（472→107）但排名 88→22 —— 自然权重稳固"}},{"id":"2026-04","label":"2026年04月","days":30,"sales":26181.0,"dailySales":872.7,"rows":[{"group":"品类核心大词","keyword":"tank tops for women / womens tank tops / tank tops","groupRaw":"tank tops for women\n\nwomens tank tops\n\ntank tops","searchFreq":207,"searchVol":725940,"freqRaw":"207\n\n1246\n\n1479","volRaw":"725940\n\n386460\n\n340728","orgImp":2301803.6113557224,"adImp":71298.2754013856,"totImp":2373101.886757108,"orgOrders":9207.214445422891,"adOrders":285.19310160554244,"totOrders":9492.407547028433,"clicks":94924.07547028433,"cpc":0.8,"spend":2281.5448128443395,"cvr":0.1,"ctr":0.04,"flowShare":36.25685629665954,"salesShare":36.256856296659535},{"group":"属性精准词","keyword":"summer tops for women / womens summer tops","groupRaw":"summer tops for women\n\nwomens summer tops","searchFreq":521,"searchVol":530028,"freqRaw":"521\n\n563","volRaw":"530028\n\n584012","orgImp":1075023.3615718686,"adImp":10964.237229122304,"totImp":1085987.598800991,"orgOrders":4300.093446287475,"adOrders":43.856948916489216,"totOrders":4343.950395203963,"clicks":43439.50395203964,"cpc":0.9,"spend":394.71254024840295,"cvr":0.1,"ctr":0.04,"flowShare":16.591995703769765,"salesShare":16.59199570376977},{"group":"前3页其他","keyword":"前3页其他关键词","groupRaw":"前3页其他关键词","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":3032419.7300015204,"adImp":53740.78444038031,"totImp":3086160.514441901,"orgOrders":12129.678920006083,"adOrders":214.96313776152124,"totOrders":12344.642057767604,"clicks":123446.42057767602,"cpc":0.8,"spend":1719.70510209217,"cvr":0.1,"ctr":0.04,"flowShare":47.15114799957069,"salesShare":47.151147999570696},{"group":"除前3页","keyword":"第4页及以后极长尾自然流量","groupRaw":"除前三页","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":0,"adImp":0,"totImp":0,"orgOrders":0.0,"adOrders":0,"totOrders":0.0,"clicks":0,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":0.0}],"totals":{"totOrders":26181.0,"orgOrders":25636.986811716448,"adOrders":544.0131882835528,"spend":4395.962455184912,"dailySpend":146.53208183949707,"avgCpc":0.8080617436968512,"orgShare":97.92210691614702,"adShare":2.0778930838529956,"top3Daily":872.7},"correction":{"mode":"scale","scale":0.9192892093184408,"sumFront":26181.0,"origSum":28479.61200307196,"beyondOrders":0.0,"beyondRawReading":0.0,"beyondRawShare":0.0,"flowOther":47.151147999570696},"ctx":{"rating":4.53,"adScore":3846,"orgScore":175094,"totScore":178940,"adShareScore":2.15,"rank":18,"price":"12.99-14.99-17.99","dealPrice":12.96,"kwCount":"6834（5548+2131）","spendDaily":160,"spendMonth":4782,"spendRevShare":1.41,"cpu":0.18,"profit":99942,"adStruct":"SP 63.98% + SBV 36.02%","op":"测试 SBV 视频广告（占36%），品牌复购流量入口 21%，站外 9%"}},{"id":"2026-05","label":"2026年05月","days":31,"sales":64888.0,"dailySales":2093.1612903225805,"rows":[{"group":"品类核心大词","keyword":"tank tops for women / womens tank tops / tank tops","groupRaw":"tank tops for women\n\nwomens tank tops\n\ntank tops","searchFreq":130,"searchVol":1166752,"freqRaw":"130\n\n868\n\n955","volRaw":"1166752\n\n461240\n\n443556","orgImp":3865887.312613,"adImp":21865.687643,"totImp":3887753.000256,"orgOrders":15463.549250452003,"adOrders":87.462750572,"totOrders":15551.012001024003,"clicks":155510.12001024,"cpc":0.8,"spend":699.702004576,"cvr":0.1,"ctr":0.04,"flowShare":28.28721525868411,"salesShare":23.965928986906672},{"group":"属性精准词","keyword":"womens summer tops / summer tops / summer tops for women","groupRaw":"womens summer tops\n\nsummer tops\n\nsummer tops for women","searchFreq":76,"searchVol":1717804,"freqRaw":"76\n\n825\n\n446","volRaw":"1717804\n\n469192\n\n547536","orgImp":2414311.217992,"adImp":55940.782136,"totImp":2470252.000128,"orgOrders":9657.244871968,"adOrders":223.76312854400004,"totOrders":9881.008000512,"clicks":98810.08000512,"cpc":0.9,"spend":2013.868156896,"cvr":0.1,"ctr":0.04,"flowShare":17.973505535514857,"salesShare":15.227789422561951},{"group":"前3页其他","keyword":"前3页其他关键词","groupRaw":"前3页其他关键词","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":7105785.489141,"adImp":280061.511115,"totImp":7385847.000256,"orgOrders":28423.141956564006,"adOrders":1120.24604446,"totOrders":29543.388001024006,"clicks":295433.88001024,"cpc":0.8,"spend":8961.96835568,"cvr":0.1,"ctr":0.04,"flowShare":53.739279205801026,"salesShare":45.52981753332512},{"group":"除前3页","keyword":"第4页及以后极长尾自然流量","groupRaw":"除前三页","searchFreq":null,"searchVol":null,"freqRaw":null,"volRaw":null,"orgImp":2478147.999359997,"adImp":0,"totImp":2478147.999359997,"orgOrders":9912.591997439988,"adOrders":0,"totOrders":9912.591997439988,"clicks":99125.91997439988,"cpc":null,"spend":0,"cvr":0.09,"ctr":0.04,"flowShare":null,"salesShare":15.276464057206244}],"totals":{"totOrders":64887.99999999999,"orgOrders":63456.528076423994,"adOrders":1431.4719235759999,"spend":11675.538517152,"dailySpend":376.63027474683867,"avgCpc":0.815631681268677,"orgShare":97.79393428126002,"adShare":2.206065718739983,"top3Daily":1773.400258147097},"correction":{"mode":"derive","scale":1.0,"sumFront":54975.40800256001,"origSum":54975.40800256001,"beyondOrders":9912.591997439988,"beyondRawReading":375.872326325373,"beyondRawShare":0.152764640572063,"flowOther":53.73927920580103},"ctx":{"rating":4.46,"adScore":9349,"orgScore":347324,"totScore":356673,"adShareScore":2.62,"rank":9,"price":"12.99-14.99-17.99","dealPrice":11.45,"kwCount":"10000（7969+3745）","spendDaily":485,"spendMonth":15016,"spendRevShare":2.02,"cpu":0.23,"profit":244536,"adStruct":"SP 99.08% + SBV 0.92%","op":"5.11-24 第四次秒杀（901→2509单），关键词破万，SBV 砍至 0.92%（止损）；站外 10%"}}],"watch":{"B0F7H3WNY8":{"2026-07":{"tot":1.0,"org":1.0,"ad":0.0,"adShare":0.0,"bsr":356,"price":22.4,"rating":4.38},"2026-06":{"tot":0.8,"org":0.8,"ad":0.0,"adShare":0.0,"bsr":410,"price":21.1,"rating":4.41},"2026-05":{"tot":1.0,"org":1.0,"ad":0.0,"adShare":0.0,"bsr":354,"price":22.74,"rating":4.33},"2026-04":{"tot":1.4,"org":1.4,"ad":0.0,"adShare":0.0,"bsr":399,"price":20.99,"rating":4.3},"2026-03":{"tot":0.9,"org":0.9,"ad":0.0,"adShare":0.0,"bsr":374,"price":21.95,"rating":4.3},"2026-02":{"tot":4.1,"org":4.1,"ad":0.0,"adShare":0.0,"bsr":380,"price":20.99,"rating":4.33},"2026-01":{"tot":0.8,"org":0.8,"ad":0.0,"adShare":0.0,"bsr":379,"price":22.41,"rating":4.23},"2025-12":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":0.0,"bsr":433,"price":22.99,"rating":4.2},"2025-11":{"tot":0.1,"org":0.1,"ad":0.0,"adShare":0.0,"bsr":265,"price":20.69,"rating":4.3},"2025-10":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":0.0,"bsr":262,"price":22.99,"rating":4.4},"2025-09":{"tot":0.1,"org":0.1,"ad":0.0,"adShare":0.0,"bsr":286,"price":22.99,"rating":4.6},"2025-08":{"tot":0.7,"org":0.7,"ad":0.0,"adShare":0.0,"bsr":736,"price":22.99,"rating":4.68}},"B0G2LV9HZW":{"2026-07":{"tot":1226.5,"org":1226.5,"ad":0.0,"adShare":0.0,"bsr":76,"price":22.59,"rating":4.28},"2026-06":{"tot":1237.9,"org":1237.9,"ad":0.0,"adShare":0.0,"bsr":43,"price":24.11,"rating":4.28},"2026-05":{"tot":786.1,"org":506.6,"ad":279.5,"adShare":35.6,"bsr":25,"price":24.45,"rating":4.2},"2026-04":{"tot":2325.0,"org":339.1,"ad":1985.9,"adShare":85.4,"bsr":85,"price":24.97,"rating":4.21},"2026-03":{"tot":845.6,"org":350.2,"ad":495.5,"adShare":58.6,"bsr":76,"price":21.0,"rating":4.31},"2026-02":{"tot":90.2,"org":74.5,"ad":15.8,"adShare":17.5,"bsr":97,"price":19.97,"rating":4.41},"2026-01":{"tot":35.1,"org":20.6,"ad":14.4,"adShare":41.1,"bsr":139,"price":20.73,"rating":4.49},"2025-12":{"tot":0.1,"org":0.0,"ad":0.1,"adShare":100.0,"bsr":2287,"price":29.97,"rating":null},"2025-11":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null},"2025-10":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null},"2025-09":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null},"2025-08":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null}},"B0GV43LTS9":{"2026-07":{"tot":286.8,"org":209.8,"ad":77.0,"adShare":26.9,"bsr":167,"price":22.81,"rating":3.94},"2026-06":{"tot":396.1,"org":248.4,"ad":147.7,"adShare":37.3,"bsr":107,"price":23.32,"rating":4.15},"2026-05":{"tot":123.9,"org":71.5,"ad":52.4,"adShare":42.3,"bsr":289,"price":20.99,"rating":4.69},"2026-04":{"tot":6.9,"org":3.8,"ad":3.1,"adShare":44.7,"bsr":1167,"price":26.32,"rating":4.7},"2026-03":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null},"2026-02":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null},"2026-01":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null},"2025-12":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null},"2025-11":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null},"2025-10":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null},"2025-09":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null},"2025-08":{"tot":0.0,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null}},"B0GV43LTS9家族":{"2025-08":{"tot":null,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null,"n":50},"2025-09":{"tot":null,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null,"n":50},"2025-10":{"tot":null,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null,"n":50},"2025-11":{"tot":null,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null,"n":50},"2025-12":{"tot":null,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null,"n":50},"2026-01":{"tot":null,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null,"n":50},"2026-02":{"tot":null,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null,"n":50},"2026-03":{"tot":null,"org":0.0,"ad":0.0,"adShare":null,"bsr":null,"price":null,"rating":null,"n":50},"2026-04":{"tot":13.3,"org":8.1,"ad":5.2,"adShare":38.9,"bsr":1167,"price":21.57,"rating":4.9,"n":50},"2026-05":{"tot":18.0,"org":10.1,"ad":7.9,"adShare":44.0,"bsr":427,"price":24.47,"rating":4.5,"n":31},"2026-06":{"tot":29.1,"org":15.7,"ad":13.4,"adShare":46.2,"bsr":110,"price":23.87,"rating":3.85,"n":45},"2026-07":{"tot":6.9,"org":4.5,"ad":2.4,"adShare":35.3,"bsr":186,"price":25.64,"rating":3.84,"n":50},"2026-08":{"tot":5.8,"org":2.9,"ad":2.8,"adShare":49.3,"bsr":389,"price":25.91,"rating":3.8,"n":50}},"_meta":{"famAsins":50}},"dailySeries":[{"t":46198,"v":1625,"mark":false},{"t":46197,"v":1622,"mark":false},{"t":46196,"v":1577,"mark":false},{"t":46195,"v":1595,"mark":false},{"t":46194,"v":1591,"mark":false},{"t":46193,"v":1596,"mark":false},{"t":46192,"v":1616,"mark":false},{"t":46191,"v":1577,"mark":false},{"t":46190,"v":1545,"mark":false},{"t":46189,"v":1562,"mark":false},{"t":46188,"v":1607,"mark":false},{"t":46187,"v":1707,"mark":false},{"t":46186,"v":1712,"mark":false},{"t":46185,"v":1894,"mark":false},{"t":46184,"v":1610,"mark":false},{"t":46183,"v":1799,"mark":false},{"t":46182,"v":1467,"mark":false},{"t":46181,"v":1573,"mark":false},{"t":46180,"v":1769,"mark":false},{"t":46179,"v":1504,"mark":false},{"t":46178,"v":1465,"mark":false},{"t":46177,"v":1377,"mark":false},{"t":46176,"v":1461,"mark":false},{"t":46175,"v":1477,"mark":false},{"t":46174,"v":1576,"mark":false},{"t":46173,"v":1822,"mark":false},{"t":46172,"v":1856,"mark":false},{"t":46171,"v":1836,"mark":false},{"t":46170,"v":2097,"mark":false},{"t":46169,"v":2307,"mark":false},{"t":46168,"v":2407,"mark":false},{"t":46167,"v":3964,"mark":false},{"t":46166,"v":2509,"mark":true},{"t":46165,"v":2544,"mark":false},{"t":46164,"v":2761,"mark":false},{"t":46163,"v":2835,"mark":false},{"t":46162,"v":4072,"mark":false},{"t":46161,"v":3282,"mark":false},{"t":46160,"v":3185,"mark":false},{"t":46159,"v":2880,"mark":false},{"t":46158,"v":2784,"mark":false},{"t":46157,"v":2815,"mark":false},{"t":46156,"v":2251,"mark":false},{"t":46155,"v":1065,"mark":false},{"t":46154,"v":916,"mark":false},{"t":46153,"v":901,"mark":false},{"t":46152,"v":921,"mark":false},{"t":46151,"v":800,"mark":false},{"t":46150,"v":837,"mark":false},{"t":46149,"v":955,"mark":false},{"t":46148,"v":866,"mark":false},{"t":46147,"v":939,"mark":false},{"t":46146,"v":816,"mark":false},{"t":46145,"v":926,"mark":false},{"t":46144,"v":798,"mark":false},{"t":46143,"v":744,"mark":false},{"t":46142,"v":910,"mark":false},{"t":46141,"v":919,"mark":false},{"t":46140,"v":938,"mark":false},{"t":46139,"v":914,"mark":false},{"t":46138,"v":983,"mark":false},{"t":46137,"v":904,"mark":false},{"t":46136,"v":830,"mark":false},{"t":46135,"v":895,"mark":false},{"t":46134,"v":940,"mark":false},{"t":46133,"v":856,"mark":false},{"t":46132,"v":946,"mark":false},{"t":46131,"v":1041,"mark":false},{"t":46130,"v":824,"mark":false},{"t":46129,"v":859,"mark":false},{"t":46128,"v":959,"mark":false},{"t":46127,"v":1063,"mark":false},{"t":46126,"v":836,"mark":false},{"t":46125,"v":894,"mark":false},{"t":46124,"v":883,"mark":false},{"t":46123,"v":826,"mark":false},{"t":46122,"v":739,"mark":false},{"t":46121,"v":765,"mark":false},{"t":46120,"v":841,"mark":false},{"t":46119,"v":778,"mark":false},{"t":46118,"v":683,"mark":false},{"t":46117,"v":713,"mark":false},{"t":46116,"v":687,"mark":false},{"t":46115,"v":791,"mark":false},{"t":46114,"v":895,"mark":false},{"t":46113,"v":1046,"mark":false},{"t":46112,"v":1411,"mark":true},{"t":46111,"v":1181,"mark":false},{"t":46110,"v":1180,"mark":false},{"t":46109,"v":1145,"mark":false},{"t":46108,"v":979,"mark":false},{"t":46107,"v":844,"mark":false},{"t":46106,"v":729,"mark":false},{"t":46105,"v":625,"mark":false},{"t":46104,"v":662,"mark":false},{"t":46103,"v":631,"mark":false},{"t":46102,"v":558,"mark":false},{"t":46101,"v":454,"mark":false},{"t":46100,"v":478,"mark":false},{"t":46099,"v":499,"mark":false},{"t":46098,"v":478,"mark":false},{"t":46097,"v":501,"mark":false},{"t":46096,"v":599,"mark":false},{"t":46095,"v":560,"mark":false},{"t":46094,"v":529,"mark":false},{"t":46093,"v":586,"mark":false},{"t":46092,"v":636,"mark":false},{"t":46091,"v":646,"mark":false},{"t":46090,"v":740,"mark":false},{"t":46089,"v":754,"mark":true},{"t":46088,"v":686,"mark":false},{"t":46087,"v":664,"mark":false},{"t":46086,"v":605,"mark":false},{"t":46085,"v":837,"mark":false},{"t":46084,"v":815,"mark":false},{"t":46083,"v":702,"mark":false},{"t":46082,"v":578,"mark":false},{"t":46081,"v":496,"mark":false},{"t":46080,"v":455,"mark":false},{"t":46079,"v":352,"mark":false},{"t":46078,"v":265,"mark":false},{"t":46077,"v":176,"mark":false},{"t":46076,"v":163,"mark":false},{"t":46075,"v":178,"mark":false},{"t":46074,"v":141,"mark":false},{"t":46073,"v":135,"mark":false},{"t":46072,"v":156,"mark":false},{"t":46071,"v":149,"mark":false},{"t":46070,"v":123,"mark":false},{"t":46069,"v":161,"mark":false},{"t":46068,"v":144,"mark":false},{"t":46067,"v":136,"mark":false},{"t":46066,"v":131,"mark":false},{"t":46065,"v":147,"mark":false},{"t":46064,"v":177,"mark":false},{"t":46063,"v":168,"mark":false},{"t":46062,"v":145,"mark":false},{"t":46061,"v":148,"mark":false},{"t":46060,"v":135,"mark":false},{"t":46059,"v":133,"mark":false},{"t":46058,"v":140,"mark":false},{"t":46057,"v":118,"mark":false},{"t":46056,"v":125,"mark":false},{"t":46055,"v":117,"mark":false},{"t":46054,"v":136,"mark":false},{"t":46053,"v":128,"mark":false},{"t":46052,"v":115,"mark":false},{"t":46051,"v":133,"mark":false},{"t":46050,"v":129,"mark":false},{"t":46049,"v":133,"mark":false},{"t":46048,"v":113,"mark":false},{"t":46047,"v":109,"mark":false},{"t":46046,"v":94,"mark":false},{"t":46045,"v":94,"mark":false},{"t":46044,"v":104,"mark":false},{"t":46043,"v":162,"mark":false},{"t":46042,"v":141,"mark":false},{"t":46041,"v":152,"mark":false},{"t":46040,"v":137,"mark":false},{"t":46039,"v":139,"mark":false},{"t":46038,"v":151,"mark":false},{"t":46037,"v":168,"mark":false},{"t":46036,"v":188,"mark":false},{"t":46035,"v":204,"mark":false},{"t":46034,"v":285,"mark":false},{"t":46033,"v":299,"mark":true},{"t":46032,"v":277,"mark":false},{"t":46031,"v":268,"mark":false},{"t":46030,"v":313,"mark":false},{"t":46029,"v":321,"mark":false},{"t":46028,"v":315,"mark":false},{"t":46027,"v":297,"mark":false},{"t":46026,"v":179,"mark":false},{"t":46025,"v":120,"mark":false},{"t":46024,"v":110,"mark":false},{"t":46023,"v":71,"mark":false},{"t":46022,"v":45,"mark":false},{"t":46021,"v":32,"mark":false},{"t":46020,"v":8,"mark":false},{"t":46019,"v":9,"mark":false},{"t":46018,"v":7,"mark":false},{"t":46017,"v":7,"mark":false},{"t":46016,"v":7,"mark":false},{"t":46015,"v":6,"mark":false},{"t":46014,"v":8,"mark":false},{"t":46013,"v":10,"mark":false},{"t":46012,"v":8,"mark":false},{"t":46011,"v":12,"mark":false},{"t":46010,"v":10,"mark":false},{"t":46009,"v":5,"mark":false},{"t":46008,"v":3,"mark":false},{"t":46007,"v":3,"mark":false},{"t":46006,"v":2,"mark":false},{"t":46005,"v":2,"mark":false},{"t":46004,"v":1,"mark":false},{"t":46003,"v":1,"mark":false},{"t":46002,"v":1,"mark":false},{"t":46001,"v":1,"mark":false},{"t":46000,"v":1,"mark":false}]};
+const CFG = { ctr: 0.04, cvr: 0.10, cpcWarnRatio: 1.3, cvrFloor: 0.08 };
+const MONTHS = DATA.months;
+const GROUP_COLORS = { "品牌防御词":"#f59e0b", "品类核心大词":"#ef4444", "属性精准词":"#8b5cf6", "前3页其他":"#38bdf8", "除前3页":"#10b981" };
+const GROUP_CLS = { "品牌防御词":"group-brand", "品类核心大词":"group-core", "属性精准词":"group-attr", "前3页其他":"group-other", "除前3页":"group-beyond" };
+const state = { mi: 0, group: "all", sortKey: "flowShare", sortDir: -1, logImp: true, logOrd: false, logSales: false };
+
+/* ================= 格式化工具 ================= */
+const f2  = v => Number(v).toFixed(2);
+const f1  = v => Number(v).toFixed(1);
+const fi  = v => Math.round(v).toLocaleString("zh-CN");
+const fde = v => Number(v).toLocaleString("zh-CN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const pct = (v, d = 2) => (v == null ? "—" : v.toFixed(d) + "%");
+const usd = (v, d = 2) => (v == null ? "—" : "$" + Number(v).toFixed(d));
+const dash = v => (v == null || v === "" ? "—" : v);
+
+const cur = () => MONTHS[state.mi];
+function monthTot(m){
+  const T = {};
+  ["orgImp","adImp","totImp","clicks","orgOrders","adOrders","totOrders","spend"].forEach(k =>
+    T[k] = m.rows.reduce((s, r) => s + (r[k] ?? 0), 0));
+  T.adClicks = m.rows.reduce((s, r) => s + (r.adImp ?? 0) * CFG.ctr, 0);
+  T.dailySales = m.sales / m.days;
+  T.avgCpc = T.adClicks > 0 ? T.spend / T.adClicks : 0;
+  T.dailySpend = T.spend / m.days;
+  T.orgShare = T.totOrders > 0 ? T.orgOrders / T.totOrders * 100 : 0;
+  T.adShare  = T.totOrders > 0 ? T.adOrders  / T.totOrders * 100 : 0;
+  return T;
+}
+
+/* ================= KPI 卡片 ================= */
+function renderKPI(){
+  const m = cur(), T = monthTot(m), c = m.ctx;
+  const cards = [
+    { lab:"竞品总销量", val:fi(m.sales), sub:"统计周期内全渠道预估总销售件数", ico:"🛒", c:"#eef2ff", bar:"#6366f1" },
+    { lab:"日均销量", val:f1(T.dailySales), sub:m.sales + " ÷ " + m.days + " 天（有效统计天数）", ico:"📅", c:"#e0f2fe", bar:"#0ea5e9" },
+    { lab:"总广告花费(归因)", val:usd(T.spend), sub:"日均 " + usd(T.dailySpend) + " · 广告点击 " + fi(T.adClicks) + " 次", ico:"💸", c:"#fef3c7", bar:"#f59e0b" },
+    { lab:"平均 CPC", val:usd(T.avgCpc, 2), sub:"总花费 ÷ 广告点击量（加权）", ico:"🎯", c:"#fce7f3", bar:"#ec4899" },
+    { lab:"自然订单", val:fi(T.orgOrders) + " 单", sub:"占比 " + pct(T.orgShare) + " · 白嫖流量基本盘", ico:"🌿", c:"#d1fae5", bar:"#10b981" },
+    { lab:"广告订单", val:fi(T.adOrders) + " 单", sub:"占比 " + pct(T.adShare) + " · 付费流量补充", ico:"📣", c:"#fee2e2", bar:"#ef4444" }
+  ];
+  document.getElementById("kpiGrid").innerHTML = cards.map(x => `
+    <div class="card kpi" title="${x.sub}">
+      <div class="ico" style="background:${x.c};">${x.ico}</div>
+      <div class="lab">${x.lab}</div>
+      <div class="val">${x.val}</div>
+      <div class="sub">${x.sub}</div>
+      <div class="bar" style="background:${x.bar};"></div>
+    </div>`).join("");
+  document.getElementById("kpiNote").textContent = "周期级指标 · 不受词根筛选影响 · " + m.label + " · 有效统计天数 " + m.days + " 天";
+  /* 运营上下文卡（来源：竞1-分析 Sheet1） */
+  const ctx = [
+    { lab:"月均 BSR 排名", val:c.rank == null ? "—" : fi(c.rank), sub:"Women's Tanks & Camis 子类目", ico:"🏆", c:"#f0fdf4", bar:"#22c55e" },
+    { lab:"平均成交价", val:usd(c.dealPrice), sub:"价格区间 " + c.price, ico:"💵", c:"#fefce8", bar:"#eab308" },
+    { lab:"广告关键词数", val:c.kwCount, sub:"自然 + 广告 覆盖", ico:"🔑", c:"#f5f3ff", bar:"#8b5cf6" },
+    { lab:"月利润（估算）", val:usd(c.profit), sub:"广告花费占比(营收) " + pct(c.spendRevShare), ico:"💰", c:"#ecfeff", bar:"#06b6d4" },
+    { lab:"广告结构", val:c.adStruct, sub:"SP / SBV 构成", ico:"📣", c:"#fff7ed", bar:"#f97316" }
+  ];
+  document.getElementById("kpiGrid2").innerHTML = ctx.map(x => `
+    <div class="card kpi" title="${x.sub}">
+      <div class="ico" style="background:${x.c};">${x.ico}</div>
+      <div class="lab">${x.lab}</div>
+      <div class="val" style="font-size:21px;">${x.val}</div>
+      <div class="sub">${x.sub}</div>
+      <div class="bar" style="background:${x.bar};"></div>
+    </div>`).join("");
+}
+
+/* ================= 策略预警 ================= */
+function renderAlerts(){
+  const m = cur(), T = monthTot(m);
+  const data = state.group === "all" ? m.rows.slice() : m.rows.filter(r => r.group === state.group);
+  const tSpend = data.reduce((s, r) => s + r.spend, 0);
+  const tAdClicks = data.reduce((s, r) => s + (r.adImp ?? 0) * CFG.ctr, 0);
+  const avgCpc = tAdClicks > 0 ? tSpend / tAdClicks : 0;
+  const out = [];
+  data.forEach(r => {
+    const adImpShare = r.totImp > 0 ? r.adImp / r.totImp * 100 : 0;
+    const spendShare = tSpend > 0 ? r.spend / tSpend * 100 : 0;
+    if (adImpShare > 40 && spendShare > 50) {
+      out.push({ tag:"战略攻坚词", cls:"tag-attack", head:"🎯 战略攻坚词", kw:r.keyword,
+        why:`广告展示占比 ${pct(adImpShare)} ＞ 40% 且 广告花费占比 ${pct(spendShare)} ＞ 50%`,
+        rule:"规则：广告展示量/总展示量 > 40% 且 广告花费占比 > 50%",
+        extra:`CPC ${usd(r.cpc)} · 月花费 ${usd(r.spend)}（占总广告开支 ${pct(spendShare)}）· 换取自然单 ${f2(r.orgOrders)} 单` });
+    }
+    if (r.flowShare != null && r.flowShare > 15 && r.spend < 30) {
+      out.push({ tag:"高权重自然词", cls:"tag-free", head:"🌿 高权重自然词（白嫖词）", kw:r.keyword,
+        why:`流量占比 ${pct(r.flowShare)} ＞ 15% 且 广告花费 ${usd(r.spend)} ＜ $30`,
+        rule:"规则：流量占比 > 15% 且 广告花费 < $30",
+        extra:`自然展示 ${fi(r.orgImp)} · 广告展示仅 ${fi(r.adImp)} · 低价锁定词根前排` });
+    }
+  });
+  const cpcThreshold = avgCpc * CFG.cpcWarnRatio;
+  const badCpc = data.filter(r => r.cpc != null && r.cpc > cpcThreshold && (r.cvr ?? CFG.cvr) < CFG.cvrFloor);
+  if (badCpc.length) {
+    badCpc.forEach(r => out.push({ tag:"广告效率低下", cls:"tag-warn", head:"⚠️ 广告效率低下预警", kw:r.keyword,
+      why:`CPC ${usd(r.cpc)} ＞ 品类平均 ${usd(avgCpc)} × 1.3 = ${usd(cpcThreshold)} 且 转化率 ${pct((r.cvr ?? CFG.cvr) * 100)} ＜ 8%`,
+      rule:"规则：CPC > 品类平均 × 130% 且 转化率 < 8% 时触发" }));
+  } else {
+    const maxCpc = Math.max(0, ...data.map(r => r.cpc ?? 0));
+    out.push({ tag:"未触发", cls:"tag-none", head:"✅ CPC 异常偏高预警：未触发", kw:"全部词根正常",
+      why:`品类平均 CPC ${usd(avgCpc)} × 1.3 = ${usd(cpcThreshold)}，当前最高 CPC 为 ${usd(maxCpc)}`,
+      rule:"规则：CPC > 品类平均 × 130% 且 转化率 < 8% 时触发" });
+  }
+  if (!out.length) out.push({ tag:"无命中", cls:"tag-none", head:"✅ 无预警命中", kw:"当前筛选下全部词根健康",
+    why:"未触发攻坚词 / 白嫖词 / CPC 预警规则", rule:"规则详见 §5 自动化规则与策略预警" });
+  document.getElementById("alertGrid").innerHTML = out.map(a => `
+    <div class="alert">
+      <div class="a-head">${a.head}<span class="a-tag ${a.cls}">${a.tag}</span></div>
+      <div class="a-kw">关键词：${a.kw}</div>
+      <div class="a-why">${a.why}</div>
+      ${a.extra ? `<div class="a-why">${a.extra}</div>` : ""}
+      <div class="a-rule">${a.rule}</div>
+    </div>`).join("");
+}
+
+/* ================= 平衡校验 ================= */
+function renderBalance(){
+  const m = cur(), T = monthTot(m);
+  const diff = T.totOrders - m.sales;
+  const ok = Math.abs(diff) < 0.001;
+  const segs = m.rows.map(r => ({ label:r.group, v:r.totOrders, c:GROUP_COLORS[r.group] }));
+  const share = r => (r.totOrders / T.totOrders * 100).toFixed(2) + "%";
+  const c = m.correction;
+  let note = "";
+  if (c.mode === "derive" && c.beyondOrders > 0) {
+    note = `📌 本月经平衡校验推导「除前3页」= ${fde(c.beyondOrders)} 单（${pct(c.beyondOrders / m.sales * 100)}）。原始截图读数为 ${fde(c.beyondRawReading)} 单（与该行占比 ${pct((c.beyondRawShare ?? 0) * 100)} 不闭合，如 ${fde(c.beyondRawReading)}/${m.sales} ≈ ${pct(c.beyondRawReading / m.sales * 100, 2)}），按规则以推导值为准。`;
+  } else if (c.mode === "scale") {
+    note = `📌 本月经平衡校验发现：前3页词根原始 Σ 总单量 ${fde(c.origSum)} 件 ＞ 月总销量 ${fi(m.sales)}（超 ${pct((c.origSum / m.sales - 1) * 100, 2)}），按规则等比缩放 ×${c.scale.toFixed(5)} 使 Σ = 100%，「除前3页」= 0。`;
+  } else if (c.mode === "derive" && c.beyondOrders === 0) {
+    note = "📌 前3页词根原始 Σ 已覆盖 100%，「除前3页」= 0。";
+  }
+  document.getElementById("balWrap").innerHTML = `
+    <div class="bal-line">
+      <span>词根自然单 <b>${fde(T.orgOrders)}</b> + 词根广告单 <b>${fde(T.adOrders)}</b> = 词根总单量 <b>${fde(T.totOrders)}</b> 件</span>
+      <span>竞品总销量 <b>${fi(m.sales)}</b> 件</span>
+      <span class="bal-check ${ok ? "" : "bad"}">${ok ? "✓ 校验通过" : "✗ 校验失败 Δ" + fde(diff)} · 100% 归因闭环</span>
+    </div>
+    <div class="stackbar">${segs.map(s => `<div style="width:${(s.v / T.totOrders * 100).toFixed(2)}%; background:${s.c};" title="${s.label}：${fde(s.v)} 单（${share(s)}）"></div>`).join("")}</div>
+    <div class="bal-legend">${segs.map(s => `<span><i style="background:${s.c};"></i>${s.label} ${fde(s.v)} 单 · ${share(s)}</span>`).join("")}</div>
+    ${note ? `<div class="bal-note">${note}</div>` : ""}`;
+}
+
+/* ================= 主透视表 ================= */
+const COLS = [
+  { key:"time",       mod:"维度标识",       lab:"选取时间",      fmt:() => cur().label, sortable:false, align:"l" },
+  { key:"group",      mod:"维度标识",       lab:"词根分组",      fmt:r => `<span class="chip ${GROUP_CLS[r.group]}">${r.group}</span>`, sortable:false, align:"l", sticky:true },
+  { key:"totalSales", mod:"总体表现",       lab:"竞品总销量",    fmt:() => fi(cur().sales), sortable:false },
+  { key:"dailySales", mod:"总体表现",       lab:"日均销量",      fmt:() => f1(cur().sales / cur().days), sortable:false },
+  { key:"keyword",    mod:"词根归因",       lab:"主打关键词",    fmt:r => r.keyword, sortable:false, align:"l", sticky2:true, tip:"按词根归拢后的细分关键词集合" },
+  { key:"dailyOrders",mod:"词根归因",       lab:"词根日均",      fmt:r => f2(r.totOrders / cur().days), sortable:true, tip:"该词根集合每日贡献的预估出单量（总单量 ÷ 有效天数）" },
+  { key:"flowShare",  mod:"词根归因",       lab:"流量占比",      fmt:r => pct(r.flowShare), sortable:true, tip:"词根日均 ÷ 前3页口径日均合计（前3页口径，月内合计 100%）" },
+  { key:"searchFreq", mod:"词根归因",       lab:"搜索频率",      fmt:r => dash(r.searchFreq == null ? null : fi(r.searchFreq)), sortable:true, tip:"Amazon Search Frequency Rank（ABA 排名，数值越小搜索越热，取词根首词）" },
+  { key:"searchVol",  mod:"词根归因",       lab:"搜索量",        fmt:r => dash(r.searchVol == null ? null : fi(r.searchVol)), sortable:true, tip:"该关键词站内月度估算搜索流量（市场级，取词根首词）" },
+  { key:"totImp",     mod:"曝光与出单归因", lab:"总展示量",      fmt:r => fi(r.totImp), sortable:true, tip:"自然展示量 + 广告展示量" },
+  { key:"orgImp",     mod:"曝光与出单归因", lab:"自然展示量",    fmt:r => fi(r.orgImp), sortable:true },
+  { key:"adImp",      mod:"曝光与出单归因", lab:"广告展示量",    fmt:r => fi(r.adImp), sortable:true },
+  { key:"orgOrders",  mod:"曝光与出单归因", lab:"词根自然单",    fmt:r => f2(r.orgOrders), sortable:true, tip:"自然展示量 × CTR(4%) × 转化率(10%)" },
+  { key:"adOrders",   mod:"曝光与出单归因", lab:"词根广告单",    fmt:r => f2(r.adOrders), sortable:true, tip:"广告展示量 × CTR(4%) × 转化率(10%)" },
+  { key:"totOrders",  mod:"曝光与出单归因", lab:"词根总单量",    fmt:r => f2(r.totOrders), sortable:true, tip:"词根自然单 + 词根广告单" },
+  { key:"salesShare", mod:"曝光与出单归因", lab:"词根销量占比",  fmt:r => pct(r.salesShare), sortable:true, tip:"词根总单量 ÷ 月总销量（全量口径，月内合计 100%）" },
+  { key:"cvr",        mod:"曝光与出单归因", lab:"词根转化率",    fmt:r => pct((r.cvr ?? CFG.cvr) * 100), sortable:false, tip:"自然与广告统一估算的订单转化率（除前3页按 9%）" },
+  { key:"clicks",     mod:"曝光与出单归因", lab:"词根总点击量",  fmt:r => fi(r.clicks), sortable:true, tip:"总展示量 × 点击率（或 总单量 ÷ 转化率）" },
+  { key:"ctr",        mod:"投效转化",       lab:"点击率 CTR",    fmt:r => pct((r.ctr ?? CFG.ctr) * 100), sortable:false, tip:"自然与广告统一假定的点击率（Impressions → Clicks）" },
+  { key:"cpc",        mod:"投效转化",       lab:"CPC",           fmt:r => usd(r.cpc), sortable:true, tip:"该词根广告点击的单次点击成本" },
+  { key:"spend",      mod:"投效转化",       lab:"花费 ($)",      fmt:r => usd(r.spend), sortable:true, tip:"广告点击量 × CPC（归因口径）" },
+  { key:"dailySpend", mod:"投效转化",       lab:"日均花费 ($)",  fmt:r => usd(r.spend / cur().days), sortable:true, tip:"词根总花费 ÷ 有效统计天数" },
+  { key:"tag",        mod:"策略标签",       lab:"策略标签",      fmt:r => tagChip(r), sortable:false, align:"l" }
+];
+function tagChip(r){
+  const T = monthTot(cur());
+  const adImpShare = r.totImp > 0 ? r.adImp / r.totImp * 100 : 0;
+  const spendShare = T.spend > 0 ? r.spend / T.spend * 100 : 0;
+  if (adImpShare > 40 && spendShare > 50) return `<span class="chip tag-attack">🎯 战略攻坚词</span>`;
+  if (r.flowShare != null && r.flowShare > 15 && r.spend < 30) return `<span class="chip tag-free">🌿 高权重自然词</span>`;
+  return `<span class="chip tag-none">—</span>`;
+}
+function renderTable(){
+  const m = cur();
+  let data = state.group === "all" ? m.rows.slice() : m.rows.filter(r => r.group === state.group);
+  const sk = state.sortKey, sd = state.sortDir;
+  if (sk) data = data.slice().sort((a, b) => {
+    const av = a[sk] ?? -Infinity, bv = b[sk] ?? -Infinity;
+    return (av - bv) * sd;
+  });
+  const segs = [];
+  let curMod = null;
+  COLS.forEach(c => {
+    if (!curMod || curMod.name !== c.mod) { curMod = { name:c.mod, cols:[] }; segs.push(curMod); }
+    curMod.cols.push(c);
+  });
+  const modRow = "<tr>" + segs.map(s => `<th class="mod" colspan="${s.cols.length}" style="background:#64748b;">
+      ${s.name} <span style="font-weight:400;opacity:.85;">(${s.cols.length}项)</span></th>`).join("") + "</tr>";
+  const fldRow = "<tr>" + COLS.map(c => {
+    const sticky = c.sticky ? " sticky" : c.sticky2 ? " sticky2" : "";
+    const cls = (c.align === "l" ? "l " : "");
+    const arr = c.sortable ? `<span class="arr">${state.sortKey === c.key ? (state.sortDir === 1 ? "▲" : "▼") : "⇅"}</span>` : "";
+    return `<th class="fld${sticky} ${cls}" data-key="${c.key}" title="${c.tip || ""}">${c.lab}${arr}</th>`;
+  }).join("") + "</tr>";
+  document.getElementById("thead").innerHTML = modRow + fldRow;
+  document.getElementById("tbody").innerHTML = data.map(r => {
+    const tds = COLS.map(c => {
+      const sticky = c.sticky ? " sticky" : c.sticky2 ? " sticky2" : "";
+      const cls = (c.align === "l" ? "l" : "");
+      return `<td class="${cls}${sticky}" title="${c.tip || ""}">${c.fmt(r)}</td>`;
+    }).join("");
+    return `<tr data-id="${r.group}">${tds}</tr>`;
+  }).join("") || `<tr><td colspan="${COLS.length}" style="text-align:center;color:#94a3b8;padding:26px;">当前筛选下无数据</td></tr>`;
+  const T = monthTot(m);
+  const sums = {};
+  const addKeys = ["dailyOrders","searchFreq","searchVol","totImp","orgImp","adImp","orgOrders","adOrders","totOrders","clicks","spend"];
+  addKeys.forEach(k => sums[k] = data.reduce((s, r) => s + (r[k] ?? 0), 0));
+  const totalRow = COLS.map(c => {
+    let v = "—";
+    if (c.key === "time") v = m.label;
+    else if (c.key === "group") v = "合计";
+    else if (c.key === "keyword") v = data.length + " 个词根分组";
+    else if (c.key === "totalSales") v = fi(m.sales);
+    else if (c.key === "dailySales") v = f1(T.dailySales);
+    else if (c.key === "flowShare") v = state.group === "all"
+      ? pct(m.rows.filter(r => r.group !== "除前3页").reduce((s, r) => s + r.flowShare, 0)) + "（前3页口径）"
+      : pct(data.reduce((s, r) => s + (r.flowShare ?? 0), 0));
+    else if (c.key === "salesShare") v = state.group === "all" ? "100.00%" : pct(data.reduce((s, r) => s + r.salesShare, 0));
+    else if (c.key === "cvr") v = "10%（统一假定 / 除前3页 9%）";
+    else if (c.key === "ctr") v = "4%（统一假定）";
+    else if (c.key === "cpc") v = T.adClicks > 0 ? usd(T.spend / T.adClicks) : "—";
+    else if (c.key === "tag") v = "";
+    else if (c.key in sums) {
+      const raw = sums[c.key];
+      if (["searchFreq","searchVol","totImp","orgImp","adImp","clicks"].includes(c.key)) v = fi(raw) || "—";
+      else v = f2(raw);
+    }
+    return `<td class="${c.align === "l" ? "l" : ""}" title="${c.tip || ""}">${v}</td>`;
+  }).join("");
+  document.getElementById("tfoot").innerHTML = `<tr>${totalRow}</tr>`;
+  document.getElementById("tblNote").innerHTML =
+    `※ 自然单/广告单 = 展示量 × 点击率(4.00%) × 转化率(10.00%) 归因估算；「除前3页」无广告展现，自然展示量为按平衡规则推导值；流量占比为「前3页口径」（词根日均 ÷ 前3页日均合计 ${f2(m.totals.top3Daily)}），销量占比为「全量口径」（词根总单量 ÷ ${fi(m.sales)}，月内合计 100%）。`;
+}
+
+/* ================= SVG 图表（单月） ================= */
+function stackedBar(containerId, items, opts){
+  const W = 560, H = 270, padL = 128, padR = 14, padT = 18, padB = 46;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const maxV = Math.max(...items.map(i => i.a + i.b));
+  const log = opts.log;
+  const sc = v => log ? Math.log10(1 + v) / Math.log10(1 + maxV) : v / maxV;
+  const n = items.length, slot = pw / n, bw = Math.min(64, slot * 0.56);
+  let g = "";
+  [0, .25, .5, .75, 1].forEach(f => {
+    const y = padT + ph - f * ph;
+    g += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7" stroke-width="1"/>`;
+    const val = log ? Math.pow(10, f * Math.log10(1 + maxV)) - 1 : f * maxV;
+    g += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${val >= 1000 ? (val / 1000).toFixed(0) + "k" : Math.round(val)}</text>`;
+  });
+  items.forEach((it, i) => {
+    const cx = padL + slot * i + slot / 2;
+    const x = cx - bw / 2;
+    const ha = sc(it.a) * ph, hb = sc(it.b) * ph;
+    const ya = padT + ph - ha, yb = ya - hb;
+    g += `<rect x="${x}" y="${ya}" width="${bw}" height="${ha}" rx="3" fill="#3b82f6" opacity=".92"><title>${it.label} 自然：${fi(it.a)}</title></rect>`;
+    g += `<rect x="${x}" y="${yb}" width="${bw}" height="${hb}" rx="3" fill="#f59e0b" opacity=".95"><title>${it.label} 广告：${fi(it.b)}</title></rect>`;
+    g += `<text x="${cx}" y="${yb - 7}" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">${opts.fmt(it.a + it.b)}</text>`;
+    g += `<text x="${cx}" y="${padT + ph + 16}" text-anchor="middle" font-size="10.5" fill="#475569">${it.label}</text>`;
+  });
+  document.getElementById(containerId).innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`;
+}
+function donutChart(containerId, legendId){
+  const m = cur();
+  const items = m.rows.map(r => ({ label:r.group, v:r.totOrders, c:GROUP_COLORS[r.group] }));
+  const total = items.reduce((s, i) => s + i.v, 0);
+  const R = 74, C = 2 * Math.PI * R, cx = 110, cy = 118, sw = 26;
+  let offset = 0, segs = "";
+  items.forEach(it => {
+    const share = it.v / total;
+    const len = share * C;
+    segs += `<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="${it.c}" stroke-width="${sw}"
+      stroke-dasharray="${len} ${C - len + 1}" stroke-dashoffset="${-offset}" transform="rotate(-90 ${cx} ${cy})">
+      <title>${it.label}：${fde(it.v)} 单 · ${pct(share * 100)}</title></circle>`;
+    offset += len;
+  });
+  document.getElementById(containerId).innerHTML =
+    `<svg viewBox="0 0 220 236" role="img">${segs}
+      <text x="${cx}" y="${cy - 6}" text-anchor="middle" font-size="26" font-weight="800" fill="#0f172a">${fi(total)}</text>
+      <text x="${cx}" y="${cy + 14}" text-anchor="middle" font-size="11" fill="#94a3b8">词根总单量</text>
+    </svg>`;
+  document.getElementById(legendId).innerHTML = items.map(it =>
+    `<span><i style="background:${it.c};"></i>${it.label} ${pct(it.v / total * 100)}（${fde(it.v)} 单）</span>`).join("");
+}
+function spendBars(containerId){
+  const m = cur();
+  const items = m.rows.slice().sort((a, b) => b.spend - a.spend);
+  const T = monthTot(m);
+  const W = 560, H = 30 + items.length * 44, padL = 118, padR = 100;
+  const maxV = Math.max(...items.map(r => r.spend)) || 1;
+  let g = "";
+  items.forEach((r, i) => {
+    const y = 16 + i * 44, bw = (W - padL - padR) * (r.spend / maxV);
+    g += `<text x="${padL - 10}" y="${y + 13}" text-anchor="end" font-size="11" fill="#475569">${r.group}</text>`;
+    g += `<rect x="${padL}" y="${y}" width="${Math.max(bw, r.spend > 0 ? 3 : 0)}" height="20" rx="5" fill="${GROUP_COLORS[r.group]}" opacity=".9"><title>${r.group}：${usd(r.spend)}（${pct(r.spend / T.spend * 100)}）</title></rect>`;
+    g += `<text x="${padL + bw + 8}" y="${y + 15}" font-size="11.5" font-weight="700" fill="#334155">${usd(r.spend)} · ${pct(r.spend / T.spend * 100)}</text>`;
+  });
+  document.getElementById(containerId).innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`;
+  document.getElementById("spendNote").textContent = "Σ 词根花费 $" + f2(T.spend) + " / 月 · 实际Campaign $" + fi(m.ctx.spendMonth);
+}
+function scatterChart(containerId){
+  const m = cur();
+  const pts = m.rows.map(r => ({ x:r.spend, y:r.orgOrders, r:r.totOrders, label:r.group, kw:r.keyword, c:GROUP_COLORS[r.group] }));
+  const W = 900, H = 420, padL = 62, padB = 52, padT = 18, padR = 30;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const xMax = Math.max(...pts.map(p => p.x)) * 1.15 || 1;
+  const yMax = Math.max(...pts.map(p => p.y)) * 1.15 || 1;
+  const X = v => padL + v / xMax * pw;
+  const Y = v => padT + ph - v / yMax * ph;
+  const avgX = pts.reduce((s, p) => s + p.x, 0) / pts.length;
+  const avgY = pts.reduce((s, p) => s + p.y, 0) / pts.length;
+  let g = "";
+  for (let i = 0; i <= 4; i++) {
+    const y = padT + ph - (i / 4) * ph;
+    g += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7"/>`;
+    g += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${(yMax * i / 4) >= 1000 ? (yMax * i / 4 / 1000).toFixed(0) + "k" : Math.round(yMax * i / 4)}</text>`;
+    const xv = xMax * i / 4;
+    g += `<line x1="${X(xv)}" y1="${padT}" x2="${X(xv)}" y2="${padT + ph}" stroke="#eef2f7"/>`;
+    g += `<text x="${X(xv)}" y="${padT + ph + 16}" text-anchor="middle" font-size="10" fill="#94a3b8">${xv >= 1000 ? (xv / 1000).toFixed(0) + "k" : Math.round(xv)}</text>`;
+  }
+  g += `<line x1="${X(avgX)}" y1="${padT}" x2="${X(avgX)}" y2="${padT + ph}" stroke="#cbd5e1" stroke-dasharray="5 4"/>`;
+  g += `<line x1="${padL}" y1="${Y(avgY)}" x2="${W - padR}" y2="${Y(avgY)}" stroke="#cbd5e1" stroke-dasharray="5 4"/>`;
+  g += `<text x="${X(avgX) + 4}" y="${padT + 10}" font-size="10" fill="#94a3b8">均值 X=${f2(avgX)}</text>`;
+  g += `<text x="${padL + 4}" y="${Y(avgY) - 5}" font-size="10" fill="#94a3b8">均值 Y=${f2(avgY)}</text>`;
+  g += `<text x="${padL + pw / 2}" y="${H - 8}" text-anchor="middle" font-size="11.5" fill="#64748b" font-weight="600">广告花费（$）</text>`;
+  g += `<text x="14" y="${padT + ph / 2}" text-anchor="middle" font-size="11.5" fill="#64748b" font-weight="600" transform="rotate(-90 14 ${padT + ph / 2})">词根自然单</text>`;
+  pts.forEach(p => {
+    const rad = 5 + Math.sqrt(p.r) * 1.05;
+    g += `<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="${rad}" fill="${p.c}" opacity=".78" stroke="#fff" stroke-width="2">
+      <title>${p.kw}\n${p.label}\n广告花费 ${usd(p.x)} · 自然单 ${f2(p.y)} · 总单量 ${f2(p.r)}</title></circle>`;
+    const lx = X(p.x) + rad + 6, ly = Y(p.y) + 4;
+    const anchor = (X(p.x) + rad + 90 > W - padR) ? "end" : "start";
+    const ax = anchor === "end" ? X(p.x) - rad - 6 : lx;
+    g += `<text x="${ax}" y="${ly}" text-anchor="${anchor}" font-size="11" font-weight="700" fill="${p.c}">${p.label}</text>`;
+  });
+  document.getElementById(containerId).innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`;
+  document.getElementById("scatterNote").textContent = `气泡大小 = 词根总单量 · 均值（${f2(avgX)} / ${f2(avgY)}）· ${m.label}`;
+}
+function renderCharts(){
+  const m = cur();
+  const imp = m.rows.map(r => ({ label:r.group, a:r.orgImp, b:r.adImp }));
+  const ord = m.rows.map(r => ({ label:r.group, a:r.orgOrders, b:r.adOrders }));
+  stackedBar("chImp", imp, { log:state.logImp, fmt:fi });
+  stackedBar("chOrd", ord, { log:state.logOrd, fmt:f2 });
+  donutChart("chDonut", "donutLegend");
+  spendBars("chSpend");
+  scatterChart("chScatter");
+}
+
+/* ================= 月度趋势（多月） ================= */
+function trendSalesChart(){
+  const log = state.logSales;
+  const W = 560, H = 300, padL = 52, padR = 14, padT = 20, padB = 44;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const n = MONTHS.length, slot = pw / n, bw = Math.min(52, slot * 0.55);
+  const maxV = Math.max(...MONTHS.map(m => m.sales));
+  const sc = v => log ? Math.log10(1 + v) / Math.log10(1 + maxV) : v / maxV;
+  let g = "";
+  [0, .25, .5, .75, 1].forEach(f => {
+    const y = padT + ph - f * ph;
+    g += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7"/>`;
+    const val = log ? Math.pow(10, f * Math.log10(1 + maxV)) - 1 : f * maxV;
+    g += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${val >= 1000 ? (val / 1000).toFixed(0) + "k" : Math.round(val)}</text>`;
+  });
+  MONTHS.forEach((m, i) => {
+    const T = monthTot(m);
+    const cx = padL + slot * i + slot / 2;
+    const x = cx - bw / 2;
+    const ho = sc(T.orgOrders) * ph, ha = sc(T.adOrders) * ph;
+    g += `<rect x="${x}" y="${padT + ph - ho}" width="${bw}" height="${ho}" rx="3" fill="#3b82f6" opacity=".92"><title>${m.label} 自然单 ${f2(T.orgOrders)}</title></rect>`;
+    g += `<rect x="${x}" y="${padT + ph - ho - ha}" width="${bw}" height="${ha}" rx="3" fill="#f59e0b" opacity=".95"><title>${m.label} 广告单 ${f2(T.adOrders)}</title></rect>`;
+    g += `<text x="${cx}" y="${padT + ph - ho - ha - 7}" text-anchor="middle" font-size="11" font-weight="700" fill="#334155">${fi(m.sales)}</text>`;
+    g += `<text x="${cx}" y="${padT + ph + 14}" text-anchor="middle" font-size="10.5" fill="#475569">${m.id}</text>`;
+    g += `<text x="${cx}" y="${padT + ph + 27}" text-anchor="middle" font-size="10" fill="#10b981">自然 ${pct(T.orgShare, 0)}</text>`;
+  });
+  document.getElementById("chTrendSales").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`;
+}
+function trendSpendChart(){
+  const W = 560, H = 300, padL = 52, padR = 14, padT = 20, padB = 44;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const n = MONTHS.length, slot = pw / n, bw = Math.min(22, slot * 0.3);
+  const maxV = Math.max(...MONTHS.map(m => Math.max(monthTot(m).spend, m.ctx.spendMonth)));
+  const sc = v => v / maxV;
+  let g = "";
+  [0, .25, .5, .75, 1].forEach(f => {
+    const y = padT + ph - f * ph;
+    g += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7"/>`;
+    const val = f * maxV;
+    g += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${val >= 1000 ? (val / 1000).toFixed(0) + "k" : Math.round(val)}</text>`;
+  });
+  MONTHS.forEach((m, i) => {
+    const T = monthTot(m);
+    const cx = padL + slot * i + slot / 2;
+    const h1 = sc(T.spend) * ph, h2 = sc(m.ctx.spendMonth) * ph;
+    g += `<rect x="${cx - bw - 2}" y="${padT + ph - h1}" width="${bw}" height="${h1}" rx="3" fill="#2563eb" opacity=".9"><title>${m.label} 归因口径 ${usd(T.spend)}</title></rect>`;
+    g += `<rect x="${cx + 2}" y="${padT + ph - h2}" width="${bw}" height="${h2}" rx="3" fill="#f59e0b" opacity=".95"><title>${m.label} 实际Campaign ${usd(m.ctx.spendMonth)}</title></rect>`;
+    g += `<text x="${cx}" y="${padT + ph + 14}" text-anchor="middle" font-size="10.5" fill="#475569">${m.id}</text>`;
+    g += `<text x="${cx - bw - 2}" y="${padT + ph - h1 - 4}" text-anchor="middle" font-size="9.5" fill="#2563eb">${T.spend >= 1000 ? (T.spend / 1000).toFixed(1) + "k" : fi(T.spend)}</text>`;
+    g += `<text x="${cx + 2}" y="${padT + ph - h2 - 4}" text-anchor="middle" font-size="9.5" fill="#b45309">${m.ctx.spendMonth >= 1000 ? (m.ctx.spendMonth / 1000).toFixed(1) + "k" : fi(m.ctx.spendMonth)}</text>`;
+  });
+  document.getElementById("chTrendSpend").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${g}</svg>`;
+}
+function structTable(){
+  const heads = ["月份","品牌防御词","品类核心大词","属性精准词","前3页其他","除前3页","自然单占比","广告单占比","归因花费","月均排名","平均成交价","月利润"];
+  const trs = MONTHS.map(m => {
+    const T = monthTot(m), c = m.ctx;
+    const val = g => { const r = m.rows.find(x => x.group === g); return r ? pct(r.salesShare, 1) : "—"; };
+    return `<tr>
+      <td class="m">${m.label}</td>
+      <td class="g-brand">${val("品牌防御词")}</td>
+      <td class="g-core">${val("品类核心大词")}</td>
+      <td class="g-attr">${val("属性精准词")}</td>
+      <td class="g-other">${val("前3页其他")}</td>
+      <td class="g-beyond">${val("除前3页")}</td>
+      <td>${pct(T.orgShare, 1)}</td>
+      <td>${pct(T.adShare, 1)}</td>
+      <td>${usd(T.spend)}</td>
+      <td class="rank">${c.rank == null ? "—" : fi(c.rank)}</td>
+      <td>${usd(c.dealPrice)}</td>
+      <td>${usd(c.profit)}</td>
+    </tr>`;
+  }).join("");
+  document.getElementById("structTable").innerHTML =
+    `<thead><tr>${heads.map(h => `<th>${h}</th>`).join("")}</tr></thead><tbody>${trs}</tbody>`;
+}
+function dailyChart(){
+  const pts = DATA.dailySeries.slice().sort((a, b) => a.t - b.t);
+  const W = 1100, H = 260, padL = 46, padR = 16, padT = 16, padB = 30;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const t0 = pts[0].t, t1 = pts[pts.length - 1].t;
+  const maxV = Math.max(...pts.map(p => p.v));
+  const X = t => padL + (t - t0) / (t1 - t0) * pw;
+  const Y = v => padT + ph - v / maxV * ph;
+  let d = "";
+  for (let i = 0; i <= 4; i++) {
+    const y = padT + ph - (i / 4) * ph;
+    d += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="#eef2f7"/>`;
+    d += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" font-size="10" fill="#94a3b8">${Math.round(maxV * i / 4)}</text>`;
+  }
+  const path = pts.map((p, i) => (i ? "L" : "M") + X(p.t).toFixed(1) + " " + Y(p.v).toFixed(1)).join(" ");
+  d += `<path d="${path}" fill="none" stroke="#64748b" stroke-width="1.6" opacity=".85"/>`;
+  d += `<path d="${path}" fill="none" stroke="#94a3b8" stroke-width="5" opacity=".12"/>`;
+  /* 月份边界 */
+  const months = [];
+  pts.forEach(p => {
+    const mk = String(p.t).slice(0, 4);
+    if (!months.length || months[months.length - 1].mk !== mk) months.push({ mk, t: p.t });
+  });
+  months.forEach(mo => {
+    d += `<line x1="${X(mo.t)}" y1="${padT}" x2="${X(mo.t)}" y2="${padT + ph}" stroke="#e2e8f0" stroke-dasharray="3 3"/>`;
+  });
+  pts.filter(p => p.mark).forEach(p => {
+    d += `<circle cx="${X(p.t)}" cy="${Y(p.v)}" r="5" fill="#ef4444" stroke="#fff" stroke-width="2"><title>秒杀日 ${p.t}：${p.v} 件</title></circle>`;
+    d += `<text x="${X(p.t)}" y="${Y(p.v) - 10}" text-anchor="middle" font-size="10.5" font-weight="700" fill="#ef4444">${p.v}</text>`;
+  });
+  d += `<text x="${padL}" y="${H - 8}" font-size="10.5" fill="#94a3b8">${pts[0].t}（开推日 2025-12-09）→ ${pts[pts.length - 1].t}（2026-06-25）· 月分界线为每月1日</text>`;
+  document.getElementById("chDaily").innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img">${d}</svg>`;
+}
+
+/* ================= 竞对速览 ================= */
+function watchEntity(ent, data, title, color){
+  const months = [];
+  for (let y = 2025; y <= 2026; y++)
+    for (let m = 1; m <= 12; m++) {
+      const mk = y + "-" + String(m).padStart(2, "0");
+      if (mk < "2025-08" || mk > "2026-07") continue;
+      months.push(mk);
+    }
+  const trs = months.map(mk => {
+    const v = data[mk];
+    const cell = (x, cls = "v") => `<td class="${cls}">${x == null ? "—" : x}</td>`;
+    const adShare = v && v.adShare != null ? v.adShare : null;
+    const big = adShare != null && adShare > 50;
+    return `<tr><td class="m">${mk}</td>
+      ${cell(v ? v.tot : null)}
+      ${cell(v ? v.org : null)}
+      ${cell(v ? v.ad : null)}
+      ${cell(adShare == null ? null : adShare.toFixed(1) + "%", big ? "big" : "hl")}
+      ${cell(v ? v.bsr : null)}
+      ${cell(v ? v.price : null)}
+      ${cell(v ? v.rating : null)}</tr>`;
+  }).join("");
+  return `<div class="card card-pad chart-box">
+    <div class="sec-head"><div class="sec-title" style="font-size:14px; color:${color};">${title}</div>
+      <div class="sec-sub">月均 综合/自然/广告 流量得分 · 广告占比 · BSR(Tanks) · 价格 · 评分</div></div>
+    <div style="overflow-x:auto;">
+      <table class="watch-table">
+        <thead><tr><th>月份</th><th>综合得分</th><th>自然得分</th><th>广告得分</th><th>广告占比</th><th>BSR</th><th>价格$</th><th>评分</th></tr></thead>
+        <tbody>${trs}</tbody>
+      </table>
+    </div>
+  </div>`;
+}
+function renderWatch(){
+  const w = DATA.watch;
+  const html = [
+    watchEntity("B0F7H3WNY8", w["B0F7H3WNY8"], "B0F7H3WNY8 · 稳盘型（自然为主）", "#2563eb"),
+    watchEntity("B0G2LV9HZW", w["B0G2LV9HZW"], "B0G2LV9HZW · 爆发型（广告驱动）", "#dc2626"),
+    watchEntity("B0GV43LTS9", w["B0GV43LTS9"], "B0GV43LTS9 · 新链接（2026-05 起量）", "#7c3aed"),
+    watchEntity("B0GV43LTS9家族", w["B0GV43LTS9家族"], "B0GV43LTS9 家族（" + w["_meta"].famAsins + " 个跟踪ASIN均值）", "#0d9488")
+  ].join("");
+  document.getElementById("watchGrid").innerHTML = html;
+  document.getElementById("watchNote").innerHTML =
+    `<b>⚠️ 口径说明：</b>① 三个流量得分文件来自西柚洞察「流量得分趋势」导出，<b>得分刻度互不一致</b>（B0G2LV9HZW 为关键词数量级 0~5,000+；B0F7H3WNY8 与 B0GV* 为档位得分 0~300 级），因此<b>仅可看单条曲线自身趋势与「广告得分占比」，不可跨 ASIN 比较绝对分值</b>；② BSR 取当月最低（最优）值，价格/评分为月度平均；③ 本看板主体（竞品1 Trendy Queen）的完整 21 项归因来自《竞对推广数据.xlsx》，速览数据仅作竞对大盘参照，未做关键词级归因。<br>
+    <b>速览结论：</b>B0G2LV9HZW 走「广告先冲量、后转自然」路径：2026-03 广告占比 58.6% → 04 月 85.4%（综合得分 2,325 峰值）→ 05 月降广告转自然（自然 506.6 vs 广告 279.5）→ 07 月几乎纯自然（综合 1,226.5、广告 0），BSR 从 2,287 冲至 25；B0F7H3WNY8 全程纯自然低分稳盘（BSR 300~740）；B0GV43LTS9 家族约 50 个 ASIN 于 2026-05 前后集中起量，广告占比 35~44%，为典型的「家族矩阵铺量」打法。`;
+}
+
+/* ================= 数据字典 / 公式卡 ================= */
+const DICT = [
+  ["选取时间", "维度标识", "String/Date", "分析的时间颗粒度（按月统计），2025年12月 ~ 2026年5月"],
+  ["竞品1：总销量", "总体表现", "Integer", "统计周期内该 ASIN 的全渠道预估总销售件数（如 12月 614）"],
+  ["日均销量", "总体表现", "Float", "总销量 ÷ 有效统计天数（12月 614 ÷ 23 ≈ 26.7）"],
+  ["主打关键词", "词根归因", "Text Group", "按词根归拢后的细分关键词集合（ABA 关键词）"],
+  ["词根日均", "词根归因", "Float", "该词根集合每日贡献的预估出单量（总单量 ÷ 有效天数）"],
+  ["流量占比", "词根归因", "Percentage", "词根日均 ÷ 前3页口径日均合计（前3页口径，月内合计 100%）"],
+  ["搜索频率", "词根归因", "Integer Multi", "Amazon Search Frequency Rank（ABA 排名，数值越小越热；市场级）"],
+  ["搜索量", "词根归因", "Integer Multi", "该关键词站内月度估算搜索流量（市场级）"],
+  ["总展示量", "曝光与出单归因", "Integer", "词根自然展示量 + 广告展示量"],
+  ["自然展示量", "曝光与出单归因", "Integer", "该词根下产品自然排名的曝光次数"],
+  ["广告展示量", "曝光与出单归因", "Integer", "该词根下 Sponsored 广告位置的曝光次数"],
+  ["词根自然单", "曝光与出单归因", "Float", "自然展示量 × 点击率 × 转化率"],
+  ["词根广告单", "曝光与出单归因", "Float", "广告展示量 × 点击率 × 转化率"],
+  ["词根总单量", "曝光与出单归因", "Float", "词根自然单 + 词根广告单（月度归因总订单数）"],
+  ["词根销量占比", "曝光与出单归因", "Percentage", "词根总单量 ÷ 月总销量（全量口径，月内合计 100%）"],
+  ["词根转化率", "曝光与出单归因", "Percentage", "自然与广告统一估算的订单转化率（Clicks → Orders）= 10%（除前3页 9%）"],
+  ["词根总点击量", "曝光与出单归因", "Integer", "总展示量 × 点击率（或 词根总单量 ÷ 转化率）"],
+  ["点击率 (CTR)", "投效转化", "Percentage", "自然与广告统一假定的点击率（Impressions → Clicks）= 4%"],
+  ["CPC", "投效转化", "Currency ($)", "该词根广告点击的单次点击成本（0.80 / 0.90 / 1.00）"],
+  ["花费 ($)", "投效转化", "Currency ($)", "词根广告点击量 × CPC（归因口径）"],
+  ["日均花费 ($)", "投效转化", "Currency ($)", "词根总花费 ÷ 有效统计天数"]
+];
+function renderDict(){
+  document.getElementById("dictTable").innerHTML =
+    `<thead><tr><th>字段名称</th><th>所属模块</th><th>字段类型</th><th>数据含义</th></tr></thead>
+     <tbody>${DICT.map(d => `<tr><td class="v">${d[0]}</td><td>${d[1]}</td><td>${d[2]}</td><td>${d[3]}</td></tr>`).join("")}</tbody>`;
+}
+function renderFormula(){
+  const F = [
+    { n:"词根总展示量", e:"自然展示量 + 广告展示量", note:"例：12月 trendy queen = 26,943 + 658 = 27,601" },
+    { n:"词根总点击量", e:"总展示量 × 点击率 (4%)", note:"例：27,601 × 4% ≈ 1,104 次" },
+    { n:"词根自然单", e:"自然展示量 × CTR × 转化率", note:"例：26,943 × 4% × 10% = 107.77" },
+    { n:"词根广告单", e:"广告展示量 × CTR × 转化率", note:"例：12,073 × 4% × 10% = 48.29" },
+    { n:"词根总单量", e:"词根自然单 + 词根广告单", note:"例：107.77 + 2.63 = 110.40" },
+    { n:"词根销量占比", e:"词根总单量 ÷ 竞品总销量", note:"例：110.40 ÷ 614 = 17.98%" },
+    { n:"词根广告花费", e:"广告点击量 × CPC", note:"例：12,073 × 4% × $1.00 = $482.92" },
+    { n:"日均花费", e:"词根总花费 ÷ 有效统计天数", note:"例：$482.92 ÷ 23 ≈ $21.00" },
+    { n:"除前3页推导", e:"月总销量 − 前4项合计", note:"例：12月 614 − 286.37 = 327.63 单（53.36%）" },
+    { n:"自然展示反推", e:"自然单 ÷ (CTR × 转化率)", note:"例：327.63 ÷ 4% ÷ 10% ≈ 81,907" },
+    { n:"平均 CPC", e:"Σ 花费 ÷ Σ 广告点击量（加权）", note:"例：12月 $679.88 ÷ 729.12 次 ≈ $0.93" },
+    { n:"单均获客成本", e:"总广告花费 ÷ 总销量", note:"例：5月 $11,675.54 ÷ 64,888 ≈ $0.18" }
+  ];
+  document.getElementById("formulaGrid").innerHTML = F.map(f =>
+    `<div class="f-card"><div class="f-name">${f.n}</div><div class="f-eq">${f.e}</div><div class="f-note">${f.note}</div></div>`).join("");
+}
+
+/* ================= 追溯底稿 ================= */
+function renderAudit(){
+  const corrRows = MONTHS.map(m => {
+    const c = m.correction;
+    let act;
+    if (c.mode === "derive" && c.beyondOrders > 0) act = `推导「除前3页」${fde(c.beyondOrders)} 单（${pct(c.beyondOrders / m.sales * 100)}）`;
+    else if (c.mode === "scale") act = `原始 Σ ${fde(c.origSum)} 件 ＞ 销量，等比缩放 ×${c.scale.toFixed(5)}，「除前3页」= 0`;
+    else act = "前3页已覆盖 100%";
+    return `<tr><td>${m.label}</td><td>${fi(m.sales)}</td><td>${fde(c.origSum)}</td><td>${act}</td>
+      <td>${c.beyondRawReading == null || c.beyondRawReading === 0 ? "—" : fde(c.beyondRawReading) + " 单（占比 " + pct((c.beyondRawShare ?? 0) * 100) + "）"}</td></tr>`;
+  }).join("");
+  const md = DATA.months[0];
+  document.getElementById("auditBody").innerHTML = `
+    <b>① 数据来源：</b>《竞对推广数据.xlsx》（竞1 = Trendy Queen B0G13Z2LD7，Sheet1 运营分析 + Sheet2 21 列归因表）、《流量得分趋势_US_B0F7H3WNY8 / B0G2LV9HZW》、《自然-广告流量趋势_US_B0GV43LTS9...》（西柚洞察导出）。评分/评分数量、BSR、价格、卖家精灵销量为第三方估算，需以后台数据人工复核。
+    <br><b>② 锚点验证（12月 = 已验证锚点）：</b>总销量 614 件、Σ归因广告花费 $679.88、自然单占比 88.13%，与源数据逐项一致。
+    <br><b>③ 平衡校验修正明细（强制规则）：</b>「除前3页」总单量 = 月总销量 − 前4项合计；凡原始读数与占比不闭合，以推导值为准并在页脚注明。
+    <div style="overflow-x:auto; margin-top:8px;"><table class="audit-table">
+      <thead><tr><th>月份</th><th>总销量</th><th>前4项Σ单量</th><th>修正动作</th><th>原始读数（修正前）</th></tr></thead>
+      <tbody>${corrRows}</tbody></table></div>
+    <br><b>④ 流量占比修正：</b>按「流量占比 = 词根日均 ÷ 前3页口径日均合计」统一重算（1月「前3页其他」原始 36.39% → 27.15%；2月 38.48% → 34.46%；4月/5月 其他词根 ±1pp 内微调），保证前3页口径月内合计 = 100%。
+    <br><b>⑤ 归因口径 vs 实际Campaign：</b>归因表「花费」由 广告展示量 × CTR × CPC 推导，仅覆盖归因框内词根；Sheet1「广告花费（日均）」为全量 Campaign 开支。1月、4月两者基本吻合，12月（679.88 vs 1,380）、2月（4,185.82 vs 13,229）、3月（2,272.37 vs 3,293）、5月（11,675.54 vs 15,016）差异 = 归因框外关键词（如 5月广告关键词已达 10,000 个）与非词根广告流量，属正常口径差。
+    <br><b>⑥ 市场级 vs 竞对级：</b>搜索频率/搜索量为市场级（ABA，同一关键词同月对所有竞对一致）；展示量/订单/花费/CPC 为竞对级归因。
+    <br><b>⑦ 数据边界：</b>CTR 4% / 转化率 10% 为统一假定（可被真实广告后台数据覆盖）；有效统计天数 = 各月日均销量反推（12月 23 天因 12.9 开推；其余 28~31 天）；评分、利润、CPU 为 Sheet1 原始读数，未做调整。`;
+}
+
+/* ================= CSV 导出 ================= */
+function exportCSV(){
+  const m = cur();
+  let data = state.group === "all" ? m.rows.slice() : m.rows.filter(r => r.group === state.group);
+  if (state.sortKey) data = data.slice().sort((a, b) => {
+    const av = a[state.sortKey] ?? -Infinity, bv = b[state.sortKey] ?? -Infinity;
+    return (av - bv) * state.sortDir;
+  });
+  const header = ["选取时间","词根分组","主打关键词","搜索频率","搜索量","总展示量","自然展示量","广告展示量",
+    "词根自然单","词根广告单","词根总单量","词根日均","流量占比(%)","词根销量占比(%)","词根转化率(%)",
+    "词根总点击量","点击率(%)","CPC","花费($)","日均花费($)"];
+  const esc = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
+  const line = data.map(r => [m.label, r.group, r.keyword,
+    r.searchFreq ?? "", r.searchVol ?? "", Math.round(r.totImp), Math.round(r.orgImp), Math.round(r.adImp),
+    f2(r.orgOrders), f2(r.adOrders), f2(r.totOrders), f2(r.totOrders / m.days),
+    r.flowShare == null ? "" : f2(r.flowShare), f2(r.salesShare), f2((r.cvr ?? CFG.cvr) * 100),
+    Math.round(r.clicks), f2((r.ctr ?? CFG.ctr) * 100), r.cpc ?? "", f2(r.spend), f2(r.spend / m.days)
+  ].map(esc).join(","));
+  const csv = "\ufeff" + [header.map(esc).join(","), ...line].join("\r\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "竞品关键词流量归因_TrendyQueen_" + m.id + ".csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+/* ================= 初始化 ================= */
+function syncToggle(id, isLog){
+  document.querySelectorAll(`#${id} button`).forEach(b =>
+    b.classList.toggle("on", (b.dataset.v === "log") === isLog));
+}
+function refresh(){
+  renderKPI(); renderAlerts(); renderBalance(); renderTable(); renderCharts();
+}
+function init(){
+  const tSel = document.getElementById("selTime");
+  MONTHS.forEach((m, i) => {
+    const o = document.createElement("option");
+    o.value = String(i); o.textContent = m.label;
+    tSel.appendChild(o);
+  });
+  tSel.value = "0";
+  tSel.addEventListener("change", e => { state.mi = Number(e.target.value); refresh(); });
+  const gSel = document.getElementById("selGroup");
+  Object.keys(GROUP_COLORS).forEach(g => {
+    const o = document.createElement("option");
+    o.value = g; o.textContent = g;
+    gSel.appendChild(o);
+  });
+  gSel.addEventListener("change", e => { state.group = e.target.value; refresh(); });
+  document.getElementById("tbody").addEventListener("click", e => {
+    const th = e.target.closest("th[data-key]");
+    if (!th) return;
+    const k = th.dataset.key;
+    if (!COLS.find(c => c.key === k)?.sortable) return;
+    if (state.sortKey === k) state.sortDir *= -1;
+    else { state.sortKey = k; state.sortDir = -1; }
+    refresh();
+  });
+  document.getElementById("tgImp").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    state.logImp = b.dataset.v === "log"; syncToggle("tgImp", state.logImp); refresh();
+  });
+  document.getElementById("tgOrd").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    state.logOrd = b.dataset.v === "log"; syncToggle("tgOrd", state.logOrd); refresh();
+  });
+  document.getElementById("tgSales").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    state.logSales = b.dataset.v === "log"; syncToggle("tgSales", state.logSales); trendSalesChart();
+  });
+  document.getElementById("btnExport").addEventListener("click", exportCSV);
+  refresh();
+  trendSalesChart(); trendSpendChart(); structTable(); dailyChart(); renderWatch(); renderDict(); renderFormula(); renderAudit();
+}
+document.addEventListener("DOMContentLoaded", init);
+</script>
+</body>
+</html>
